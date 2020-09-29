@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{52135385-70F3-486F-B968-A81A35FAD28E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartPIS</RootNamespace>
+    <AssemblyName>SmartPIS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.2">
+      <HintPath>..\..\..\..\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Data.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v19.2">
+      <HintPath>..\..\..\..\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.Utils.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v19.2">
+      <HintPath>..\..\..\..\Program Files (x86)\DevExpress 19.2\Components\Bin\Framework\DevExpress.XtraEditors.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sedas.Control">
+      <HintPath>..\..\Reference Library\Sedas.Control.dll</HintPath>
+    </Reference>
+    <Reference Include="Sedas.Core">
+      <HintPath>..\..\Reference Library\Sedas.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sedas.DB">
+      <HintPath>..\..\Reference Library\Sedas.DB.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaselineData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaselineData.Designer.cs">
+      <DependentUpon>BaselineData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Breast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Breast.designer.cs">
+      <DependentUpon>Breast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cervix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cervix.designer.cs">
+      <DependentUpon>Cervix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Colon hemicoloectomy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colon hemicoloectomy.designer.cs">
+      <DependentUpon>Colon hemicoloectomy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoreLibrary.cs" />
+    <Compile Include="Diagnosis1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diagnosis1.Designer.cs">
+      <DependentUpon>Diagnosis1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diagnosis2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diagnosis2.Designer.cs">
+      <DependentUpon>Diagnosis2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiaSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiaSearch.Designer.cs">
+      <DependentUpon>DiaSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiaSearch2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiaSearch2.designer.cs">
+      <DependentUpon>DiaSearch2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Endometrial cancer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Endometrial cancer.designer.cs">
+      <DependentUpon>Endometrial cancer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Esophagus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Esophagus.designer.cs">
+      <DependentUpon>Esophagus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="Interst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interst.Designer.cs">
+      <DependentUpon>Interst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gross.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gross.Designer.cs">
+      <DependentUpon>Gross.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrossAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrossAdd.Designer.cs">
+      <DependentUpon>GrossAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrossBaseline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrossBaseline.Designer.cs">
+      <DependentUpon>GrossBaseline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ini.cs" />
+    <Compile Include="Kidney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kidney.designer.cs">
+      <DependentUpon>Kidney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liver Intrahepatic Cholangiocarcinoma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liver Intrahepatic Cholangiocarcinoma.designer.cs">
+      <DependentUpon>Liver Intrahepatic Cholangiocarcinoma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liver hepatectomy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liver hepatectomy.designer.cs">
+      <DependentUpon>Liver hepatectomy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liver meta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liver meta.designer.cs">
+      <DependentUpon>Liver meta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lung.designer.cs">
+      <DependentUpon>Lung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ovary cancer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ovary cancer.designer.cs">
+      <DependentUpon>Ovary cancer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="prostate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="prostate.designer.cs">
+      <DependentUpon>prostate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rectal cancer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rectal cancer.designer.cs">
+      <DependentUpon>Rectal cancer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stage.Designer.cs">
+      <DependentUpon>Stage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stomach gastrectomy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stomach gastrectomy.designer.cs">
+      <DependentUpon>Stomach gastrectomy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stomach GIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stomach GIST.designer.cs">
+      <DependentUpon>Stomach GIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TESTIS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TESTIS.designer.cs">
+      <DependentUpon>TESTIS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Urinary bladder cystectomy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Urinary bladder cystectomy.designer.cs">
+      <DependentUpon>Urinary bladder cystectomy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View.Designer.cs">
+      <DependentUpon>View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Urinary bladder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Urinary bladder.designer.cs">
+      <DependentUpon>Urinary bladder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTEXTcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTEXTcs.Designer.cs">
+      <DependentUpon>ViewTEXTcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraForm1.Designer.cs">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BaselineData.resx">
+      <DependentUpon>BaselineData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Breast.resx">
+      <DependentUpon>Breast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cervix.resx">
+      <DependentUpon>Cervix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colon hemicoloectomy.resx">
+      <DependentUpon>Colon hemicoloectomy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diagnosis1.resx">
+      <DependentUpon>Diagnosis1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diagnosis2.resx">
+      <DependentUpon>Diagnosis2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiaSearch.resx">
+      <DependentUpon>DiaSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiaSearch2.resx">
+      <DependentUpon>DiaSearch2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Endometrial cancer.resx">
+      <DependentUpon>Endometrial cancer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Esophagus.resx">
+      <DependentUpon>Esophagus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gross.resx">
+      <DependentUpon>Gross.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GrossAdd.resx">
+      <DependentUpon>GrossAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GrossBaseline.resx">
+      <DependentUpon>GrossBaseline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interst.resx">
+      <DependentUpon>Interst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kidney.resx">
+      <DependentUpon>Kidney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liver Intrahepatic Cholangiocarcinoma.resx">
+      <DependentUpon>Liver Intrahepatic Cholangiocarcinoma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liver hepatectomy.resx">
+      <DependentUpon>Liver hepatectomy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liver meta.resx">
+      <DependentUpon>Liver meta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lung.resx">
+      <DependentUpon>Lung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ovary cancer.resx">
+      <DependentUpon>Ovary cancer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="prostate.resx">
+      <DependentUpon>prostate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rectal cancer.resx">
+      <DependentUpon>Rectal cancer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stage.resx">
+      <DependentUpon>Stage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stomach gastrectomy.resx">
+      <DependentUpon>Stomach gastrectomy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stomach GIST.resx">
+      <DependentUpon>Stomach GIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TESTIS.resx">
+      <DependentUpon>TESTIS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Urinary bladder cystectomy.resx">
+      <DependentUpon>Urinary bladder cystectomy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View.resx">
+      <DependentUpon>View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Urinary bladder.resx">
+      <DependentUpon>Urinary bladder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTEXTcs.resx">
+      <DependentUpon>ViewTEXTcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

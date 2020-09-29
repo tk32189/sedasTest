@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{32AECA8E-2926-47AB-8E09-B7ED60A4B4D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Sedas.Control</RootNamespace>
+    <AssemblyName>Sedas.Control</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="SedaSkin20200611_2">
+      <HintPath>..\..\Reference Library\SedaSkin20200611_2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animations\AnimationDirection.cs" />
+    <Compile Include="Animations\AnimationManager.cs" />
+    <Compile Include="Animations\Animations.cs" />
+    <Compile Include="CoreLibrary.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridControl\HGridColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GridControl\HGridColumn.Designer.cs">
+      <DependentUpon>HGridColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridControl\HGridColumnCollection.cs" />
+    <Compile Include="GridControl\HGridColumnCollection.Designer.cs">
+      <DependentUpon>HGridColumnCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridControl\HGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GridControl\HGridControl.Designer.cs">
+      <DependentUpon>HGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridControl\HGridInfoRegistrator.cs" />
+    <Compile Include="GridControl\HGridInfoRegistrator.Designer.cs">
+      <DependentUpon>HGridInfoRegistrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridControl\HGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GridControl\HGridView.Designer.cs">
+      <DependentUpon>HGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HCheckButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HCheckButton.Designer.cs">
+      <DependentUpon>HCheckButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HCheckEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HCheckEdit.Designer.cs">
+      <DependentUpon>HCheckEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HComboBoxEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HComboBoxEdit.Designer.cs">
+      <DependentUpon>HComboBoxEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HDateEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HDateEdit.Designer.cs">
+      <DependentUpon>HDateEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HFlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HFlowLayoutPanel.Designer.cs">
+      <DependentUpon>HFlowLayoutPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HGroupControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HGroupControl.Designer.cs">
+      <DependentUpon>HGroupControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HImageComboBoxEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HImageComboBoxEdit.Designer.cs">
+      <DependentUpon>HImageComboBoxEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HLabelControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HLabelControl.Designer.cs">
+      <DependentUpon>HLabelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HListBoxControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HListBoxControl.Designer.cs">
+      <DependentUpon>HListBoxControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HMemoEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HMemoEdit.Designer.cs">
+      <DependentUpon>HMemoEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HPanelControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HPanelControl.Designer.cs">
+      <DependentUpon>HPanelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HPictureEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HPictureEdit.Designer.cs">
+      <DependentUpon>HPictureEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSedasSimpleButton1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HSedasSimpleButton1.Designer.cs">
+      <DependentUpon>HSedasSimpleButton1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSedasSimpleButton2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HSedasSimpleButton2.Designer.cs">
+      <DependentUpon>HSedasSimpleButton2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSedasSImpleButtonPurple.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HSedasSImpleButtonPurple.Designer.cs">
+      <DependentUpon>HSedasSImpleButtonPurple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSedasSImpleButtonGreen.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HSedasSImpleButtonGreen.Designer.cs">
+      <DependentUpon>HSedasSImpleButtonGreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSedasSImpleButtonBlue.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HSedasSImpleButtonBlue.Designer.cs">
+      <DependentUpon>HSedasSImpleButtonBlue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSedasSImpleButtonOrange.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HSedasSImpleButtonOrange.Designer.cs">
+      <DependentUpon>HSedasSImpleButtonOrange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HSimpleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HSimpleButton.Designer.cs">
+      <DependentUpon>HSimpleButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HTabControl.Designer.cs">
+      <DependentUpon>HTabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HTableLayoutPanel.Designer.cs">
+      <DependentUpon>HTableLayoutPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTabSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HTabSelector.Designer.cs">
+      <DependentUpon>HTabSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTextEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HTextEdit.Designer.cs">
+      <DependentUpon>HTextEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabControlSkinTabPainter.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HCheckButton.resx">
+      <DependentUpon>HCheckButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HListBoxControl.resx">
+      <DependentUpon>HListBoxControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSedasSimpleButton1.resx">
+      <DependentUpon>HSedasSimpleButton1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSedasSImpleButtonBlue.resx">
+      <DependentUpon>HSedasSImpleButtonBlue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSedasSImpleButtonGreen.resx">
+      <DependentUpon>HSedasSImpleButtonGreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSimpleButton.resx">
+      <DependentUpon>HSimpleButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>set p1=$(SolutionDir)Reference Library\
+xcopy "$(TargetPath)"  "%25p1%25" /Y /C /R</PostBuildEvent>
+  </PropertyGroup>
+</Project>
