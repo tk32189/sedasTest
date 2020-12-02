@@ -238,9 +238,9 @@ namespace DGS_Viewer
             this.labelControl1.Location = new System.Drawing.Point(10, 10);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(52, 13);
+            this.labelControl1.Size = new System.Drawing.Size(111, 13);
             this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "병리번호";
+            this.labelControl1.Text = "병리번호 testsettst";
             // 
             // labelControl2
             // 
