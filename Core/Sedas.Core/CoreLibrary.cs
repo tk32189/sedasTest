@@ -601,10 +601,116 @@ namespace Sedas.Core
 
 
 
-        
+
+        /// <summary>
+        /// name         : DupFolderCheck
+        /// desc         : 폴더명 중복체크
+        /// author       : 심우종
+        /// create date  : 2020-09-29
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        public string DupFolderCheck(string newFolderPath, bool isNeedToDupCheck = true)
+        {
+            bool isDup = false;
+            DirectoryInfo di = new DirectoryInfo(newFolderPath);
+
+            if (isNeedToDupCheck == true)
+            {
+                if (di.Exists)
+                {
+                    isDup = true;
+                    //이미 동일한 파일이 존재하는 경우
+                    //newFileName = newFileName + DateTime.Now.ToString("HHmmss");
+
+                    bool isTempNumExists = false;
+                    int existTempNum = 0;
+                    int existTempNumIndex = 0;
+
+
+                    string folderName = di.Name;
+
+
+                    if (!string.IsNullOrEmpty(folderName))
+                    {
+                        //newFileName = splFileName.ElementAt(0) + DateTime.Now.ToString("HHmmss") + "." + splFileName.ElementAt(1);
+
+                        int startIndexNum = folderName.LastIndexOf('(');
+                        int endIndexNum = folderName.LastIndexOf(')');
+                        existTempNumIndex = startIndexNum;
+                        if (startIndexNum >= 0 && endIndexNum >= 0)
+                        {
+                            //임시번호가 뒤에 붙어있음.
+                            string tempNum = folderName.Substring(startIndexNum, endIndexNum - startIndexNum + 1);
+                            if (tempNum.Length >= 3)
+                            {
+                                if (tempNum[0].ToString() == "(" && tempNum[tempNum.Length - 1].ToString() == ")")
+                                {
+                                    string strNumber = tempNum.Substring(1, tempNum.Length - 2);
+                                    if (strNumber.ToIntOrNull() != null)
+                                    {
+                                        int num = strNumber.ToInt();
+                                        existTempNum = num;
+                                        isTempNumExists = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                   
+
+                    if (isTempNumExists == true && existTempNum > 0 && existTempNumIndex > 0)
+                    {
+
+                        newFolderPath = di.Parent.FullName + "\\" +  folderName.Substring(0, existTempNumIndex) + "(" + (existTempNum + 1).ToString() + ")";
+                    }
+                    else
+                    {
+                        newFolderPath = di.Parent.FullName + "\\" + folderName.ToString() + "(1)";
+                    }
+                }
+            }
+
+
+            if (isDup == false)
+            {
+                return newFolderPath;
+            }
+            else
+            {
+                return DupFolderCheck(newFolderPath, isNeedToDupCheck);
+            }
+        }
 
 
 
+
+        /// <summary>
+        /// name         : SedasRunProcess
+        /// desc         : 프로그램을 실행한다.
+        /// author       : 심우종
+        /// create date  : 2020-10-14 13:47
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        public void SedasRunProcess(string runExe, string logId)
+        {
+            using (Process compiler = new Process())
+            {
+                string path = @"C:\SEDAS\SedasLauncher\SedasLauncher.exe";
+                string param1 = runExe;
+                string param2 = logId;
+                FileInfo file = new FileInfo(path);
+
+                compiler.StartInfo.FileName = path;
+                string arg = string.Format("\"{0}\" {1}", runExe, logId);
+                compiler.StartInfo.Arguments = arg;
+                //compiler.StartInfo.Arguments = "\"" + jsonValue + "\"" ;
+                compiler.StartInfo.UseShellExecute = true;
+
+                compiler.StartInfo.WorkingDirectory = file.DirectoryName;
+                compiler.Start();
+            }
+        }
 
     }
 }

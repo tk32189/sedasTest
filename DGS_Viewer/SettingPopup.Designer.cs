@@ -28,107 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingPopup));
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.tlp1 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.groupControl2 = new Sedas.Control.HGroupControl(this.components);
-            this.panelControl1 = new Sedas.Control.HPanelControl(this.components);
-            this.chkOcsYn = new Sedas.Control.HCheckEdit(this.components);
-            this.flowLayoutPanel2 = new Sedas.Control.HFlowLayoutPanel(this.components);
-            this.labelControl4 = new Sedas.Control.HLabelControl(this.components);
-            this.txtOcsDsn = new Sedas.Control.HTextEdit(this.components);
-            this.labelControl5 = new Sedas.Control.HLabelControl(this.components);
-            this.txtOcsUser = new Sedas.Control.HTextEdit(this.components);
-            this.labelControl6 = new Sedas.Control.HLabelControl(this.components);
-            this.txtOcsPasswd = new Sedas.Control.HTextEdit(this.components);
-            this.groupControl1 = new Sedas.Control.HGroupControl(this.components);
-            this.flowLayoutPanel1 = new Sedas.Control.HFlowLayoutPanel(this.components);
-            this.labelControl1 = new Sedas.Control.HLabelControl(this.components);
-            this.txtDgsdsn = new Sedas.Control.HTextEdit(this.components);
-            this.labelControl2 = new Sedas.Control.HLabelControl(this.components);
-            this.txtDgsUser = new Sedas.Control.HTextEdit(this.components);
-            this.labelControl3 = new Sedas.Control.HLabelControl(this.components);
-            this.txtDgsPasswd = new Sedas.Control.HTextEdit(this.components);
+            this.tlp1 = new Sedas.Control.HTableLayoutPanel();
+            this.groupControl2 = new Sedas.Control.HGroupControl();
+            this.panelControl1 = new Sedas.Control.HPanelControl();
+            this.chkOcsYn = new Sedas.Control.HCheckEdit();
+            this.flowLayoutPanel2 = new Sedas.Control.HFlowLayoutPanel();
+            this.labelControl4 = new Sedas.Control.HLabelControl();
+            this.txtOcsDsn = new Sedas.Control.HTextEdit();
+            this.labelControl5 = new Sedas.Control.HLabelControl();
+            this.txtOcsUser = new Sedas.Control.HTextEdit();
+            this.labelControl6 = new Sedas.Control.HLabelControl();
+            this.txtOcsPasswd = new Sedas.Control.HTextEdit();
+            this.groupControl1 = new Sedas.Control.HGroupControl();
+            this.flowLayoutPanel1 = new Sedas.Control.HFlowLayoutPanel();
+            this.labelControl1 = new Sedas.Control.HLabelControl();
+            this.txtDgsdsn = new Sedas.Control.HTextEdit();
+            this.labelControl2 = new Sedas.Control.HLabelControl();
+            this.txtDgsUser = new Sedas.Control.HTextEdit();
+            this.labelControl3 = new Sedas.Control.HLabelControl();
+            this.txtDgsPasswd = new Sedas.Control.HTextEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.tableLayoutPanel1 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.groupControl3 = new Sedas.Control.HGroupControl(this.components);
-            this.tableLayoutPanel6 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.tableLayoutPanel10 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.labelControl9 = new Sedas.Control.HLabelControl(this.components);
-            this.listGridName = new Sedas.Control.HListBoxControl(this.components);
-            this.txtGridName = new Sedas.Control.HTextEdit(this.components);
-            this.flowLayoutPanel4 = new Sedas.Control.HFlowLayoutPanel(this.components);
-            this.btnGridNameAdd = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
-            this.btnGridNameDelete = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
-            this.tableLayoutPanel7 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.panelControl2 = new Sedas.Control.HPanelControl(this.components);
-            this.txtListCount = new Sedas.Control.HTextEdit(this.components);
-            this.labelControl7 = new Sedas.Control.HLabelControl(this.components);
-            this.memoEdit1 = new Sedas.Control.HMemoEdit(this.components);
-            this.tableLayoutPanel8 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.labelControl8 = new Sedas.Control.HLabelControl(this.components);
-            this.listGridLength = new Sedas.Control.HListBoxControl(this.components);
-            this.txtGridLength = new Sedas.Control.HTextEdit(this.components);
-            this.flowLayoutPanel3 = new Sedas.Control.HFlowLayoutPanel(this.components);
-            this.btnGridLengthAdd = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
-            this.btnGridLengthDelete = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
+            this.tableLayoutPanel1 = new Sedas.Control.HTableLayoutPanel();
+            this.groupControl3 = new Sedas.Control.HGroupControl();
+            this.tableLayoutPanel6 = new Sedas.Control.HTableLayoutPanel();
+            this.tableLayoutPanel10 = new Sedas.Control.HTableLayoutPanel();
+            this.labelControl9 = new Sedas.Control.HLabelControl();
+            this.listGridName = new Sedas.Control.HListBoxControl();
+            this.txtGridName = new Sedas.Control.HTextEdit();
+            this.flowLayoutPanel4 = new Sedas.Control.HFlowLayoutPanel();
+            this.btnGridNameAdd = new Sedas.Control.HSedasSImpleButtonPurple();
+            this.btnGridNameDelete = new Sedas.Control.HSedasSImpleButtonPurple();
+            this.btnGridNameUp = new Sedas.Control.HSedasSImpleButtonPurple();
+            this.btnGridNameDown = new Sedas.Control.HSedasSImpleButtonPurple();
+            this.tableLayoutPanel7 = new Sedas.Control.HTableLayoutPanel();
+            this.panelControl2 = new Sedas.Control.HPanelControl();
+            this.txtListCount = new Sedas.Control.HTextEdit();
+            this.labelControl7 = new Sedas.Control.HLabelControl();
+            this.memoEdit1 = new Sedas.Control.HMemoEdit();
+            this.tableLayoutPanel8 = new Sedas.Control.HTableLayoutPanel();
+            this.labelControl8 = new Sedas.Control.HLabelControl();
+            this.listGridLength = new Sedas.Control.HListBoxControl();
+            this.txtGridLength = new Sedas.Control.HTextEdit();
+            this.flowLayoutPanel3 = new Sedas.Control.HFlowLayoutPanel();
+            this.btnGridLengthAdd = new Sedas.Control.HSedasSImpleButtonPurple();
+            this.btnGridLengthDelete = new Sedas.Control.HSedasSImpleButtonPurple();
+            this.btnGridLengthUp = new Sedas.Control.HSedasSImpleButtonPurple();
+            this.btnGridLengthDown = new Sedas.Control.HSedasSImpleButtonPurple();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
-            this.tableLayoutPanel2 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.groupControl5 = new Sedas.Control.HGroupControl(this.components);
-            this.tableLayoutPanel12 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.labelControl11 = new Sedas.Control.HLabelControl(this.components);
-            this.txtProgramSavePath = new Sedas.Control.HTextEdit(this.components);
-            this.btnProgramSavePath = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
-            this.groupControl4 = new Sedas.Control.HGroupControl(this.components);
-            this.tableLayoutPanel11 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.labelControl10 = new Sedas.Control.HLabelControl(this.components);
-            this.txtImageSavePath = new Sedas.Control.HTextEdit(this.components);
-            this.btnImageSavePath = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
+            this.tableLayoutPanel2 = new Sedas.Control.HTableLayoutPanel();
+            this.groupControl5 = new Sedas.Control.HGroupControl();
+            this.tableLayoutPanel12 = new Sedas.Control.HTableLayoutPanel();
+            this.labelControl11 = new Sedas.Control.HLabelControl();
+            this.txtProgramSavePath = new Sedas.Control.HTextEdit();
+            this.btnProgramSavePath = new Sedas.Control.HSedasSImpleButtonPurple();
+            this.groupControl4 = new Sedas.Control.HGroupControl();
+            this.tableLayoutPanel11 = new Sedas.Control.HTableLayoutPanel();
+            this.labelControl10 = new Sedas.Control.HLabelControl();
+            this.txtImageSavePath = new Sedas.Control.HTextEdit();
+            this.btnImageSavePath = new Sedas.Control.HSedasSImpleButtonPurple();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
-            this.tableLayoutPanel3 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.tableLayoutPanel4 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.groupControl6 = new Sedas.Control.HGroupControl(this.components);
-            this.tableLayoutPanel14 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.tableLayoutPanel16 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.labelControl13 = new Sedas.Control.HLabelControl(this.components);
-            this.listWeek = new Sedas.Control.HListBoxControl(this.components);
-            this.txtComboWeek = new Sedas.Control.HTextEdit(this.components);
-            this.btnComboWeekAdd = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
-            this.btnComboWeekEdit = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
-            this.btnComboWeekDelete = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
-            this.tableLayoutPanel15 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.labelControl12 = new Sedas.Control.HLabelControl(this.components);
-            this.listChar = new Sedas.Control.HListBoxControl(this.components);
-            this.txtComboChar = new Sedas.Control.HTextEdit(this.components);
-            this.btnComboCharAdd = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
-            this.btnComboCharEdit = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
-            this.btnComboCharDelete = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
-            this.tableLayoutPanel5 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.groupControl9 = new Sedas.Control.HGroupControl(this.components);
-            this.rdoImageSizeSmall = new Sedas.Control.HCheckEdit(this.components);
-            this.rdoImageSizeBig = new Sedas.Control.HCheckEdit(this.components);
-            this.groupControl8 = new Sedas.Control.HGroupControl(this.components);
-            this.rdoUiModeBottom = new Sedas.Control.HCheckEdit(this.components);
-            this.rdoUiModeTop = new Sedas.Control.HCheckEdit(this.components);
-            this.rdoUiModeRight = new Sedas.Control.HCheckEdit(this.components);
-            this.rdoUiModeLeft = new Sedas.Control.HCheckEdit(this.components);
-            this.groupControl7 = new Sedas.Control.HGroupControl(this.components);
-            this.chkHypen = new Sedas.Control.HCheckEdit(this.components);
-            this.rdoCipher2 = new Sedas.Control.HCheckEdit(this.components);
-            this.rdoCipher1 = new Sedas.Control.HCheckEdit(this.components);
+            this.tableLayoutPanel3 = new Sedas.Control.HTableLayoutPanel();
+            this.tableLayoutPanel4 = new Sedas.Control.HTableLayoutPanel();
+            this.groupControl6 = new Sedas.Control.HGroupControl();
+            this.tableLayoutPanel14 = new Sedas.Control.HTableLayoutPanel();
+            this.tableLayoutPanel16 = new Sedas.Control.HTableLayoutPanel();
+            this.labelControl13 = new Sedas.Control.HLabelControl();
+            this.listWeek = new Sedas.Control.HListBoxControl();
+            this.txtComboWeek = new Sedas.Control.HTextEdit();
+            this.btnComboWeekAdd = new Sedas.Control.HSedasSImpleButtonPurple();
+            this.btnComboWeekEdit = new Sedas.Control.HSedasSImpleButtonPurple();
+            this.btnComboWeekDelete = new Sedas.Control.HSedasSImpleButtonPurple();
+            this.tableLayoutPanel15 = new Sedas.Control.HTableLayoutPanel();
+            this.labelControl12 = new Sedas.Control.HLabelControl();
+            this.listChar = new Sedas.Control.HListBoxControl();
+            this.txtComboChar = new Sedas.Control.HTextEdit();
+            this.btnComboCharAdd = new Sedas.Control.HSedasSImpleButtonPurple();
+            this.btnComboCharEdit = new Sedas.Control.HSedasSImpleButtonPurple();
+            this.btnComboCharDelete = new Sedas.Control.HSedasSImpleButtonPurple();
+            this.tableLayoutPanel5 = new Sedas.Control.HTableLayoutPanel();
+            this.hGroupControl3 = new Sedas.Control.HGroupControl();
+            this.chkOnlyMapping = new Sedas.Control.HCheckEdit();
+            this.hGroupControl2 = new Sedas.Control.HGroupControl();
+            this.chkLastUpDt = new Sedas.Control.HCheckEdit();
+            this.rdoPeriodOther = new Sedas.Control.HCheckEdit();
+            this.hFlowLayoutPanel1 = new Sedas.Control.HFlowLayoutPanel();
+            this.txtPeriod = new Sedas.Control.HTextEdit();
+            this.hLabelControl1 = new Sedas.Control.HLabelControl();
+            this.rdoPeriodToday = new Sedas.Control.HCheckEdit();
+            this.hGroupControl1 = new Sedas.Control.HGroupControl();
+            this.rdoSortLastDt = new Sedas.Control.HCheckEdit();
+            this.rdoSortInsertDt = new Sedas.Control.HCheckEdit();
+            this.rdoSortStudyDt = new Sedas.Control.HCheckEdit();
+            this.groupControl9 = new Sedas.Control.HGroupControl();
+            this.rdoImageSizeSmall = new Sedas.Control.HCheckEdit();
+            this.rdoImageSizeBig = new Sedas.Control.HCheckEdit();
+            this.groupControl8 = new Sedas.Control.HGroupControl();
+            this.rdoUiModeBottom = new Sedas.Control.HCheckEdit();
+            this.rdoUiModeTop = new Sedas.Control.HCheckEdit();
+            this.rdoUiModeRight = new Sedas.Control.HCheckEdit();
+            this.rdoUiModeLeft = new Sedas.Control.HCheckEdit();
+            this.groupControl7 = new Sedas.Control.HGroupControl();
+            this.chkHypen = new Sedas.Control.HCheckEdit();
+            this.rdoCipher2 = new Sedas.Control.HCheckEdit();
+            this.rdoCipher1 = new Sedas.Control.HCheckEdit();
             this.simpleButton7 = new Sedas.Control.HSimpleButton();
             this.simpleButton8 = new Sedas.Control.HSimpleButton();
-            this.tlpMain = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.tlpBottom = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.btnConfirm = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
-            this.btnCancel = new Sedas.Control.HSedasSImpleButtonGreen(this.components);
-            this.btnGridNameUp = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
-            this.btnGridNameDown = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
-            this.btnGridLengthUp = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
-            this.btnGridLengthDown = new Sedas.Control.HSedasSImpleButtonPurple(this.components);
+            this.tlpMain = new Sedas.Control.HTableLayoutPanel();
+            this.tlpBottom = new Sedas.Control.HTableLayoutPanel();
+            this.btnConfirm = new Sedas.Control.HSedasSImpleButtonBlue();
+            this.btnCancel = new Sedas.Control.HSedasSImpleButtonGreen();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -189,6 +201,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.listChar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComboChar.Properties)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hGroupControl3)).BeginInit();
+            this.hGroupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkOnlyMapping.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hGroupControl2)).BeginInit();
+            this.hGroupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkLastUpDt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdoPeriodOther.Properties)).BeginInit();
+            this.hFlowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPeriod.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdoPeriodToday.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hGroupControl1)).BeginInit();
+            this.hGroupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rdoSortLastDt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdoSortInsertDt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdoSortStudyDt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).BeginInit();
             this.groupControl9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rdoImageSizeSmall.Properties)).BeginInit();
@@ -225,7 +252,7 @@
             this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(570, 428);
+            this.xtraTabControl1.Size = new System.Drawing.Size(598, 534);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -241,7 +268,7 @@
             this.xtraTabPage1.Controls.Add(this.tlp1);
             this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(564, 399);
+            this.xtraTabPage1.Size = new System.Drawing.Size(592, 506);
             this.xtraTabPage1.Text = "DB설정";
             // 
             // tlp1
@@ -258,8 +285,8 @@
             this.tlp1.RowCount = 2;
             this.tlp1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlp1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlp1.Size = new System.Drawing.Size(564, 399);
+            this.tlp1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tlp1.Size = new System.Drawing.Size(592, 506);
             this.tlp1.TabIndex = 0;
             // 
             // groupControl2
@@ -272,13 +299,13 @@
             this.groupControl2.Controls.Add(this.panelControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.groupControl2.Location = new System.Drawing.Point(7, 207);
+            this.groupControl2.Location = new System.Drawing.Point(7, 260);
             this.groupControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.groupControl2.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControl2.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.SedasControlType = Sedas.Control.HGroupControl.HGroupControlType.KuhLight;
-            this.groupControl2.Size = new System.Drawing.Size(550, 184);
+            this.groupControl2.Size = new System.Drawing.Size(578, 239);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "OCSDB";
             // 
@@ -288,16 +315,16 @@
             this.panelControl1.Controls.Add(this.chkOcsYn);
             this.panelControl1.Controls.Add(this.flowLayoutPanel2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(2, 19);
+            this.panelControl1.Location = new System.Drawing.Point(2, 17);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(2);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.SedasControlType = Sedas.Control.HPanelControl.SedasPanelType.Null;
-            this.panelControl1.Size = new System.Drawing.Size(546, 163);
+            this.panelControl1.Size = new System.Drawing.Size(574, 220);
             this.panelControl1.TabIndex = 0;
             // 
             // chkOcsYn
             // 
-            this.chkOcsYn.Location = new System.Drawing.Point(404, 115);
+            this.chkOcsYn.Location = new System.Drawing.Point(404, 119);
             this.chkOcsYn.Margin = new System.Windows.Forms.Padding(2);
             this.chkOcsYn.Name = "chkOcsYn";
             this.chkOcsYn.Properties.Appearance.ForeColor = System.Drawing.Color.White;
@@ -319,10 +346,10 @@
             this.flowLayoutPanel2.Controls.Add(this.txtOcsUser);
             this.flowLayoutPanel2.Controls.Add(this.labelControl6);
             this.flowLayoutPanel2.Controls.Add(this.txtOcsPasswd);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 50);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 83);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(538, 30);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(538, 26);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // labelControl4
@@ -330,13 +357,13 @@
             this.labelControl4.Location = new System.Drawing.Point(2, 2);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(35, 14);
+            this.labelControl4.Size = new System.Drawing.Size(37, 12);
             this.labelControl4.TabIndex = 0;
             this.labelControl4.Text = "DSN : ";
             // 
             // txtOcsDsn
             // 
-            this.txtOcsDsn.Location = new System.Drawing.Point(41, 2);
+            this.txtOcsDsn.Location = new System.Drawing.Point(43, 2);
             this.txtOcsDsn.Margin = new System.Windows.Forms.Padding(2);
             this.txtOcsDsn.Name = "txtOcsDsn";
             this.txtOcsDsn.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
@@ -348,21 +375,22 @@
             this.txtOcsDsn.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtOcsDsn.Properties.ReadOnly = true;
             this.txtOcsDsn.SedasControlType = Sedas.Control.ControlType.Kuh;
-            this.txtOcsDsn.Size = new System.Drawing.Size(105, 18);
+            this.txtOcsDsn.SedasForeColor = null;
+            this.txtOcsDsn.Size = new System.Drawing.Size(105, 16);
             this.txtOcsDsn.TabIndex = 1;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(158, 2);
+            this.labelControl5.Location = new System.Drawing.Point(160, 2);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(10, 2, 2, 2);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(41, 14);
+            this.labelControl5.Size = new System.Drawing.Size(44, 12);
             this.labelControl5.TabIndex = 2;
             this.labelControl5.Text = "USER : ";
             // 
             // txtOcsUser
             // 
-            this.txtOcsUser.Location = new System.Drawing.Point(203, 2);
+            this.txtOcsUser.Location = new System.Drawing.Point(208, 2);
             this.txtOcsUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtOcsUser.Name = "txtOcsUser";
             this.txtOcsUser.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
@@ -374,21 +402,22 @@
             this.txtOcsUser.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtOcsUser.Properties.ReadOnly = true;
             this.txtOcsUser.SedasControlType = Sedas.Control.ControlType.Kuh;
-            this.txtOcsUser.Size = new System.Drawing.Size(105, 18);
+            this.txtOcsUser.SedasForeColor = null;
+            this.txtOcsUser.Size = new System.Drawing.Size(105, 16);
             this.txtOcsUser.TabIndex = 3;
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(320, 2);
+            this.labelControl6.Location = new System.Drawing.Point(325, 2);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(10, 2, 2, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(61, 14);
+            this.labelControl6.Size = new System.Drawing.Size(62, 12);
             this.labelControl6.TabIndex = 4;
             this.labelControl6.Text = "PASSWD : ";
             // 
             // txtOcsPasswd
             // 
-            this.txtOcsPasswd.Location = new System.Drawing.Point(385, 2);
+            this.txtOcsPasswd.Location = new System.Drawing.Point(391, 2);
             this.txtOcsPasswd.Margin = new System.Windows.Forms.Padding(2);
             this.txtOcsPasswd.Name = "txtOcsPasswd";
             this.txtOcsPasswd.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
@@ -400,7 +429,8 @@
             this.txtOcsPasswd.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtOcsPasswd.Properties.ReadOnly = true;
             this.txtOcsPasswd.SedasControlType = Sedas.Control.ControlType.Kuh;
-            this.txtOcsPasswd.Size = new System.Drawing.Size(106, 18);
+            this.txtOcsPasswd.SedasForeColor = null;
+            this.txtOcsPasswd.Size = new System.Drawing.Size(106, 16);
             this.txtOcsPasswd.TabIndex = 5;
             // 
             // groupControl1
@@ -413,13 +443,13 @@
             this.groupControl1.Controls.Add(this.flowLayoutPanel1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.groupControl1.Location = new System.Drawing.Point(7, 8);
+            this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.groupControl1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.SedasControlType = Sedas.Control.HGroupControl.HGroupControlType.KuhLight;
-            this.groupControl1.Size = new System.Drawing.Size(550, 183);
+            this.groupControl1.Size = new System.Drawing.Size(578, 239);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "DGSDB";
             // 
@@ -432,10 +462,10 @@
             this.flowLayoutPanel1.Controls.Add(this.txtDgsUser);
             this.flowLayoutPanel1.Controls.Add(this.labelControl3);
             this.flowLayoutPanel1.Controls.Add(this.txtDgsPasswd);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 80);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 110);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(538, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(538, 26);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // labelControl1
@@ -443,13 +473,13 @@
             this.labelControl1.Location = new System.Drawing.Point(2, 2);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(35, 14);
+            this.labelControl1.Size = new System.Drawing.Size(37, 12);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "DSN : ";
             // 
             // txtDgsdsn
             // 
-            this.txtDgsdsn.Location = new System.Drawing.Point(41, 2);
+            this.txtDgsdsn.Location = new System.Drawing.Point(43, 2);
             this.txtDgsdsn.Margin = new System.Windows.Forms.Padding(2);
             this.txtDgsdsn.Name = "txtDgsdsn";
             this.txtDgsdsn.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
@@ -460,21 +490,22 @@
             this.txtDgsdsn.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtDgsdsn.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtDgsdsn.SedasControlType = Sedas.Control.ControlType.Kuh;
-            this.txtDgsdsn.Size = new System.Drawing.Size(105, 18);
+            this.txtDgsdsn.SedasForeColor = null;
+            this.txtDgsdsn.Size = new System.Drawing.Size(105, 16);
             this.txtDgsdsn.TabIndex = 1;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(158, 2);
+            this.labelControl2.Location = new System.Drawing.Point(160, 2);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(10, 2, 2, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(41, 14);
+            this.labelControl2.Size = new System.Drawing.Size(44, 12);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "USER : ";
             // 
             // txtDgsUser
             // 
-            this.txtDgsUser.Location = new System.Drawing.Point(203, 2);
+            this.txtDgsUser.Location = new System.Drawing.Point(208, 2);
             this.txtDgsUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtDgsUser.Name = "txtDgsUser";
             this.txtDgsUser.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
@@ -485,21 +516,22 @@
             this.txtDgsUser.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtDgsUser.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtDgsUser.SedasControlType = Sedas.Control.ControlType.Kuh;
-            this.txtDgsUser.Size = new System.Drawing.Size(105, 18);
+            this.txtDgsUser.SedasForeColor = null;
+            this.txtDgsUser.Size = new System.Drawing.Size(105, 16);
             this.txtDgsUser.TabIndex = 3;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(320, 2);
+            this.labelControl3.Location = new System.Drawing.Point(325, 2);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(10, 2, 2, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(61, 14);
+            this.labelControl3.Size = new System.Drawing.Size(62, 12);
             this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "PASSWD : ";
             // 
             // txtDgsPasswd
             // 
-            this.txtDgsPasswd.Location = new System.Drawing.Point(385, 2);
+            this.txtDgsPasswd.Location = new System.Drawing.Point(391, 2);
             this.txtDgsPasswd.Margin = new System.Windows.Forms.Padding(2);
             this.txtDgsPasswd.Name = "txtDgsPasswd";
             this.txtDgsPasswd.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
@@ -510,7 +542,8 @@
             this.txtDgsPasswd.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtDgsPasswd.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtDgsPasswd.SedasControlType = Sedas.Control.ControlType.Kuh;
-            this.txtDgsPasswd.Size = new System.Drawing.Size(106, 18);
+            this.txtDgsPasswd.SedasForeColor = null;
+            this.txtDgsPasswd.Size = new System.Drawing.Size(106, 16);
             this.txtDgsPasswd.TabIndex = 5;
             // 
             // xtraTabPage2
@@ -518,7 +551,7 @@
             this.xtraTabPage2.Controls.Add(this.tableLayoutPanel1);
             this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(564, 399);
+            this.xtraTabPage2.Size = new System.Drawing.Size(592, 506);
             this.xtraTabPage2.Text = "리스트설정";
             // 
             // tableLayoutPanel1
@@ -533,8 +566,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 395F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(564, 399);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 511F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(592, 506);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl3
@@ -550,13 +583,13 @@
             this.groupControl3.Controls.Add(this.tableLayoutPanel6);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.groupControl3.Location = new System.Drawing.Point(7, 8);
+            this.groupControl3.Location = new System.Drawing.Point(7, 7);
             this.groupControl3.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.groupControl3.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControl3.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.SedasControlType = Sedas.Control.HGroupControl.HGroupControlType.KuhLight;
-            this.groupControl3.Size = new System.Drawing.Size(550, 383);
+            this.groupControl3.Size = new System.Drawing.Size(578, 492);
             this.groupControl3.TabIndex = 1;
             this.groupControl3.Text = "리스트 환경설정";
             // 
@@ -571,14 +604,14 @@
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel8, 3, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(2, 19);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(2, 17);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 355F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 355F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(546, 362);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 479F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 479F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(574, 473);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // tableLayoutPanel10
@@ -590,24 +623,24 @@
             this.tableLayoutPanel10.Controls.Add(this.txtGridName, 0, 2);
             this.tableLayoutPanel10.Controls.Add(this.flowLayoutPanel4, 0, 3);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(172, 2);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(181, 2);
             this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 4;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(166, 358);
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(175, 469);
             this.tableLayoutPanel10.TabIndex = 2;
             // 
             // labelControl9
             // 
             this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl9.Location = new System.Drawing.Point(56, 2);
+            this.labelControl9.Location = new System.Drawing.Point(55, 2);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(54, 14);
+            this.labelControl9.Size = new System.Drawing.Size(64, 12);
             this.labelControl9.TabIndex = 0;
             this.labelControl9.Text = "리스트 이름";
             // 
@@ -616,16 +649,16 @@
             this.listGridName.Appearance.ForeColor = System.Drawing.Color.White;
             this.listGridName.Appearance.Options.UseForeColor = true;
             this.listGridName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listGridName.Location = new System.Drawing.Point(2, 25);
+            this.listGridName.Location = new System.Drawing.Point(2, 22);
             this.listGridName.Margin = new System.Windows.Forms.Padding(2);
             this.listGridName.Name = "listGridName";
             this.listGridName.SedasControlType = Sedas.Control.HListBoxControl.HListBoxControlType.Null;
-            this.listGridName.Size = new System.Drawing.Size(162, 265);
+            this.listGridName.Size = new System.Drawing.Size(171, 388);
             this.listGridName.TabIndex = 1;
             // 
             // txtGridName
             // 
-            this.txtGridName.Location = new System.Drawing.Point(2, 294);
+            this.txtGridName.Location = new System.Drawing.Point(2, 414);
             this.txtGridName.Margin = new System.Windows.Forms.Padding(2);
             this.txtGridName.Name = "txtGridName";
             this.txtGridName.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
@@ -636,7 +669,8 @@
             this.txtGridName.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtGridName.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtGridName.SedasControlType = Sedas.Control.ControlType.Kuh;
-            this.txtGridName.Size = new System.Drawing.Size(162, 18);
+            this.txtGridName.SedasForeColor = null;
+            this.txtGridName.Size = new System.Drawing.Size(162, 16);
             this.txtGridName.TabIndex = 2;
             // 
             // flowLayoutPanel4
@@ -647,10 +681,10 @@
             this.flowLayoutPanel4.Controls.Add(this.btnGridNameDelete);
             this.flowLayoutPanel4.Controls.Add(this.btnGridNameUp);
             this.flowLayoutPanel4.Controls.Add(this.btnGridNameDown);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(5, 325);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(9, 441);
             this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(156, 31);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(156, 26);
             this.flowLayoutPanel4.TabIndex = 3;
             // 
             // btnGridNameAdd
@@ -664,7 +698,7 @@
             this.btnGridNameAdd.Name = "btnGridNameAdd";
             this.btnGridNameAdd.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
             this.btnGridNameAdd.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnGridNameAdd.Size = new System.Drawing.Size(50, 27);
+            this.btnGridNameAdd.Size = new System.Drawing.Size(50, 23);
             this.btnGridNameAdd.TabIndex = 1;
             this.btnGridNameAdd.Text = "추가";
             this.btnGridNameAdd.Click += new System.EventHandler(this.btnGridNameAdd_Click);
@@ -680,10 +714,44 @@
             this.btnGridNameDelete.Name = "btnGridNameDelete";
             this.btnGridNameDelete.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
             this.btnGridNameDelete.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnGridNameDelete.Size = new System.Drawing.Size(50, 27);
+            this.btnGridNameDelete.Size = new System.Drawing.Size(50, 23);
             this.btnGridNameDelete.TabIndex = 2;
             this.btnGridNameDelete.Text = "삭제";
             this.btnGridNameDelete.Click += new System.EventHandler(this.btnGridNameDelete_Click);
+            // 
+            // btnGridNameUp
+            // 
+            this.btnGridNameUp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnGridNameUp.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnGridNameUp.Appearance.Options.UseForeColor = true;
+            this.btnGridNameUp.Location = new System.Drawing.Point(110, 2);
+            this.btnGridNameUp.LookAndFeel.SkinName = "My Basic";
+            this.btnGridNameUp.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnGridNameUp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGridNameUp.Name = "btnGridNameUp";
+            this.btnGridNameUp.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
+            this.btnGridNameUp.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
+            this.btnGridNameUp.Size = new System.Drawing.Size(20, 23);
+            this.btnGridNameUp.TabIndex = 3;
+            this.btnGridNameUp.Text = "△";
+            this.btnGridNameUp.Click += new System.EventHandler(this.btnGridNameUp_Click);
+            // 
+            // btnGridNameDown
+            // 
+            this.btnGridNameDown.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnGridNameDown.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnGridNameDown.Appearance.Options.UseForeColor = true;
+            this.btnGridNameDown.Location = new System.Drawing.Point(134, 2);
+            this.btnGridNameDown.LookAndFeel.SkinName = "My Basic";
+            this.btnGridNameDown.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnGridNameDown.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGridNameDown.Name = "btnGridNameDown";
+            this.btnGridNameDown.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
+            this.btnGridNameDown.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
+            this.btnGridNameDown.Size = new System.Drawing.Size(20, 23);
+            this.btnGridNameDown.TabIndex = 4;
+            this.btnGridNameDown.Text = "▽";
+            this.btnGridNameDown.Click += new System.EventHandler(this.btnGridNameDown_Click);
             // 
             // tableLayoutPanel7
             // 
@@ -697,9 +765,9 @@
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 78F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(166, 358);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(175, 469);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // panelControl2
@@ -711,12 +779,12 @@
             this.panelControl2.Margin = new System.Windows.Forms.Padding(2);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.SedasControlType = Sedas.Control.HPanelControl.SedasPanelType.Null;
-            this.panelControl2.Size = new System.Drawing.Size(162, 73);
+            this.panelControl2.Size = new System.Drawing.Size(162, 63);
             this.panelControl2.TabIndex = 0;
             // 
             // txtListCount
             // 
-            this.txtListCount.Location = new System.Drawing.Point(61, 24);
+            this.txtListCount.Location = new System.Drawing.Point(61, 21);
             this.txtListCount.Margin = new System.Windows.Forms.Padding(2);
             this.txtListCount.Name = "txtListCount";
             this.txtListCount.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
@@ -729,15 +797,16 @@
             this.txtListCount.Properties.Mask.EditMask = "\\d+";
             this.txtListCount.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtListCount.SedasControlType = Sedas.Control.ControlType.Kuh;
-            this.txtListCount.Size = new System.Drawing.Size(74, 18);
+            this.txtListCount.SedasForeColor = null;
+            this.txtListCount.Size = new System.Drawing.Size(74, 16);
             this.txtListCount.TabIndex = 1;
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(11, 27);
+            this.labelControl7.Location = new System.Drawing.Point(11, 23);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(45, 14);
+            this.labelControl7.Size = new System.Drawing.Size(45, 12);
             this.labelControl7.TabIndex = 0;
             this.labelControl7.Text = "Count : ";
             // 
@@ -746,7 +815,7 @@
             this.memoEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.memoEdit1.EditValue = "* List 이름의 개수가 Count 보다 적을경우  TEMP 가 출력되고 많을경우 적용되지 않습니다.\r\n\r\n* List 길이의 개수가 Count" +
     " 보다 적을경우 길이는 100으로 지정되고  많을경우 적용되지 않습니다.";
-            this.memoEdit1.Location = new System.Drawing.Point(2, 80);
+            this.memoEdit1.Location = new System.Drawing.Point(2, 69);
             this.memoEdit1.Margin = new System.Windows.Forms.Padding(2);
             this.memoEdit1.Name = "memoEdit1";
             this.memoEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
@@ -758,7 +827,7 @@
             this.memoEdit1.Properties.ReadOnly = true;
             this.memoEdit1.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.memoEdit1.SedasControlType = Sedas.Control.ControlType.Kuh;
-            this.memoEdit1.Size = new System.Drawing.Size(162, 276);
+            this.memoEdit1.Size = new System.Drawing.Size(171, 398);
             this.memoEdit1.TabIndex = 1;
             // 
             // tableLayoutPanel8
@@ -770,15 +839,15 @@
             this.tableLayoutPanel8.Controls.Add(this.txtGridLength, 0, 2);
             this.tableLayoutPanel8.Controls.Add(this.flowLayoutPanel3, 0, 3);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(377, 2);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(395, 2);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 4;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(167, 358);
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(177, 469);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
             // labelControl8
@@ -787,23 +856,23 @@
             this.labelControl8.Location = new System.Drawing.Point(56, 2);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(54, 14);
+            this.labelControl8.Size = new System.Drawing.Size(64, 12);
             this.labelControl8.TabIndex = 0;
             this.labelControl8.Text = "리스트 길이";
             // 
             // listGridLength
             // 
             this.listGridLength.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listGridLength.Location = new System.Drawing.Point(2, 25);
+            this.listGridLength.Location = new System.Drawing.Point(2, 22);
             this.listGridLength.Margin = new System.Windows.Forms.Padding(2);
             this.listGridLength.Name = "listGridLength";
             this.listGridLength.SedasControlType = Sedas.Control.HListBoxControl.HListBoxControlType.Null;
-            this.listGridLength.Size = new System.Drawing.Size(163, 265);
+            this.listGridLength.Size = new System.Drawing.Size(173, 388);
             this.listGridLength.TabIndex = 1;
             // 
             // txtGridLength
             // 
-            this.txtGridLength.Location = new System.Drawing.Point(2, 294);
+            this.txtGridLength.Location = new System.Drawing.Point(2, 414);
             this.txtGridLength.Margin = new System.Windows.Forms.Padding(2);
             this.txtGridLength.Name = "txtGridLength";
             this.txtGridLength.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
@@ -816,7 +885,8 @@
             this.txtGridLength.Properties.Mask.EditMask = "\\d+";
             this.txtGridLength.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtGridLength.SedasControlType = Sedas.Control.ControlType.Kuh;
-            this.txtGridLength.Size = new System.Drawing.Size(163, 18);
+            this.txtGridLength.SedasForeColor = null;
+            this.txtGridLength.Size = new System.Drawing.Size(163, 16);
             this.txtGridLength.TabIndex = 2;
             // 
             // flowLayoutPanel3
@@ -827,10 +897,10 @@
             this.flowLayoutPanel3.Controls.Add(this.btnGridLengthDelete);
             this.flowLayoutPanel3.Controls.Add(this.btnGridLengthUp);
             this.flowLayoutPanel3.Controls.Add(this.btnGridLengthDown);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(5, 325);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(10, 441);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(156, 31);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(156, 26);
             this.flowLayoutPanel3.TabIndex = 3;
             // 
             // btnGridLengthAdd
@@ -844,7 +914,7 @@
             this.btnGridLengthAdd.Name = "btnGridLengthAdd";
             this.btnGridLengthAdd.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
             this.btnGridLengthAdd.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnGridLengthAdd.Size = new System.Drawing.Size(50, 27);
+            this.btnGridLengthAdd.Size = new System.Drawing.Size(50, 23);
             this.btnGridLengthAdd.TabIndex = 0;
             this.btnGridLengthAdd.Text = "추가";
             this.btnGridLengthAdd.Click += new System.EventHandler(this.btnGridLengthAdd_Click);
@@ -860,17 +930,51 @@
             this.btnGridLengthDelete.Name = "btnGridLengthDelete";
             this.btnGridLengthDelete.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
             this.btnGridLengthDelete.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnGridLengthDelete.Size = new System.Drawing.Size(50, 27);
+            this.btnGridLengthDelete.Size = new System.Drawing.Size(50, 23);
             this.btnGridLengthDelete.TabIndex = 1;
             this.btnGridLengthDelete.Text = "삭제";
             this.btnGridLengthDelete.Click += new System.EventHandler(this.btnGridLengthDelete_Click);
+            // 
+            // btnGridLengthUp
+            // 
+            this.btnGridLengthUp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnGridLengthUp.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnGridLengthUp.Appearance.Options.UseForeColor = true;
+            this.btnGridLengthUp.Location = new System.Drawing.Point(110, 2);
+            this.btnGridLengthUp.LookAndFeel.SkinName = "My Basic";
+            this.btnGridLengthUp.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnGridLengthUp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGridLengthUp.Name = "btnGridLengthUp";
+            this.btnGridLengthUp.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
+            this.btnGridLengthUp.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
+            this.btnGridLengthUp.Size = new System.Drawing.Size(20, 23);
+            this.btnGridLengthUp.TabIndex = 5;
+            this.btnGridLengthUp.Text = "△";
+            this.btnGridLengthUp.Click += new System.EventHandler(this.btnGridLengthUp_Click);
+            // 
+            // btnGridLengthDown
+            // 
+            this.btnGridLengthDown.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnGridLengthDown.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnGridLengthDown.Appearance.Options.UseForeColor = true;
+            this.btnGridLengthDown.Location = new System.Drawing.Point(134, 2);
+            this.btnGridLengthDown.LookAndFeel.SkinName = "My Basic";
+            this.btnGridLengthDown.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnGridLengthDown.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGridLengthDown.Name = "btnGridLengthDown";
+            this.btnGridLengthDown.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
+            this.btnGridLengthDown.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
+            this.btnGridLengthDown.Size = new System.Drawing.Size(20, 23);
+            this.btnGridLengthDown.TabIndex = 6;
+            this.btnGridLengthDown.Text = "▽";
+            this.btnGridLengthDown.Click += new System.EventHandler(this.btnGridLengthDown_Click);
             // 
             // xtraTabPage3
             // 
             this.xtraTabPage3.Controls.Add(this.tableLayoutPanel2);
             this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(564, 399);
+            this.xtraTabPage3.Size = new System.Drawing.Size(592, 507);
             this.xtraTabPage3.Text = "디렉토리설정";
             // 
             // tableLayoutPanel2
@@ -885,11 +989,11 @@
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 78F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 78F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(564, 399);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(592, 507);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // groupControl5
@@ -902,13 +1006,13 @@
             this.groupControl5.Controls.Add(this.tableLayoutPanel12);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl5.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.groupControl5.Location = new System.Drawing.Point(7, 86);
+            this.groupControl5.Location = new System.Drawing.Point(7, 74);
             this.groupControl5.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.groupControl5.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControl5.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.groupControl5.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.groupControl5.Name = "groupControl5";
             this.groupControl5.SedasControlType = Sedas.Control.HGroupControl.HGroupControlType.KuhLight;
-            this.groupControl5.Size = new System.Drawing.Size(550, 62);
+            this.groupControl5.Size = new System.Drawing.Size(578, 53);
             this.groupControl5.TabIndex = 2;
             this.groupControl5.Text = "응용프로그램 경로 설정";
             // 
@@ -922,26 +1026,26 @@
             this.tableLayoutPanel12.Controls.Add(this.txtProgramSavePath, 1, 0);
             this.tableLayoutPanel12.Controls.Add(this.btnProgramSavePath, 2, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(2, 19);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(2, 17);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(546, 41);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(574, 34);
             this.tableLayoutPanel12.TabIndex = 1;
             // 
             // labelControl11
             // 
             this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelControl11.Location = new System.Drawing.Point(3, 13);
+            this.labelControl11.Location = new System.Drawing.Point(3, 11);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(96, 14);
+            this.labelControl11.Size = new System.Drawing.Size(112, 12);
             this.labelControl11.TabIndex = 0;
             this.labelControl11.Text = "응용프로그램 경로 : ";
             // 
             // txtProgramSavePath
             // 
             this.txtProgramSavePath.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtProgramSavePath.Location = new System.Drawing.Point(105, 11);
+            this.txtProgramSavePath.Location = new System.Drawing.Point(121, 9);
             this.txtProgramSavePath.Name = "txtProgramSavePath";
             this.txtProgramSavePath.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
             this.txtProgramSavePath.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(191)))), ((int)(((byte)(186)))));
@@ -951,7 +1055,8 @@
             this.txtProgramSavePath.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtProgramSavePath.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtProgramSavePath.SedasControlType = Sedas.Control.ControlType.Kuh;
-            this.txtProgramSavePath.Size = new System.Drawing.Size(382, 18);
+            this.txtProgramSavePath.SedasForeColor = null;
+            this.txtProgramSavePath.Size = new System.Drawing.Size(382, 16);
             this.txtProgramSavePath.TabIndex = 1;
             // 
             // btnProgramSavePath
@@ -959,13 +1064,13 @@
             this.btnProgramSavePath.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnProgramSavePath.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnProgramSavePath.Appearance.Options.UseForeColor = true;
-            this.btnProgramSavePath.Location = new System.Drawing.Point(509, 7);
+            this.btnProgramSavePath.Location = new System.Drawing.Point(537, 6);
             this.btnProgramSavePath.LookAndFeel.SkinName = "My Basic";
             this.btnProgramSavePath.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnProgramSavePath.Name = "btnProgramSavePath";
             this.btnProgramSavePath.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
             this.btnProgramSavePath.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnProgramSavePath.Size = new System.Drawing.Size(34, 26);
+            this.btnProgramSavePath.Size = new System.Drawing.Size(34, 22);
             this.btnProgramSavePath.TabIndex = 2;
             this.btnProgramSavePath.Text = "...";
             this.btnProgramSavePath.Click += new System.EventHandler(this.btnProgramSavePath_Click);
@@ -980,13 +1085,13 @@
             this.groupControl4.Controls.Add(this.tableLayoutPanel11);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.groupControl4.Location = new System.Drawing.Point(7, 8);
+            this.groupControl4.Location = new System.Drawing.Point(7, 7);
             this.groupControl4.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.groupControl4.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControl4.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.groupControl4.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.SedasControlType = Sedas.Control.HGroupControl.HGroupControlType.KuhLight;
-            this.groupControl4.Size = new System.Drawing.Size(550, 62);
+            this.groupControl4.Size = new System.Drawing.Size(578, 53);
             this.groupControl4.TabIndex = 1;
             this.groupControl4.Text = "이미지 경로 설정";
             // 
@@ -1000,26 +1105,26 @@
             this.tableLayoutPanel11.Controls.Add(this.txtImageSavePath, 1, 0);
             this.tableLayoutPanel11.Controls.Add(this.btnImageSavePath, 2, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(2, 19);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(2, 17);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(546, 41);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(574, 34);
             this.tableLayoutPanel11.TabIndex = 0;
             // 
             // labelControl10
             // 
             this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelControl10.Location = new System.Drawing.Point(3, 13);
+            this.labelControl10.Location = new System.Drawing.Point(3, 11);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(90, 14);
+            this.labelControl10.Size = new System.Drawing.Size(104, 12);
             this.labelControl10.TabIndex = 0;
             this.labelControl10.Text = "이미지 저장 경로 : ";
             // 
             // txtImageSavePath
             // 
             this.txtImageSavePath.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtImageSavePath.Location = new System.Drawing.Point(99, 11);
+            this.txtImageSavePath.Location = new System.Drawing.Point(113, 9);
             this.txtImageSavePath.Name = "txtImageSavePath";
             this.txtImageSavePath.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
             this.txtImageSavePath.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(191)))), ((int)(((byte)(186)))));
@@ -1029,7 +1134,8 @@
             this.txtImageSavePath.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtImageSavePath.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtImageSavePath.SedasControlType = Sedas.Control.ControlType.Kuh;
-            this.txtImageSavePath.Size = new System.Drawing.Size(390, 18);
+            this.txtImageSavePath.SedasForeColor = null;
+            this.txtImageSavePath.Size = new System.Drawing.Size(390, 16);
             this.txtImageSavePath.TabIndex = 1;
             // 
             // btnImageSavePath
@@ -1037,13 +1143,13 @@
             this.btnImageSavePath.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnImageSavePath.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnImageSavePath.Appearance.Options.UseForeColor = true;
-            this.btnImageSavePath.Location = new System.Drawing.Point(509, 7);
+            this.btnImageSavePath.Location = new System.Drawing.Point(537, 6);
             this.btnImageSavePath.LookAndFeel.SkinName = "My Basic";
             this.btnImageSavePath.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnImageSavePath.Name = "btnImageSavePath";
             this.btnImageSavePath.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
             this.btnImageSavePath.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnImageSavePath.Size = new System.Drawing.Size(34, 26);
+            this.btnImageSavePath.Size = new System.Drawing.Size(34, 22);
             this.btnImageSavePath.TabIndex = 2;
             this.btnImageSavePath.Text = "...";
             this.btnImageSavePath.Click += new System.EventHandler(this.btnImageSavePath_Click);
@@ -1052,7 +1158,7 @@
             // 
             this.xtraTabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(564, 399);
+            this.xtraTabPage4.Size = new System.Drawing.Size(592, 506);
             this.xtraTabPage4.Text = "맵핑설정";
             // 
             // xtraTabPage5
@@ -1060,7 +1166,7 @@
             this.xtraTabPage5.Controls.Add(this.tableLayoutPanel3);
             this.xtraTabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(564, 399);
+            this.xtraTabPage5.Size = new System.Drawing.Size(592, 506);
             this.xtraTabPage5.Text = "기타설정";
             // 
             // tableLayoutPanel3
@@ -1075,8 +1181,8 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 395F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(564, 399);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 511F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(592, 506);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -1092,8 +1198,8 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 391F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(560, 395);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 507F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(588, 502);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // groupControl6
@@ -1104,15 +1210,14 @@
             this.groupControl6.Appearance.Options.UseBorderColor = true;
             this.groupControl6.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.groupControl6.Controls.Add(this.tableLayoutPanel14);
-            this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl6.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.groupControl6.Location = new System.Drawing.Point(7, 8);
+            this.groupControl6.Location = new System.Drawing.Point(7, 7);
             this.groupControl6.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.groupControl6.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControl6.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.groupControl6.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.groupControl6.Name = "groupControl6";
             this.groupControl6.SedasControlType = Sedas.Control.HGroupControl.HGroupControlType.KuhLight;
-            this.groupControl6.Size = new System.Drawing.Size(266, 379);
+            this.groupControl6.Size = new System.Drawing.Size(280, 316);
             this.groupControl6.TabIndex = 2;
             this.groupControl6.Text = "COMBO SETUP";
             // 
@@ -1125,11 +1230,11 @@
             this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel16, 2, 0);
             this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel15, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(2, 19);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(2, 17);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(262, 358);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(276, 297);
             this.tableLayoutPanel14.TabIndex = 0;
             // 
             // tableLayoutPanel16
@@ -1143,41 +1248,41 @@
             this.tableLayoutPanel16.Controls.Add(this.btnComboWeekEdit, 0, 4);
             this.tableLayoutPanel16.Controls.Add(this.btnComboWeekDelete, 0, 5);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(144, 3);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(151, 3);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 6;
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(115, 352);
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(122, 291);
             this.tableLayoutPanel16.TabIndex = 1;
             // 
             // labelControl13
             // 
             this.labelControl13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl13.Location = new System.Drawing.Point(40, 10);
+            this.labelControl13.Location = new System.Drawing.Point(44, 9);
             this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(34, 14);
+            this.labelControl13.Size = new System.Drawing.Size(34, 12);
             this.labelControl13.TabIndex = 0;
             this.labelControl13.Text = "WEEK";
             // 
             // listWeek
             // 
             this.listWeek.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listWeek.Location = new System.Drawing.Point(3, 38);
+            this.listWeek.Location = new System.Drawing.Point(3, 33);
             this.listWeek.Name = "listWeek";
             this.listWeek.SedasControlType = Sedas.Control.HListBoxControl.HListBoxControlType.Null;
-            this.listWeek.Size = new System.Drawing.Size(109, 171);
+            this.listWeek.Size = new System.Drawing.Size(116, 135);
             this.listWeek.TabIndex = 1;
             // 
             // txtComboWeek
             // 
             this.txtComboWeek.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtComboWeek.Location = new System.Drawing.Point(3, 215);
+            this.txtComboWeek.Location = new System.Drawing.Point(3, 174);
             this.txtComboWeek.Name = "txtComboWeek";
             this.txtComboWeek.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
             this.txtComboWeek.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(191)))), ((int)(((byte)(186)))));
@@ -1187,7 +1292,8 @@
             this.txtComboWeek.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtComboWeek.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtComboWeek.SedasControlType = Sedas.Control.ControlType.Kuh;
-            this.txtComboWeek.Size = new System.Drawing.Size(109, 18);
+            this.txtComboWeek.SedasForeColor = null;
+            this.txtComboWeek.Size = new System.Drawing.Size(116, 16);
             this.txtComboWeek.TabIndex = 2;
             // 
             // btnComboWeekAdd
@@ -1195,13 +1301,13 @@
             this.btnComboWeekAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnComboWeekAdd.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnComboWeekAdd.Appearance.Options.UseForeColor = true;
-            this.btnComboWeekAdd.Location = new System.Drawing.Point(20, 251);
+            this.btnComboWeekAdd.Location = new System.Drawing.Point(23, 204);
             this.btnComboWeekAdd.LookAndFeel.SkinName = "My Basic";
             this.btnComboWeekAdd.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnComboWeekAdd.Name = "btnComboWeekAdd";
             this.btnComboWeekAdd.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
             this.btnComboWeekAdd.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnComboWeekAdd.Size = new System.Drawing.Size(75, 27);
+            this.btnComboWeekAdd.Size = new System.Drawing.Size(75, 23);
             this.btnComboWeekAdd.TabIndex = 3;
             this.btnComboWeekAdd.Text = "입력";
             this.btnComboWeekAdd.Click += new System.EventHandler(this.btnComboWeekAdd_Click);
@@ -1211,13 +1317,13 @@
             this.btnComboWeekEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnComboWeekEdit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnComboWeekEdit.Appearance.Options.UseForeColor = true;
-            this.btnComboWeekEdit.Location = new System.Drawing.Point(20, 286);
+            this.btnComboWeekEdit.Location = new System.Drawing.Point(23, 234);
             this.btnComboWeekEdit.LookAndFeel.SkinName = "My Basic";
             this.btnComboWeekEdit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnComboWeekEdit.Name = "btnComboWeekEdit";
             this.btnComboWeekEdit.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
             this.btnComboWeekEdit.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnComboWeekEdit.Size = new System.Drawing.Size(75, 27);
+            this.btnComboWeekEdit.Size = new System.Drawing.Size(75, 23);
             this.btnComboWeekEdit.TabIndex = 4;
             this.btnComboWeekEdit.Text = "수정";
             this.btnComboWeekEdit.Click += new System.EventHandler(this.btnComboWeekEdit_Click);
@@ -1227,13 +1333,13 @@
             this.btnComboWeekDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnComboWeekDelete.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnComboWeekDelete.Appearance.Options.UseForeColor = true;
-            this.btnComboWeekDelete.Location = new System.Drawing.Point(20, 321);
+            this.btnComboWeekDelete.Location = new System.Drawing.Point(23, 264);
             this.btnComboWeekDelete.LookAndFeel.SkinName = "My Basic";
             this.btnComboWeekDelete.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnComboWeekDelete.Name = "btnComboWeekDelete";
             this.btnComboWeekDelete.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
             this.btnComboWeekDelete.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnComboWeekDelete.Size = new System.Drawing.Size(75, 27);
+            this.btnComboWeekDelete.Size = new System.Drawing.Size(75, 23);
             this.btnComboWeekDelete.TabIndex = 5;
             this.btnComboWeekDelete.Text = "삭제";
             this.btnComboWeekDelete.Click += new System.EventHandler(this.btnComboWeekDelete_Click);
@@ -1252,37 +1358,37 @@
             this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 6;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(115, 352);
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(122, 291);
             this.tableLayoutPanel15.TabIndex = 0;
             // 
             // labelControl12
             // 
             this.labelControl12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl12.Location = new System.Drawing.Point(42, 10);
+            this.labelControl12.Location = new System.Drawing.Point(44, 9);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(31, 14);
+            this.labelControl12.Size = new System.Drawing.Size(33, 12);
             this.labelControl12.TabIndex = 0;
             this.labelControl12.Text = "CHAR";
             // 
             // listChar
             // 
             this.listChar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listChar.Location = new System.Drawing.Point(3, 38);
+            this.listChar.Location = new System.Drawing.Point(3, 33);
             this.listChar.Name = "listChar";
             this.listChar.SedasControlType = Sedas.Control.HListBoxControl.HListBoxControlType.Null;
-            this.listChar.Size = new System.Drawing.Size(109, 171);
+            this.listChar.Size = new System.Drawing.Size(116, 135);
             this.listChar.TabIndex = 1;
             // 
             // txtComboChar
             // 
             this.txtComboChar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtComboChar.Location = new System.Drawing.Point(3, 215);
+            this.txtComboChar.Location = new System.Drawing.Point(3, 174);
             this.txtComboChar.Name = "txtComboChar";
             this.txtComboChar.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
             this.txtComboChar.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(191)))), ((int)(((byte)(186)))));
@@ -1292,7 +1398,8 @@
             this.txtComboChar.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtComboChar.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtComboChar.SedasControlType = Sedas.Control.ControlType.Kuh;
-            this.txtComboChar.Size = new System.Drawing.Size(109, 18);
+            this.txtComboChar.SedasForeColor = null;
+            this.txtComboChar.Size = new System.Drawing.Size(116, 16);
             this.txtComboChar.TabIndex = 2;
             // 
             // btnComboCharAdd
@@ -1300,13 +1407,13 @@
             this.btnComboCharAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnComboCharAdd.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnComboCharAdd.Appearance.Options.UseForeColor = true;
-            this.btnComboCharAdd.Location = new System.Drawing.Point(20, 251);
+            this.btnComboCharAdd.Location = new System.Drawing.Point(23, 204);
             this.btnComboCharAdd.LookAndFeel.SkinName = "My Basic";
             this.btnComboCharAdd.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnComboCharAdd.Name = "btnComboCharAdd";
             this.btnComboCharAdd.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
             this.btnComboCharAdd.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnComboCharAdd.Size = new System.Drawing.Size(75, 27);
+            this.btnComboCharAdd.Size = new System.Drawing.Size(75, 23);
             this.btnComboCharAdd.TabIndex = 3;
             this.btnComboCharAdd.Text = "입력";
             this.btnComboCharAdd.Click += new System.EventHandler(this.btnComboCharAdd_Click);
@@ -1316,13 +1423,13 @@
             this.btnComboCharEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnComboCharEdit.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnComboCharEdit.Appearance.Options.UseForeColor = true;
-            this.btnComboCharEdit.Location = new System.Drawing.Point(20, 286);
+            this.btnComboCharEdit.Location = new System.Drawing.Point(23, 234);
             this.btnComboCharEdit.LookAndFeel.SkinName = "My Basic";
             this.btnComboCharEdit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnComboCharEdit.Name = "btnComboCharEdit";
             this.btnComboCharEdit.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
             this.btnComboCharEdit.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnComboCharEdit.Size = new System.Drawing.Size(75, 27);
+            this.btnComboCharEdit.Size = new System.Drawing.Size(75, 23);
             this.btnComboCharEdit.TabIndex = 4;
             this.btnComboCharEdit.Text = "수정";
             this.btnComboCharEdit.Click += new System.EventHandler(this.btnComboCharEdit_Click);
@@ -1332,13 +1439,13 @@
             this.btnComboCharDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnComboCharDelete.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnComboCharDelete.Appearance.Options.UseForeColor = true;
-            this.btnComboCharDelete.Location = new System.Drawing.Point(20, 321);
+            this.btnComboCharDelete.Location = new System.Drawing.Point(23, 264);
             this.btnComboCharDelete.LookAndFeel.SkinName = "My Basic";
             this.btnComboCharDelete.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnComboCharDelete.Name = "btnComboCharDelete";
             this.btnComboCharDelete.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
             this.btnComboCharDelete.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnComboCharDelete.Size = new System.Drawing.Size(75, 27);
+            this.btnComboCharDelete.Size = new System.Drawing.Size(75, 23);
             this.btnComboCharDelete.TabIndex = 5;
             this.btnComboCharDelete.Text = "삭제";
             this.btnComboCharDelete.Click += new System.EventHandler(this.btnComboCharDelete_Click);
@@ -1348,20 +1455,236 @@
             this.tableLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(55)))));
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.hGroupControl3, 0, 5);
+            this.tableLayoutPanel5.Controls.Add(this.hGroupControl2, 0, 4);
+            this.tableLayoutPanel5.Controls.Add(this.hGroupControl1, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.groupControl9, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.groupControl8, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.groupControl7, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(282, 2);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(296, 2);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 4;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tableLayoutPanel5.RowCount = 7;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(276, 391);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(290, 498);
             this.tableLayoutPanel5.TabIndex = 3;
+            // 
+            // hGroupControl3
+            // 
+            this.hGroupControl3.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.hGroupControl3.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.hGroupControl3.Appearance.Options.UseBackColor = true;
+            this.hGroupControl3.Appearance.Options.UseBorderColor = true;
+            this.hGroupControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.hGroupControl3.Controls.Add(this.chkOnlyMapping);
+            this.hGroupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hGroupControl3.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.hGroupControl3.Location = new System.Drawing.Point(7, 435);
+            this.hGroupControl3.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.hGroupControl3.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.hGroupControl3.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.hGroupControl3.Name = "hGroupControl3";
+            this.hGroupControl3.SedasControlType = Sedas.Control.HGroupControl.HGroupControlType.KuhLight;
+            this.hGroupControl3.Size = new System.Drawing.Size(276, 56);
+            this.hGroupControl3.TabIndex = 8;
+            this.hGroupControl3.Text = "기타";
+            // 
+            // chkOnlyMapping
+            // 
+            this.chkOnlyMapping.Location = new System.Drawing.Point(11, 22);
+            this.chkOnlyMapping.Name = "chkOnlyMapping";
+            this.chkOnlyMapping.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.chkOnlyMapping.Properties.Appearance.Options.UseForeColor = true;
+            this.chkOnlyMapping.Properties.Caption = "매핑 이미지만 조회";
+            this.chkOnlyMapping.Properties.LookAndFeel.SkinName = "My Basic";
+            this.chkOnlyMapping.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.chkOnlyMapping.SedasControlType = Sedas.Control.HCheckEdit.HCheckControlType.Kuh;
+            this.chkOnlyMapping.Size = new System.Drawing.Size(178, 28);
+            this.chkOnlyMapping.TabIndex = 5;
+            // 
+            // hGroupControl2
+            // 
+            this.hGroupControl2.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.hGroupControl2.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.hGroupControl2.Appearance.Options.UseBackColor = true;
+            this.hGroupControl2.Appearance.Options.UseBorderColor = true;
+            this.hGroupControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.hGroupControl2.Controls.Add(this.chkLastUpDt);
+            this.hGroupControl2.Controls.Add(this.rdoPeriodOther);
+            this.hGroupControl2.Controls.Add(this.hFlowLayoutPanel1);
+            this.hGroupControl2.Controls.Add(this.rdoPeriodToday);
+            this.hGroupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hGroupControl2.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.hGroupControl2.Location = new System.Drawing.Point(7, 345);
+            this.hGroupControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.hGroupControl2.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.hGroupControl2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.hGroupControl2.Name = "hGroupControl2";
+            this.hGroupControl2.SedasControlType = Sedas.Control.HGroupControl.HGroupControlType.KuhLight;
+            this.hGroupControl2.Size = new System.Drawing.Size(276, 76);
+            this.hGroupControl2.TabIndex = 7;
+            this.hGroupControl2.Text = "기간검색 setting";
+            // 
+            // chkLastUpDt
+            // 
+            this.chkLastUpDt.Location = new System.Drawing.Point(10, 49);
+            this.chkLastUpDt.Name = "chkLastUpDt";
+            this.chkLastUpDt.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.chkLastUpDt.Properties.Appearance.Options.UseForeColor = true;
+            this.chkLastUpDt.Properties.Caption = "마지막 수정일로 검색";
+            this.chkLastUpDt.Properties.LookAndFeel.SkinName = "My Basic";
+            this.chkLastUpDt.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.chkLastUpDt.SedasControlType = Sedas.Control.HCheckEdit.HCheckControlType.Kuh;
+            this.chkLastUpDt.Size = new System.Drawing.Size(178, 28);
+            this.chkLastUpDt.TabIndex = 4;
+            // 
+            // rdoPeriodOther
+            // 
+            this.rdoPeriodOther.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rdoPeriodOther.Location = new System.Drawing.Point(128, 21);
+            this.rdoPeriodOther.Name = "rdoPeriodOther";
+            this.rdoPeriodOther.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.rdoPeriodOther.Properties.Appearance.Options.UseForeColor = true;
+            this.rdoPeriodOther.Properties.Caption = " ";
+            this.rdoPeriodOther.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Radio;
+            this.rdoPeriodOther.Properties.LookAndFeel.SkinName = "My Basic";
+            this.rdoPeriodOther.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.rdoPeriodOther.Properties.RadioGroupIndex = 2;
+            this.rdoPeriodOther.SedasControlType = Sedas.Control.HCheckEdit.HCheckControlType.Kuh;
+            this.rdoPeriodOther.Size = new System.Drawing.Size(26, 28);
+            this.rdoPeriodOther.TabIndex = 2;
+            this.rdoPeriodOther.TabStop = false;
+            this.rdoPeriodOther.CheckedChanged += new System.EventHandler(this.rdoPeriodOther_CheckedChanged);
+            // 
+            // hFlowLayoutPanel1
+            // 
+            this.hFlowLayoutPanel1.Controls.Add(this.txtPeriod);
+            this.hFlowLayoutPanel1.Controls.Add(this.hLabelControl1);
+            this.hFlowLayoutPanel1.Location = new System.Drawing.Point(151, 24);
+            this.hFlowLayoutPanel1.Name = "hFlowLayoutPanel1";
+            this.hFlowLayoutPanel1.Size = new System.Drawing.Size(75, 28);
+            this.hFlowLayoutPanel1.TabIndex = 3;
+            // 
+            // txtPeriod
+            // 
+            this.txtPeriod.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtPeriod.Location = new System.Drawing.Point(3, 3);
+            this.txtPeriod.Name = "txtPeriod";
+            this.txtPeriod.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
+            this.txtPeriod.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(191)))), ((int)(((byte)(186)))));
+            this.txtPeriod.Properties.Appearance.Options.UseBackColor = true;
+            this.txtPeriod.Properties.Appearance.Options.UseForeColor = true;
+            this.txtPeriod.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtPeriod.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.txtPeriod.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.txtPeriod.Properties.Mask.EditMask = "\\d+";
+            this.txtPeriod.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.txtPeriod.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.txtPeriod.SedasForeColor = null;
+            this.txtPeriod.Size = new System.Drawing.Size(47, 16);
+            this.txtPeriod.TabIndex = 0;
+            // 
+            // hLabelControl1
+            // 
+            this.hLabelControl1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.hLabelControl1.Location = new System.Drawing.Point(56, 5);
+            this.hLabelControl1.Name = "hLabelControl1";
+            this.hLabelControl1.Size = new System.Drawing.Size(12, 12);
+            this.hLabelControl1.TabIndex = 1;
+            this.hLabelControl1.Text = "일";
+            // 
+            // rdoPeriodToday
+            // 
+            this.rdoPeriodToday.Location = new System.Drawing.Point(11, 22);
+            this.rdoPeriodToday.Name = "rdoPeriodToday";
+            this.rdoPeriodToday.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.rdoPeriodToday.Properties.Appearance.Options.UseForeColor = true;
+            this.rdoPeriodToday.Properties.Caption = "당일";
+            this.rdoPeriodToday.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Radio;
+            this.rdoPeriodToday.Properties.LookAndFeel.SkinName = "My Basic";
+            this.rdoPeriodToday.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.rdoPeriodToday.Properties.RadioGroupIndex = 2;
+            this.rdoPeriodToday.SedasControlType = Sedas.Control.HCheckEdit.HCheckControlType.Kuh;
+            this.rdoPeriodToday.Size = new System.Drawing.Size(111, 28);
+            this.rdoPeriodToday.TabIndex = 1;
+            this.rdoPeriodToday.TabStop = false;
+            // 
+            // hGroupControl1
+            // 
+            this.hGroupControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.hGroupControl1.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.hGroupControl1.Appearance.Options.UseBackColor = true;
+            this.hGroupControl1.Appearance.Options.UseBorderColor = true;
+            this.hGroupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.hGroupControl1.Controls.Add(this.rdoSortLastDt);
+            this.hGroupControl1.Controls.Add(this.rdoSortInsertDt);
+            this.hGroupControl1.Controls.Add(this.rdoSortStudyDt);
+            this.hGroupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hGroupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.hGroupControl1.Location = new System.Drawing.Point(7, 255);
+            this.hGroupControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.hGroupControl1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.hGroupControl1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.hGroupControl1.Name = "hGroupControl1";
+            this.hGroupControl1.SedasControlType = Sedas.Control.HGroupControl.HGroupControlType.KuhLight;
+            this.hGroupControl1.Size = new System.Drawing.Size(276, 76);
+            this.hGroupControl1.TabIndex = 6;
+            this.hGroupControl1.Text = "정렬 setting";
+            // 
+            // rdoSortLastDt
+            // 
+            this.rdoSortLastDt.Location = new System.Drawing.Point(10, 47);
+            this.rdoSortLastDt.Name = "rdoSortLastDt";
+            this.rdoSortLastDt.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.rdoSortLastDt.Properties.Appearance.Options.UseForeColor = true;
+            this.rdoSortLastDt.Properties.Caption = "마지막 수정일";
+            this.rdoSortLastDt.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Radio;
+            this.rdoSortLastDt.Properties.LookAndFeel.SkinName = "My Basic";
+            this.rdoSortLastDt.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.rdoSortLastDt.Properties.RadioGroupIndex = 2;
+            this.rdoSortLastDt.SedasControlType = Sedas.Control.HCheckEdit.HCheckControlType.Kuh;
+            this.rdoSortLastDt.Size = new System.Drawing.Size(111, 28);
+            this.rdoSortLastDt.TabIndex = 3;
+            this.rdoSortLastDt.TabStop = false;
+            // 
+            // rdoSortInsertDt
+            // 
+            this.rdoSortInsertDt.Location = new System.Drawing.Point(128, 22);
+            this.rdoSortInsertDt.Name = "rdoSortInsertDt";
+            this.rdoSortInsertDt.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.rdoSortInsertDt.Properties.Appearance.Options.UseForeColor = true;
+            this.rdoSortInsertDt.Properties.Caption = "촬영일";
+            this.rdoSortInsertDt.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Radio;
+            this.rdoSortInsertDt.Properties.LookAndFeel.SkinName = "My Basic";
+            this.rdoSortInsertDt.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.rdoSortInsertDt.Properties.RadioGroupIndex = 2;
+            this.rdoSortInsertDt.SedasControlType = Sedas.Control.HCheckEdit.HCheckControlType.Kuh;
+            this.rdoSortInsertDt.Size = new System.Drawing.Size(111, 28);
+            this.rdoSortInsertDt.TabIndex = 2;
+            this.rdoSortInsertDt.TabStop = false;
+            // 
+            // rdoSortStudyDt
+            // 
+            this.rdoSortStudyDt.Location = new System.Drawing.Point(11, 22);
+            this.rdoSortStudyDt.Name = "rdoSortStudyDt";
+            this.rdoSortStudyDt.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.rdoSortStudyDt.Properties.Appearance.Options.UseForeColor = true;
+            this.rdoSortStudyDt.Properties.Caption = "접수일";
+            this.rdoSortStudyDt.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.Radio;
+            this.rdoSortStudyDt.Properties.LookAndFeel.SkinName = "My Basic";
+            this.rdoSortStudyDt.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.rdoSortStudyDt.Properties.RadioGroupIndex = 2;
+            this.rdoSortStudyDt.SedasControlType = Sedas.Control.HCheckEdit.HCheckControlType.Kuh;
+            this.rdoSortStudyDt.Size = new System.Drawing.Size(111, 28);
+            this.rdoSortStudyDt.TabIndex = 1;
+            this.rdoSortStudyDt.TabStop = false;
             // 
             // groupControl9
             // 
@@ -1374,19 +1697,19 @@
             this.groupControl9.Controls.Add(this.rdoImageSizeBig);
             this.groupControl9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl9.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.groupControl9.Location = new System.Drawing.Point(7, 212);
+            this.groupControl9.Location = new System.Drawing.Point(7, 182);
             this.groupControl9.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.groupControl9.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControl9.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.groupControl9.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.groupControl9.Name = "groupControl9";
             this.groupControl9.SedasControlType = Sedas.Control.HGroupControl.HGroupControlType.KuhLight;
-            this.groupControl9.Size = new System.Drawing.Size(262, 69);
+            this.groupControl9.Size = new System.Drawing.Size(276, 59);
             this.groupControl9.TabIndex = 5;
             this.groupControl9.Text = "이미지 크기";
             // 
             // rdoImageSizeSmall
             // 
-            this.rdoImageSizeSmall.Location = new System.Drawing.Point(128, 26);
+            this.rdoImageSizeSmall.Location = new System.Drawing.Point(128, 22);
             this.rdoImageSizeSmall.Name = "rdoImageSizeSmall";
             this.rdoImageSizeSmall.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.rdoImageSizeSmall.Properties.Appearance.Options.UseForeColor = true;
@@ -1402,7 +1725,7 @@
             // 
             // rdoImageSizeBig
             // 
-            this.rdoImageSizeBig.Location = new System.Drawing.Point(11, 26);
+            this.rdoImageSizeBig.Location = new System.Drawing.Point(11, 22);
             this.rdoImageSizeBig.Name = "rdoImageSizeBig";
             this.rdoImageSizeBig.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.rdoImageSizeBig.Properties.Appearance.Options.UseForeColor = true;
@@ -1432,20 +1755,20 @@
             this.groupControl8.Controls.Add(this.rdoUiModeLeft);
             this.groupControl8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl8.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.groupControl8.Location = new System.Drawing.Point(7, 107);
+            this.groupControl8.Location = new System.Drawing.Point(7, 92);
             this.groupControl8.LookAndFeel.SkinName = "My Basic";
             this.groupControl8.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.groupControl8.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControl8.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.groupControl8.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.groupControl8.Name = "groupControl8";
             this.groupControl8.SedasControlType = Sedas.Control.HGroupControl.HGroupControlType.KuhLight;
-            this.groupControl8.Size = new System.Drawing.Size(262, 89);
+            this.groupControl8.Size = new System.Drawing.Size(276, 76);
             this.groupControl8.TabIndex = 4;
             this.groupControl8.Text = "UI Setting";
             // 
             // rdoUiModeBottom
             // 
-            this.rdoUiModeBottom.Location = new System.Drawing.Point(129, 52);
+            this.rdoUiModeBottom.Location = new System.Drawing.Point(129, 45);
             this.rdoUiModeBottom.Name = "rdoUiModeBottom";
             this.rdoUiModeBottom.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.rdoUiModeBottom.Properties.Appearance.Options.UseForeColor = true;
@@ -1461,7 +1784,7 @@
             // 
             // rdoUiModeTop
             // 
-            this.rdoUiModeTop.Location = new System.Drawing.Point(11, 52);
+            this.rdoUiModeTop.Location = new System.Drawing.Point(11, 45);
             this.rdoUiModeTop.Name = "rdoUiModeTop";
             this.rdoUiModeTop.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.rdoUiModeTop.Properties.Appearance.Options.UseForeColor = true;
@@ -1477,7 +1800,7 @@
             // 
             // rdoUiModeRight
             // 
-            this.rdoUiModeRight.Location = new System.Drawing.Point(129, 26);
+            this.rdoUiModeRight.Location = new System.Drawing.Point(129, 22);
             this.rdoUiModeRight.Name = "rdoUiModeRight";
             this.rdoUiModeRight.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.rdoUiModeRight.Properties.Appearance.Options.UseForeColor = true;
@@ -1493,7 +1816,7 @@
             // 
             // rdoUiModeLeft
             // 
-            this.rdoUiModeLeft.Location = new System.Drawing.Point(10, 26);
+            this.rdoUiModeLeft.Location = new System.Drawing.Point(10, 22);
             this.rdoUiModeLeft.Name = "rdoUiModeLeft";
             this.rdoUiModeLeft.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.rdoUiModeLeft.Properties.Appearance.Options.UseForeColor = true;
@@ -1522,19 +1845,19 @@
             this.groupControl7.Controls.Add(this.rdoCipher1);
             this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl7.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.groupControl7.Location = new System.Drawing.Point(7, 8);
+            this.groupControl7.Location = new System.Drawing.Point(7, 7);
             this.groupControl7.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.groupControl7.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControl7.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.groupControl7.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.groupControl7.Name = "groupControl7";
             this.groupControl7.SedasControlType = Sedas.Control.HGroupControl.HGroupControlType.KuhLight;
-            this.groupControl7.Size = new System.Drawing.Size(262, 83);
+            this.groupControl7.Size = new System.Drawing.Size(276, 71);
             this.groupControl7.TabIndex = 3;
             this.groupControl7.Text = "병리번호 Setting";
             // 
             // chkHypen
             // 
-            this.chkHypen.Location = new System.Drawing.Point(10, 45);
+            this.chkHypen.Location = new System.Drawing.Point(10, 39);
             this.chkHypen.Name = "chkHypen";
             this.chkHypen.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.chkHypen.Properties.Appearance.Options.UseForeColor = true;
@@ -1547,7 +1870,7 @@
             // 
             // rdoCipher2
             // 
-            this.rdoCipher2.Location = new System.Drawing.Point(129, 17);
+            this.rdoCipher2.Location = new System.Drawing.Point(129, 15);
             this.rdoCipher2.Name = "rdoCipher2";
             this.rdoCipher2.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.rdoCipher2.Properties.Appearance.Options.UseForeColor = true;
@@ -1563,7 +1886,7 @@
             // 
             // rdoCipher1
             // 
-            this.rdoCipher1.Location = new System.Drawing.Point(11, 17);
+            this.rdoCipher1.Location = new System.Drawing.Point(11, 15);
             this.rdoCipher1.Name = "rdoCipher1";
             this.rdoCipher1.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.rdoCipher1.Properties.Appearance.Options.UseForeColor = true;
@@ -1610,8 +1933,8 @@
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 2;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tlpMain.Size = new System.Drawing.Size(574, 467);
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpMain.Size = new System.Drawing.Size(602, 568);
             this.tlpMain.TabIndex = 1;
             // 
             // tlpBottom
@@ -1623,12 +1946,12 @@
             this.tlpBottom.Controls.Add(this.btnConfirm, 0, 0);
             this.tlpBottom.Controls.Add(this.btnCancel, 1, 0);
             this.tlpBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpBottom.Location = new System.Drawing.Point(3, 435);
+            this.tlpBottom.Location = new System.Drawing.Point(3, 541);
             this.tlpBottom.Name = "tlpBottom";
             this.tlpBottom.RowCount = 1;
             this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tlpBottom.Size = new System.Drawing.Size(568, 29);
+            this.tlpBottom.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpBottom.Size = new System.Drawing.Size(596, 24);
             this.tlpBottom.TabIndex = 1;
             // 
             // btnConfirm
@@ -1641,7 +1964,7 @@
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.SedasButtonType = Sedas.Control.HSedasSImpleButtonBlue.HSimpleButtonType.Null;
             this.btnConfirm.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnConfirm.Size = new System.Drawing.Size(75, 21);
+            this.btnConfirm.Size = new System.Drawing.Size(75, 18);
             this.btnConfirm.TabIndex = 0;
             this.btnConfirm.Text = "확인";
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -1651,91 +1974,24 @@
             this.btnCancel.Appearance.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Appearance.Options.UseForeColor = true;
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCancel.Location = new System.Drawing.Point(490, 3);
+            this.btnCancel.Location = new System.Drawing.Point(518, 3);
             this.btnCancel.LookAndFeel.SkinName = "My Basic";
             this.btnCancel.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.SedasButtonType = Sedas.Control.HSedasSImpleButtonGreen.HSimpleButtonType.Null;
             this.btnCancel.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(75, 18);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "취소";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnGridNameUp
-            // 
-            this.btnGridNameUp.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnGridNameUp.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnGridNameUp.Appearance.Options.UseForeColor = true;
-            this.btnGridNameUp.Location = new System.Drawing.Point(110, 2);
-            this.btnGridNameUp.LookAndFeel.SkinName = "My Basic";
-            this.btnGridNameUp.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnGridNameUp.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGridNameUp.Name = "btnGridNameUp";
-            this.btnGridNameUp.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
-            this.btnGridNameUp.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnGridNameUp.Size = new System.Drawing.Size(20, 27);
-            this.btnGridNameUp.TabIndex = 3;
-            this.btnGridNameUp.Text = "△";
-            this.btnGridNameUp.Click += new System.EventHandler(this.btnGridNameUp_Click);
-            // 
-            // btnGridNameDown
-            // 
-            this.btnGridNameDown.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnGridNameDown.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnGridNameDown.Appearance.Options.UseForeColor = true;
-            this.btnGridNameDown.Location = new System.Drawing.Point(134, 2);
-            this.btnGridNameDown.LookAndFeel.SkinName = "My Basic";
-            this.btnGridNameDown.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnGridNameDown.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGridNameDown.Name = "btnGridNameDown";
-            this.btnGridNameDown.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
-            this.btnGridNameDown.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnGridNameDown.Size = new System.Drawing.Size(20, 27);
-            this.btnGridNameDown.TabIndex = 4;
-            this.btnGridNameDown.Text = "▽";
-            this.btnGridNameDown.Click += new System.EventHandler(this.btnGridNameDown_Click);
-            // 
-            // btnGridLengthUp
-            // 
-            this.btnGridLengthUp.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnGridLengthUp.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnGridLengthUp.Appearance.Options.UseForeColor = true;
-            this.btnGridLengthUp.Location = new System.Drawing.Point(110, 2);
-            this.btnGridLengthUp.LookAndFeel.SkinName = "My Basic";
-            this.btnGridLengthUp.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnGridLengthUp.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGridLengthUp.Name = "btnGridLengthUp";
-            this.btnGridLengthUp.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
-            this.btnGridLengthUp.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnGridLengthUp.Size = new System.Drawing.Size(20, 27);
-            this.btnGridLengthUp.TabIndex = 5;
-            this.btnGridLengthUp.Text = "△";
-            this.btnGridLengthUp.Click += new System.EventHandler(this.btnGridLengthUp_Click);
-            // 
-            // btnGridLengthDown
-            // 
-            this.btnGridLengthDown.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnGridLengthDown.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnGridLengthDown.Appearance.Options.UseForeColor = true;
-            this.btnGridLengthDown.Location = new System.Drawing.Point(134, 2);
-            this.btnGridLengthDown.LookAndFeel.SkinName = "My Basic";
-            this.btnGridLengthDown.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnGridLengthDown.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGridLengthDown.Name = "btnGridLengthDown";
-            this.btnGridLengthDown.SedasButtonType = Sedas.Control.HSedasSImpleButtonPurple.HSimpleButtonType.Null;
-            this.btnGridLengthDown.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
-            this.btnGridLengthDown.Size = new System.Drawing.Size(20, 27);
-            this.btnGridLengthDown.TabIndex = 6;
-            this.btnGridLengthDown.Text = "▽";
-            this.btnGridLengthDown.Click += new System.EventHandler(this.btnGridLengthDown_Click);
-            // 
             // SettingPopup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 467);
+            this.ClientSize = new System.Drawing.Size(602, 568);
             this.Controls.Add(this.tlpMain);
+            this.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("SettingPopup.IconOptions.Image")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SettingPopup";
@@ -1811,6 +2067,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.listChar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtComboChar.Properties)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.hGroupControl3)).EndInit();
+            this.hGroupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkOnlyMapping.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hGroupControl2)).EndInit();
+            this.hGroupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkLastUpDt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdoPeriodOther.Properties)).EndInit();
+            this.hFlowLayoutPanel1.ResumeLayout(false);
+            this.hFlowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPeriod.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdoPeriodToday.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hGroupControl1)).EndInit();
+            this.hGroupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.rdoSortLastDt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdoSortInsertDt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdoSortStudyDt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).EndInit();
             this.groupControl9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rdoImageSizeSmall.Properties)).EndInit();
@@ -1934,5 +2206,18 @@
         private Sedas.Control.HSedasSImpleButtonPurple btnGridNameDown;
         private Sedas.Control.HSedasSImpleButtonPurple btnGridLengthUp;
         private Sedas.Control.HSedasSImpleButtonPurple btnGridLengthDown;
+        private Sedas.Control.HGroupControl hGroupControl1;
+        private Sedas.Control.HCheckEdit rdoSortInsertDt;
+        private Sedas.Control.HCheckEdit rdoSortStudyDt;
+        private Sedas.Control.HGroupControl hGroupControl2;
+        private Sedas.Control.HFlowLayoutPanel hFlowLayoutPanel1;
+        private Sedas.Control.HCheckEdit rdoPeriodOther;
+        private Sedas.Control.HTextEdit txtPeriod;
+        private Sedas.Control.HLabelControl hLabelControl1;
+        private Sedas.Control.HCheckEdit rdoPeriodToday;
+        private Sedas.Control.HCheckEdit chkLastUpDt;
+        private Sedas.Control.HCheckEdit rdoSortLastDt;
+        private Sedas.Control.HGroupControl hGroupControl3;
+        private Sedas.Control.HCheckEdit chkOnlyMapping;
     }
 }

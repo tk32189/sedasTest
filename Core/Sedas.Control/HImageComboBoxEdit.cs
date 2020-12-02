@@ -80,6 +80,28 @@ namespace Sedas.Control
             }
         }
 
+
+        public void DataBindingFromArray(string[] array)
+        {
+            if (array != null && array.Count() > 0)
+            {
+                this.Properties.Items.Clear();
+
+                //if (dt.Columns.Contains(value) == false || dt.Columns.Contains(description) == false) return;
+
+
+                for (int i = 0; i < array.Count(); i++)
+                {
+                    string value = array.ElementAt(i);
+
+                    ImageComboBoxItem imageComboBoxItem = new ImageComboBoxItem();
+                    imageComboBoxItem.Value = value;
+                    imageComboBoxItem.Description = value;
+                    this.Properties.Items.Add(imageComboBoxItem);
+                }
+            }
+        }
+
         private string selectedValue = string.Empty;
 
         
@@ -159,7 +181,26 @@ namespace Sedas.Control
             }
         }
 
-     
+        private Color? sedasForeColor = null;
+        public Color? SedasForeColor
+        {
+            get
+            {
+                return sedasForeColor;
+            }
+
+            set
+            {
+                sedasForeColor = value;
+
+                if (value != null && value != Color.Empty)
+                {
+                    this.Properties.Appearance.ForeColor = value.Value;
+                    this.Properties.AppearanceDropDown.ForeColor = value.Value;
+                }
+            }
+        }
+
 
 
         Color backColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
@@ -173,9 +214,18 @@ namespace Sedas.Control
             {
                 this.Properties.Appearance.BackColor = backColor;
                 this.Properties.Appearance.Options.UseBackColor = true;
-                this.Properties.Appearance.ForeColor = textColor;
+                if (SedasForeColor != null)
+                {
+                    this.Properties.Appearance.ForeColor = SedasForeColor.Value;
+                    this.Properties.AppearanceDropDown.ForeColor = SedasForeColor.Value;
+                }
+                else
+                {
+                    this.Properties.Appearance.ForeColor = textColor;
+                    this.Properties.AppearanceDropDown.ForeColor = textColor;
+                }
+                
                 this.Properties.AppearanceDropDown.BackColor = backColor;
-                this.Properties.AppearanceDropDown.ForeColor = textColor;
                 this.Properties.AppearanceItemSelected.BackColor = backColor;
                 this.Properties.AppearanceDropDown.BorderColor = borderColor;
                 this.Properties.AppearanceDropDown.Options.UseBorderColor = true;
@@ -228,6 +278,7 @@ namespace Sedas.Control
             }
         }
 
+      
 
         private void Items_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {

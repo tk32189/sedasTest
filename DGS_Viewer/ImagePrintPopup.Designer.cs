@@ -28,24 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImagePrintPopup));
-            this.tlpMain = new Sedas.Control.HTableLayoutPanel(this.components);
+            this.tlpMain = new Sedas.Control.HTableLayoutPanel();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnPrint = new Sedas.Control.HSedasSimpleButton1(this.components);
-            this.btnCancel = new Sedas.Control.HSedasSimpleButton1(this.components);
-            this.grpControl1 = new Sedas.Control.HGroupControl(this.components);
-            this.rdoSelect = new Sedas.Control.HCheckEdit(this.components);
-            this.rdoAll = new Sedas.Control.HCheckEdit(this.components);
-            this.grpControl2 = new Sedas.Control.HGroupControl(this.components);
-            this.rdo2x2 = new Sedas.Control.HCheckEdit(this.components);
-            this.rdo1x2 = new Sedas.Control.HCheckEdit(this.components);
-            this.rdo1x1 = new Sedas.Control.HCheckEdit(this.components);
-            this.grpControl3 = new Sedas.Control.HGroupControl(this.components);
-            this.txtDignosis = new Sedas.Control.HMemoEdit(this.components);
-            this.grpControl4 = new Sedas.Control.HGroupControl(this.components);
-            this.txtComment = new Sedas.Control.HMemoEdit(this.components);
-            this.tlpMain.SuspendLayout();
+            this.btnPrint = new Sedas.Control.HSedasSimpleButton1();
+            this.btnCancel = new Sedas.Control.HSedasSimpleButton1();
+            this.grpControl1 = new Sedas.Control.HGroupControl();
+            this.rdoSelect = new Sedas.Control.HCheckEdit();
+            this.rdoAll = new Sedas.Control.HCheckEdit();
+            this.grpControl2 = new Sedas.Control.HGroupControl();
+            this.rdo2x2 = new Sedas.Control.HCheckEdit();
+            this.rdo1x2 = new Sedas.Control.HCheckEdit();
+            this.rdo1x1 = new Sedas.Control.HCheckEdit();
+            this.grpControl3 = new Sedas.Control.HGroupControl();
+            this.txtDignosis = new Sedas.Control.HMemoEdit();
+            this.grpControl4 = new Sedas.Control.HGroupControl();
+            this.txtComment = new Sedas.Control.HMemoEdit();
             this.tableLayoutPanel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpControl1)).BeginInit();
             this.grpControl1.SuspendLayout();
@@ -69,13 +67,13 @@
             this.tlpMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(55)))));
             this.tlpMain.ColumnCount = 1;
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.Controls.Add(this.tableLayoutPanel17, 0, 4);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Controls.Add(this.grpControl1, 0, 0);
             this.tlpMain.Controls.Add(this.grpControl2, 0, 1);
             this.tlpMain.Controls.Add(this.grpControl3, 0, 2);
             this.tlpMain.Controls.Add(this.grpControl4, 0, 3);
-            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMain.Location = new System.Drawing.Point(0, 0);
+            this.tlpMain.Controls.Add(this.tableLayoutPanel17, 0, 4);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 5;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
@@ -352,7 +350,6 @@
             this.Name = "ImagePrintPopup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "인   쇄";
-            this.tlpMain.ResumeLayout(false);
             this.tableLayoutPanel17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grpControl1)).EndInit();
             this.grpControl1.ResumeLayout(false);

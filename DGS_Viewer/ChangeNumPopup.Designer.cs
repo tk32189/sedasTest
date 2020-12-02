@@ -28,46 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeNumPopup));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.tableLayoutPanel1 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.tableLayoutPanel2 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.panelControl1 = new Sedas.Control.HPanelControl(this.components);
-            this.tableLayoutPanel3 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.txtYear = new Sedas.Control.HTextEdit(this.components);
-            this.txtPtoNo = new Sedas.Control.HTextEdit(this.components);
-            this.btnSearch = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
-            this.labelControl1 = new Sedas.Control.HLabelControl(this.components);
-            this.labelControl2 = new Sedas.Control.HLabelControl(this.components);
-            this.labelControl3 = new Sedas.Control.HLabelControl(this.components);
-            this.cmbChar = new Sedas.Control.HImageComboBoxEdit(this.components);
-            this.panelControl2 = new Sedas.Control.HPanelControl(this.components);
-            this.tableLayoutPanel6 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.txtPtNo = new Sedas.Control.HTextEdit(this.components);
-            this.txtPtNm = new Sedas.Control.HTextEdit(this.components);
-            this.tableLayoutPanel4 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.panelControl3 = new Sedas.Control.HPanelControl(this.components);
-            this.tableLayoutPanel5 = new Sedas.Control.HTableLayoutPanel(this.components);
-            this.btnKeyC = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
-            this.btnKey0 = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
-            this.btnKeyB = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
-            this.btnKey9 = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
-            this.btnKey8 = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
-            this.btnKey7 = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
-            this.btnKey6 = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
-            this.btnKey5 = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
-            this.btnKey4 = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
-            this.btnKey3 = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
-            this.btnKey2 = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
-            this.btnKey1 = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
-            this.btnConfirm = new Sedas.Control.HSedasSImpleButtonOrange(this.components);
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.tableLayoutPanel1 = new Sedas.Control.HTableLayoutPanel();
+            this.tableLayoutPanel2 = new Sedas.Control.HTableLayoutPanel();
+            this.tableLayoutPanel4 = new Sedas.Control.HTableLayoutPanel();
+            this.panelControl1 = new Sedas.Control.HPanelControl();
+            this.tableLayoutPanel3 = new Sedas.Control.HTableLayoutPanel();
+            this.txtYear = new Sedas.Control.HTextEdit();
+            this.txtPtoNo = new Sedas.Control.HTextEdit();
+            this.btnSearch = new Sedas.Control.HSedasSImpleButtonBlue();
+            this.labelControl1 = new Sedas.Control.HLabelControl();
+            this.labelControl2 = new Sedas.Control.HLabelControl();
+            this.labelControl3 = new Sedas.Control.HLabelControl();
+            this.cmbChar = new Sedas.Control.HImageComboBoxEdit();
+            this.panelControl2 = new Sedas.Control.HPanelControl();
+            this.tableLayoutPanel6 = new Sedas.Control.HTableLayoutPanel();
+            this.txtPtNo = new Sedas.Control.HTextEdit();
+            this.txtPtNm = new Sedas.Control.HTextEdit();
+            this.panelControl3 = new Sedas.Control.HPanelControl();
+            this.tableLayoutPanel5 = new Sedas.Control.HTableLayoutPanel();
+            this.btnKeyC = new Sedas.Control.HSedasSImpleButtonBlue();
+            this.btnKey0 = new Sedas.Control.HSedasSImpleButtonBlue();
+            this.btnKeyB = new Sedas.Control.HSedasSImpleButtonBlue();
+            this.btnKey9 = new Sedas.Control.HSedasSImpleButtonBlue();
+            this.btnKey8 = new Sedas.Control.HSedasSImpleButtonBlue();
+            this.btnKey7 = new Sedas.Control.HSedasSImpleButtonBlue();
+            this.btnKey6 = new Sedas.Control.HSedasSImpleButtonBlue();
+            this.btnKey5 = new Sedas.Control.HSedasSImpleButtonBlue();
+            this.btnKey4 = new Sedas.Control.HSedasSImpleButtonBlue();
+            this.btnKey3 = new Sedas.Control.HSedasSImpleButtonBlue();
+            this.btnKey2 = new Sedas.Control.HSedasSImpleButtonBlue();
+            this.btnKey1 = new Sedas.Control.HSedasSImpleButtonBlue();
+            this.btnConfirm = new Sedas.Control.HSedasSImpleButtonOrange();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -79,7 +76,6 @@
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPtNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPtNm.Properties)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -90,33 +86,52 @@
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(11)))), ((int)(((byte)(21)))));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(465, 324);
             this.tableLayoutPanel1.TabIndex = 1;
+            
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Controls.Add(this.panelControl1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panelControl2, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 3);
+            this.tableLayoutPanel2.Controls.Add(this.panelControl1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panelControl2, 1, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(461, 91);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(55)))));
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Controls.Add(this.panelControl3, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnConfirm, 1, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 100);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 223F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(461, 221);
+            this.tableLayoutPanel4.TabIndex = 1;
             // 
             // panelControl1
             // 
@@ -175,6 +190,7 @@
             this.txtYear.Properties.Mask.EditMask = "\\d+";
             this.txtYear.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtYear.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.txtYear.SedasForeColor = null;
             this.txtYear.Size = new System.Drawing.Size(64, 16);
             this.txtYear.TabIndex = 1;
             // 
@@ -196,6 +212,7 @@
             this.txtPtoNo.Properties.Mask.EditMask = "\\d+";
             this.txtPtoNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtPtoNo.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.txtPtoNo.SedasForeColor = null;
             this.txtPtoNo.Size = new System.Drawing.Size(87, 16);
             this.txtPtoNo.TabIndex = 2;
             // 
@@ -277,25 +294,26 @@
             this.cmbChar.Properties.AppearanceItemSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
             this.cmbChar.Properties.AppearanceItemSelected.Options.UseBackColor = true;
             this.cmbChar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            serializableAppearanceObject1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
-            serializableAppearanceObject1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(122)))), ((int)(((byte)(199)))));
-            serializableAppearanceObject1.Options.UseBackColor = true;
-            serializableAppearanceObject1.Options.UseBorderColor = true;
-            serializableAppearanceObject2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
-            serializableAppearanceObject2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(122)))), ((int)(((byte)(199)))));
-            serializableAppearanceObject2.Options.UseBackColor = true;
-            serializableAppearanceObject2.Options.UseBorderColor = true;
-            serializableAppearanceObject3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
-            serializableAppearanceObject3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(122)))), ((int)(((byte)(199)))));
-            serializableAppearanceObject3.Options.UseBackColor = true;
-            serializableAppearanceObject3.Options.UseBorderColor = true;
-            serializableAppearanceObject4.BackColor = System.Drawing.Color.DimGray;
-            serializableAppearanceObject4.Options.UseBackColor = true;
+            serializableAppearanceObject5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
+            serializableAppearanceObject5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(122)))), ((int)(((byte)(199)))));
+            serializableAppearanceObject5.Options.UseBackColor = true;
+            serializableAppearanceObject5.Options.UseBorderColor = true;
+            serializableAppearanceObject6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
+            serializableAppearanceObject6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(122)))), ((int)(((byte)(199)))));
+            serializableAppearanceObject6.Options.UseBackColor = true;
+            serializableAppearanceObject6.Options.UseBorderColor = true;
+            serializableAppearanceObject7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
+            serializableAppearanceObject7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(122)))), ((int)(((byte)(199)))));
+            serializableAppearanceObject7.Options.UseBackColor = true;
+            serializableAppearanceObject7.Options.UseBorderColor = true;
+            serializableAppearanceObject8.BackColor = System.Drawing.Color.DimGray;
+            serializableAppearanceObject8.Options.UseBackColor = true;
             this.cmbChar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmbChar.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.cmbChar.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cmbChar.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.cmbChar.SedasForeColor = System.Drawing.Color.Empty;
             this.cmbChar.SedasSelectedText = "";
             this.cmbChar.SedasSelectedValue = "";
             this.cmbChar.Size = new System.Drawing.Size(62, 18);
@@ -347,6 +365,7 @@
             this.txtPtNo.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtPtNo.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtPtNo.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.txtPtNo.SedasForeColor = null;
             this.txtPtNo.Size = new System.Drawing.Size(120, 16);
             this.txtPtNo.TabIndex = 0;
             // 
@@ -364,26 +383,9 @@
             this.txtPtNm.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtPtNm.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtPtNm.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.txtPtNm.SedasForeColor = null;
             this.txtPtNm.Size = new System.Drawing.Size(120, 16);
             this.txtPtNm.TabIndex = 1;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(55)))));
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.panelControl3, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnConfirm, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 100);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 223F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(461, 221);
-            this.tableLayoutPanel4.TabIndex = 1;
             // 
             // panelControl3
             // 
@@ -667,8 +669,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CREATE";
             this.Load += new System.EventHandler(this.ChangeNumPopup_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -681,7 +681,6 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtPtNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPtNm.Properties)).EndInit();
-            this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);

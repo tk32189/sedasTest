@@ -28,33 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tlpMain = new Sedas.Control.HTableLayoutPanel(this.components);
+            this.tlpMain = new Sedas.Control.HTableLayoutPanel();
             this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
-            this.circularGauge14 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
             this.labelComponent1 = new DevExpress.XtraGauges.Win.Base.LabelComponent();
             this.labelComponent3 = new DevExpress.XtraGauges.Win.Base.LabelComponent();
             this.arcScaleRangeBarComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent();
             this.arcScaleComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
             this.arcScaleRangeBarComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent();
             this.arcScaleComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
-            this.lblTitle = new Sedas.Control.HLabelControl(this.components);
-            this.tlpMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularGauge14)).BeginInit();
+            this.circularGauge14 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
+            this.lblTitle = new Sedas.Control.HLabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.labelComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelComponent3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularGauge14)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
             // 
             this.tlpMain.ColumnCount = 1;
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.Controls.Add(this.gaugeControl1, 0, 1);
-            this.tlpMain.Controls.Add(this.lblTitle, 0, 0);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
@@ -76,20 +72,6 @@
             this.gaugeControl1.Name = "gaugeControl1";
             this.gaugeControl1.Size = new System.Drawing.Size(259, 260);
             this.gaugeControl1.TabIndex = 0;
-            // 
-            // circularGauge14
-            // 
-            this.circularGauge14.Bounds = new System.Drawing.Rectangle(6, 6, 247, 248);
-            this.circularGauge14.Labels.AddRange(new DevExpress.XtraGauges.Win.Base.LabelComponent[] {
-            this.labelComponent1,
-            this.labelComponent3});
-            this.circularGauge14.Name = "circularGauge14";
-            this.circularGauge14.RangeBars.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent[] {
-            this.arcScaleRangeBarComponent1,
-            this.arcScaleRangeBarComponent2});
-            this.circularGauge14.Scales.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent[] {
-            this.arcScaleComponent1,
-            this.arcScaleComponent2});
             // 
             // labelComponent1
             // 
@@ -174,6 +156,20 @@
             this.arcScaleComponent2.StartAngle = -270F;
             this.arcScaleComponent2.Value = 40F;
             // 
+            // circularGauge14
+            // 
+            this.circularGauge14.Bounds = new System.Drawing.Rectangle(6, 6, 247, 248);
+            this.circularGauge14.Labels.AddRange(new DevExpress.XtraGauges.Win.Base.LabelComponent[] {
+            this.labelComponent1,
+            this.labelComponent3});
+            this.circularGauge14.Name = "circularGauge14";
+            this.circularGauge14.RangeBars.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent[] {
+            this.arcScaleRangeBarComponent1,
+            this.arcScaleRangeBarComponent2});
+            this.circularGauge14.Scales.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent[] {
+            this.arcScaleComponent1,
+            this.arcScaleComponent2});
+            // 
             // lblTitle
             // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -192,16 +188,13 @@
             this.Controls.Add(this.tlpMain);
             this.Name = "wmiGaugeUserControl";
             this.Size = new System.Drawing.Size(340, 320);
-            //this.Load += new System.EventHandler(this.wmiGaugeUserControl_Load);
-            this.tlpMain.ResumeLayout(false);
-            this.tlpMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularGauge14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelComponent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelComponent3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleRangeBarComponent2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularGauge14)).EndInit();
             this.ResumeLayout(false);
 
         }

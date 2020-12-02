@@ -33,6 +33,26 @@ namespace Sedas.Control
             }
         }
 
+        private Color? sedasForeColor = null;
+        public Color? SedasForeColor
+        {
+            get
+            {
+                return sedasForeColor;
+            }
+
+            set
+            {
+                sedasForeColor = value;
+
+                if (value != null && value != Color.Empty)
+                {
+                    this.Properties.Appearance.ForeColor = value.Value;
+                }
+            }
+        }
+
+
         Color backColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
         Color textColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(191)))), ((int)(((byte)(186)))));
         Color buttonColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(122)))), ((int)(((byte)(199)))));
@@ -44,7 +64,15 @@ namespace Sedas.Control
             {
                 this.Properties.Appearance.BackColor = backColor;
                 this.Properties.Appearance.Options.UseBackColor = true;
-                this.Properties.Appearance.ForeColor = textColor;
+                if (SedasForeColor != null)
+                {
+                    this.Properties.Appearance.ForeColor = SedasForeColor.Value;
+                }
+                else
+                {
+                    this.Properties.Appearance.ForeColor = textColor;
+                }
+                
                 this.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
                 this.Properties.Appearance.Options.UseBorderColor = true;
                 this.Properties.Appearance.BorderColor = borderColor;

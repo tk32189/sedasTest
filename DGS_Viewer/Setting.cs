@@ -41,6 +41,10 @@ namespace DGS_Viewer
         public static int nUIMode; //OTHERS, UIMODE
         public static int nCipher; //OTHERS, CIPHER
         public static int nImageSize; //OTHERS, IMAGESIZE
+        public static string sortOption; // studyDt : 접수일 우선, insertDt : 촬영일 우선
+        public static int nPeriod; //조회기간
+        public static string periodType; //기간검색 타입
+        public static string onlyMapping; //매핑 이미지만 조회여부
         public static bool bAddHypen; //OTHERS, ADDHYPEN
         public static bool bShowPathology; //OTHERS, SHOWPATHOLOGY
         public static bool bNotSendDicom; //OTHERS, SEARCHNOTDICOM

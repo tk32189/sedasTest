@@ -47,7 +47,9 @@
     <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGauges.v19.2.Win, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\Reference Library\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -63,6 +65,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +77,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClosingPwCheckPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClosingPwCheckPopup.Designer.cs">
+      <DependentUpon>ClosingPwCheckPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrossCheckClass.cs" />
     <Compile Include="EmailPopup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +140,9 @@
     <Compile Include="wmiGaugeUserControl.Designer.cs">
       <DependentUpon>wmiGaugeUserControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClosingPwCheckPopup.resx">
+      <DependentUpon>ClosingPwCheckPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmailPopup.resx">
       <DependentUpon>EmailPopup.cs</DependentUpon>
     </EmbeddedResource>

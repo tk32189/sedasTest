@@ -32,6 +32,7 @@ namespace Sedas.UserControl
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -42,15 +43,15 @@ namespace Sedas.UserControl
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.BreadCrumbNode breadCrumbNode1 = new DevExpress.XtraEditors.BreadCrumbNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SedasFileOpen));
-            this.tlpMain = new Sedas.Control.HTableLayoutPanel();
-            this.tlpCenter = new Sedas.Control.HTableLayoutPanel();
+            this.tlpMain = new Sedas.Control.HTableLayoutPanel(this.components);
+            this.tlpCenter = new Sedas.Control.HTableLayoutPanel(this.components);
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.winExplorerView = new DevExpress.XtraGrid.Views.WinExplorer.WinExplorerView();
             this.columnName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,30 +60,42 @@ namespace Sedas.UserControl
             this.columnGroup = new DevExpress.XtraGrid.Columns.GridColumn();
             this.columnImage = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.tlpOption = new Sedas.Control.HTableLayoutPanel();
-            this.grdViewType = new Sedas.Control.GridControl.HGridControl();
+            this.tlpOption = new Sedas.Control.HTableLayoutPanel(this.components);
+            this.grdViewType = new Sedas.Control.GridControl.HGridControl(this.components);
             this.grvViewType = new Sedas.Control.GridControl.HGridView();
             this.view = new Sedas.Control.GridControl.HGridColumn();
-            this.chkCheckBoxVisible = new Sedas.Control.HCheckEdit();
-            this.chkShowFileNameExtension = new Sedas.Control.HCheckEdit();
+            this.chkCheckBoxVisible = new Sedas.Control.HCheckEdit(this.components);
+            this.chkShowFileNameExtension = new Sedas.Control.HCheckEdit(this.components);
             this.btnCreatFolder = new Sedas.Control.HSimpleButton();
-            this.picturethumbnail = new Sedas.Control.HPictureEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.picturethumbnail = new Sedas.Control.HPictureEdit(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.ContextItemRename = new DevExpress.XtraBars.BarButtonItem();
             this.ContextItemDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.tlpTop = new Sedas.Control.HTableLayoutPanel();
+            this.ContextItemCopy = new DevExpress.XtraBars.BarButtonItem();
+            this.ContextItemPaste = new DevExpress.XtraBars.BarButtonItem();
+            this.ContextItemCut = new DevExpress.XtraBars.BarButtonItem();
+            this.ContextItemRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.btnFolderSelect = new Sedas.Control.HSedasSImpleButtonBlue(this.components);
+            this.tlpTop = new Sedas.Control.HTableLayoutPanel(this.components);
             this.EditSearch = new DevExpress.XtraEditors.ButtonEdit();
             this.editBreadCrumb = new DevExpress.XtraEditors.BreadCrumbEdit();
-            this.hPanelControl1 = new Sedas.Control.HPanelControl();
+            this.hPanelControl1 = new Sedas.Control.HPanelControl(this.components);
             this.btnUpTo = new DevExpress.XtraEditors.LabelControl();
             this.btnNavigationHistory = new DevExpress.XtraEditors.LabelControl();
             this.btnForward = new DevExpress.XtraEditors.LabelControl();
             this.btnBack = new DevExpress.XtraEditors.LabelControl();
-            this.itemPopupMenu = new DevExpress.XtraBars.PopupMenu();
+            this.tlpTree = new Sedas.Control.HTableLayoutPanel(this.components);
+            this.navigationTreeList = new DevExpress.XtraTreeList.TreeList();
+            this.navNameCol = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
+            this.itemPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.breadCrumbEvents1 = new DevExpress.XtraEditors.Behaviors.BreadCrumbEvents(this.components);
+            this.btnTreeRefresh = new Sedas.Control.HSimpleButton();
             this.tlpMain.SuspendLayout();
             this.tlpCenter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
@@ -100,16 +113,22 @@ namespace Sedas.UserControl
             ((System.ComponentModel.ISupportInitialize)(this.editBreadCrumb.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hPanelControl1)).BeginInit();
             this.hPanelControl1.SuspendLayout();
+            this.tlpTree.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.navigationTreeList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemPopupMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpMain
             // 
             this.tlpMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(11)))), ((int)(((byte)(21)))));
-            this.tlpMain.ColumnCount = 1;
+            this.tlpMain.ColumnCount = 2;
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMain.Controls.Add(this.tlpCenter, 0, 1);
-            this.tlpMain.Controls.Add(this.tlpTop, 0, 0);
+            this.tlpMain.Controls.Add(this.tlpCenter, 1, 1);
+            this.tlpMain.Controls.Add(this.tlpTop, 1, 0);
+            this.tlpMain.Controls.Add(this.tlpTree, 0, 0);
             this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMain.Location = new System.Drawing.Point(0, 0);
             this.tlpMain.Name = "tlpMain";
@@ -128,12 +147,12 @@ namespace Sedas.UserControl
             this.tlpCenter.Controls.Add(this.gridControl, 0, 0);
             this.tlpCenter.Controls.Add(this.tlpOption, 1, 0);
             this.tlpCenter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpCenter.Location = new System.Drawing.Point(0, 26);
+            this.tlpCenter.Location = new System.Drawing.Point(250, 26);
             this.tlpCenter.Margin = new System.Windows.Forms.Padding(0);
             this.tlpCenter.Name = "tlpCenter";
             this.tlpCenter.RowCount = 1;
             this.tlpCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpCenter.Size = new System.Drawing.Size(822, 405);
+            this.tlpCenter.Size = new System.Drawing.Size(572, 405);
             this.tlpCenter.TabIndex = 3;
             // 
             // gridControl
@@ -142,11 +161,13 @@ namespace Sedas.UserControl
             this.gridControl.Location = new System.Drawing.Point(3, 3);
             this.gridControl.MainView = this.winExplorerView;
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(616, 399);
+            this.gridControl.Size = new System.Drawing.Size(366, 399);
             this.gridControl.TabIndex = 3;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.winExplorerView,
             this.gridView1});
+            this.gridControl.DragDrop += new System.Windows.Forms.DragEventHandler(this.gridControl_DragDrop);
+            this.gridControl.DragEnter += new System.Windows.Forms.DragEventHandler(this.gridControl_DragEnter);
             // 
             // winExplorerView
             // 
@@ -174,11 +195,14 @@ namespace Sedas.UserControl
             this.winExplorerView.OptionsSelection.MultiSelect = true;
             this.winExplorerView.OptionsView.ImageLayoutMode = DevExpress.Utils.Drawing.ImageLayoutMode.Stretch;
             this.winExplorerView.OptionsView.ShowViewCaption = true;
+            this.winExplorerView.OptionsViewStyles.List.ItemWidth = 250;
+            this.winExplorerView.OptionsViewStyles.Tiles.ItemWidth = 250;
             this.winExplorerView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.columnGroup, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.winExplorerView.ItemClick += new DevExpress.XtraGrid.Views.WinExplorer.WinExplorerViewItemClickEventHandler(this.OnWinExplorerViewItemClick);
             this.winExplorerView.ItemDoubleClick += new DevExpress.XtraGrid.Views.WinExplorer.WinExplorerViewItemDoubleClickEventHandler(this.OnWinExplorerViewItemDoubleClick);
             this.winExplorerView.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.OnWinExplorerViewSelectionChanged);
+            this.winExplorerView.CustomColumnSort += new DevExpress.XtraGrid.Views.Base.CustomColumnSortEventHandler(this.winExplorerView_CustomColumnSort);
             this.winExplorerView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnWinExplorerViewKeyDown);
             // 
             // columnName
@@ -186,6 +210,7 @@ namespace Sedas.UserControl
             this.columnName.Caption = "columnName";
             this.columnName.FieldName = "Name";
             this.columnName.Name = "columnName";
+            this.columnName.SortMode = DevExpress.XtraGrid.ColumnSortMode.Custom;
             this.columnName.Visible = true;
             this.columnName.VisibleIndex = 0;
             // 
@@ -194,6 +219,7 @@ namespace Sedas.UserControl
             this.columnPath.Caption = "columnPath";
             this.columnPath.FieldName = "Path";
             this.columnPath.Name = "columnPath";
+            this.columnPath.SortMode = DevExpress.XtraGrid.ColumnSortMode.Custom;
             this.columnPath.Visible = true;
             this.columnPath.VisibleIndex = 0;
             // 
@@ -202,6 +228,7 @@ namespace Sedas.UserControl
             this.columnCheck.Caption = "columnCheck";
             this.columnCheck.FieldName = "IsCheck";
             this.columnCheck.Name = "columnCheck";
+            this.columnCheck.SortMode = DevExpress.XtraGrid.ColumnSortMode.Custom;
             this.columnCheck.Visible = true;
             this.columnCheck.VisibleIndex = 0;
             // 
@@ -210,6 +237,7 @@ namespace Sedas.UserControl
             this.columnGroup.Caption = "columnGroup";
             this.columnGroup.FieldName = "Group";
             this.columnGroup.Name = "columnGroup";
+            this.columnGroup.SortMode = DevExpress.XtraGrid.ColumnSortMode.Custom;
             this.columnGroup.Visible = true;
             this.columnGroup.VisibleIndex = 0;
             // 
@@ -218,6 +246,7 @@ namespace Sedas.UserControl
             this.columnImage.Caption = "columnImage";
             this.columnImage.FieldName = "Image";
             this.columnImage.Name = "columnImage";
+            this.columnImage.SortMode = DevExpress.XtraGrid.ColumnSortMode.Custom;
             this.columnImage.Visible = true;
             this.columnImage.VisibleIndex = 0;
             // 
@@ -235,11 +264,13 @@ namespace Sedas.UserControl
             this.tlpOption.Controls.Add(this.chkCheckBoxVisible, 0, 1);
             this.tlpOption.Controls.Add(this.chkShowFileNameExtension, 0, 2);
             this.tlpOption.Controls.Add(this.btnCreatFolder, 0, 3);
-            this.tlpOption.Controls.Add(this.picturethumbnail, 0, 5);
+            this.tlpOption.Controls.Add(this.picturethumbnail, 0, 6);
+            this.tlpOption.Controls.Add(this.btnFolderSelect, 0, 4);
             this.tlpOption.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpOption.Location = new System.Drawing.Point(625, 3);
+            this.tlpOption.Location = new System.Drawing.Point(375, 3);
             this.tlpOption.Name = "tlpOption";
-            this.tlpOption.RowCount = 6;
+            this.tlpOption.RowCount = 7;
+            this.tlpOption.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpOption.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpOption.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpOption.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -361,7 +392,7 @@ namespace Sedas.UserControl
             // 
             // picturethumbnail
             // 
-            this.picturethumbnail.Location = new System.Drawing.Point(3, 230);
+            this.picturethumbnail.Location = new System.Drawing.Point(3, 256);
             this.picturethumbnail.MenuManager = this.barManager1;
             this.picturethumbnail.Name = "picturethumbnail";
             this.picturethumbnail.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
@@ -377,8 +408,12 @@ namespace Sedas.UserControl
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ContextItemRename,
-            this.ContextItemDelete});
-            this.barManager1.MaxItemId = 3;
+            this.ContextItemDelete,
+            this.ContextItemCopy,
+            this.ContextItemPaste,
+            this.ContextItemCut,
+            this.ContextItemRefresh});
+            this.barManager1.MaxItemId = 8;
             // 
             // barDockControlTop
             // 
@@ -426,6 +461,50 @@ namespace Sedas.UserControl
             this.ContextItemDelete.Name = "ContextItemDelete";
             this.ContextItemDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ContextItemDelete_ItemClick);
             // 
+            // ContextItemCopy
+            // 
+            this.ContextItemCopy.Caption = "복사";
+            this.ContextItemCopy.Id = 3;
+            this.ContextItemCopy.Name = "ContextItemCopy";
+            this.ContextItemCopy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ContextItemCopy_ItemClick);
+            // 
+            // ContextItemPaste
+            // 
+            this.ContextItemPaste.Caption = "붙여넣기";
+            this.ContextItemPaste.Id = 4;
+            this.ContextItemPaste.Name = "ContextItemPaste";
+            this.ContextItemPaste.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ContextItemPaste_ItemClick);
+            // 
+            // ContextItemCut
+            // 
+            this.ContextItemCut.Caption = "잘라내기";
+            this.ContextItemCut.Id = 5;
+            this.ContextItemCut.Name = "ContextItemCut";
+            this.ContextItemCut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ContextItemCut_ItemClick);
+            // 
+            // ContextItemRefresh
+            // 
+            this.ContextItemRefresh.Caption = "새로고침";
+            this.ContextItemRefresh.Id = 7;
+            this.ContextItemRefresh.Name = "ContextItemRefresh";
+            this.ContextItemRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ContextItemRefresh_ItemClick);
+            // 
+            // btnFolderSelect
+            // 
+            this.btnFolderSelect.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnFolderSelect.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnFolderSelect.Appearance.Options.UseForeColor = true;
+            this.btnFolderSelect.Location = new System.Drawing.Point(3, 213);
+            this.btnFolderSelect.LookAndFeel.SkinName = "My Basic";
+            this.btnFolderSelect.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnFolderSelect.Name = "btnFolderSelect";
+            this.btnFolderSelect.SedasButtonType = Sedas.Control.HSedasSImpleButtonBlue.HSimpleButtonType.Null;
+            this.btnFolderSelect.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
+            this.btnFolderSelect.Size = new System.Drawing.Size(75, 20);
+            this.btnFolderSelect.TabIndex = 5;
+            this.btnFolderSelect.Text = "폴더선택";
+            this.btnFolderSelect.Click += new System.EventHandler(this.btnFolderSelect_Click);
+            // 
             // tlpTop
             // 
             this.tlpTop.ColumnCount = 3;
@@ -436,19 +515,19 @@ namespace Sedas.UserControl
             this.tlpTop.Controls.Add(this.editBreadCrumb, 1, 0);
             this.tlpTop.Controls.Add(this.hPanelControl1, 0, 0);
             this.tlpTop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpTop.Location = new System.Drawing.Point(0, 0);
+            this.tlpTop.Location = new System.Drawing.Point(250, 0);
             this.tlpTop.Margin = new System.Windows.Forms.Padding(0);
             this.tlpTop.Name = "tlpTop";
             this.tlpTop.RowCount = 1;
             this.tlpTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tlpTop.Size = new System.Drawing.Size(822, 26);
+            this.tlpTop.Size = new System.Drawing.Size(572, 26);
             this.tlpTop.TabIndex = 2;
             // 
             // EditSearch
             // 
             this.EditSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.EditSearch.Location = new System.Drawing.Point(625, 3);
+            this.EditSearch.Location = new System.Drawing.Point(375, 3);
             this.EditSearch.Name = "EditSearch";
             this.EditSearch.Properties.AutoHeight = false;
             editorButtonImageOptions1.SvgImageSize = new System.Drawing.Size(16, 16);
@@ -467,7 +546,7 @@ namespace Sedas.UserControl
             editorButtonImageOptions2.SvgImageSize = new System.Drawing.Size(8, 8);
             this.editBreadCrumb.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown, "", 18, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Redo, "", 15, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Redo, "", 15, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.editBreadCrumb.Properties.DropDownRows = 12;
             this.editBreadCrumb.Properties.ImageIndex = 0;
             breadCrumbNode1.Caption = "Computer";
@@ -482,7 +561,7 @@ namespace Sedas.UserControl
             this.editBreadCrumb.Properties.QueryChildNodes += new DevExpress.XtraEditors.BreadCrumbQueryChildNodesEventHandler(this.OnBreadCrumbQueryChildNodes);
             this.editBreadCrumb.Properties.ValidatePath += new DevExpress.XtraEditors.BreadCrumbValidatePathEventHandler(this.OnBreadCrumbValidatePath);
             this.editBreadCrumb.Properties.NewNodeAdding += new DevExpress.XtraEditors.BreadCrumbNewNodeAddingEventHandler(this.OnBreadCrumbNewNodeAdding);
-            this.editBreadCrumb.Size = new System.Drawing.Size(516, 20);
+            this.editBreadCrumb.Size = new System.Drawing.Size(266, 20);
             this.editBreadCrumb.TabIndex = 4;
             this.editBreadCrumb.PathChanged += new DevExpress.XtraEditors.BreadCrumbPathChangedEventHandler(this.OnBreadCrumbPathChanged);
             // 
@@ -578,13 +657,82 @@ namespace Sedas.UserControl
             this.btnBack.TabIndex = 6;
             this.btnBack.Click += new System.EventHandler(this.OnBackButtonClick);
             // 
+            // tlpTree
+            // 
+            this.tlpTree.ColumnCount = 1;
+            this.tlpTree.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTree.Controls.Add(this.navigationTreeList, 0, 0);
+            this.tlpTree.Controls.Add(this.btnTreeRefresh, 0, 1);
+            this.tlpTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpTree.Location = new System.Drawing.Point(3, 3);
+            this.tlpTree.Name = "tlpTree";
+            this.tlpTree.RowCount = 2;
+            this.tlpMain.SetRowSpan(this.tlpTree, 2);
+            this.tlpTree.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpTree.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpTree.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpTree.Size = new System.Drawing.Size(244, 425);
+            this.tlpTree.TabIndex = 4;
+            // 
+            // navigationTreeList
+            // 
+            this.behaviorManager1.SetBehaviors(this.navigationTreeList, new DevExpress.Utils.Behaviors.Behavior[] {
+            ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.XtraEditors.Behaviors.BreadCrumbBehavior.Create(typeof(DevExpress.XtraTreeList.TreeListBreadCrumbSource), this.editBreadCrumb, "DisplayName", "Name", this.breadCrumbEvents1)))});
+            this.navigationTreeList.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.navigationTreeList.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.navNameCol});
+            this.navigationTreeList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.navigationTreeList.Location = new System.Drawing.Point(3, 3);
+            this.navigationTreeList.MenuManager = this.barManager1;
+            this.navigationTreeList.Name = "navigationTreeList";
+            this.navigationTreeList.OptionsBehavior.AllowPixelScrolling = DevExpress.Utils.DefaultBoolean.False;
+            this.navigationTreeList.OptionsBehavior.Editable = false;
+            this.navigationTreeList.OptionsFind.AllowFindPanel = false;
+            this.navigationTreeList.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.navigationTreeList.OptionsView.FocusRectStyle = DevExpress.XtraTreeList.DrawFocusRectStyle.None;
+            this.navigationTreeList.OptionsView.ShowColumns = false;
+            this.navigationTreeList.OptionsView.ShowHorzLines = false;
+            this.navigationTreeList.OptionsView.ShowIndentAsRowStyle = true;
+            this.navigationTreeList.OptionsView.ShowIndicator = false;
+            this.navigationTreeList.OptionsView.ShowVertLines = false;
+            this.navigationTreeList.RowHeight = 22;
+            this.navigationTreeList.SelectImageList = this.svgImageCollection1;
+            this.navigationTreeList.Size = new System.Drawing.Size(238, 394);
+            this.navigationTreeList.TabIndex = 0;
+            // 
+            // navNameCol
+            // 
+            this.navNameCol.Caption = "DisplayName";
+            this.navNameCol.FieldName = "DisplayName";
+            this.navNameCol.Name = "navNameCol";
+            this.navNameCol.Visible = true;
+            this.navNameCol.VisibleIndex = 0;
+            // 
+            // svgImageCollection1
+            // 
+            this.svgImageCollection1.Add("electronics_desktopmac", "image://svgimages/icon builder/electronics_desktopmac.svg");
+            // 
             // itemPopupMenu
             // 
             this.itemPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.ContextItemRefresh),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ContextItemDelete, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.ContextItemRename),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ContextItemDelete)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.ContextItemCut, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ContextItemCopy),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ContextItemPaste)});
             this.itemPopupMenu.Manager = this.barManager1;
             this.itemPopupMenu.Name = "itemPopupMenu";
+            // 
+            // btnTreeRefresh
+            // 
+            this.btnTreeRefresh.Location = new System.Drawing.Point(3, 403);
+            this.btnTreeRefresh.Name = "btnTreeRefresh";
+            this.btnTreeRefresh.SedasControlType = Sedas.Control.HSimpleButton.ButtonControlType.Null;
+            this.btnTreeRefresh.Size = new System.Drawing.Size(238, 19);
+            this.btnTreeRefresh.TabIndex = 1;
+            this.btnTreeRefresh.Text = "새로고침";
+            this.btnTreeRefresh.Click += new System.EventHandler(this.btnTreeRefresh_Click);
             // 
             // SedasFileOpen
             // 
@@ -615,7 +763,11 @@ namespace Sedas.UserControl
             ((System.ComponentModel.ISupportInitialize)(this.editBreadCrumb.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hPanelControl1)).EndInit();
             this.hPanelControl1.ResumeLayout(false);
+            this.tlpTree.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.navigationTreeList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemPopupMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -657,6 +809,18 @@ namespace Sedas.UserControl
         private DevExpress.XtraBars.BarButtonItem ContextItemDelete;
         private Control.HSimpleButton btnCreatFolder;
         private Control.HPictureEdit picturethumbnail;
+        private Control.HSedasSImpleButtonBlue btnFolderSelect;
+        private DevExpress.XtraBars.BarButtonItem ContextItemCopy;
+        private DevExpress.XtraBars.BarButtonItem ContextItemPaste;
+        private DevExpress.XtraBars.BarButtonItem ContextItemCut;
+        private Control.HTableLayoutPanel tlpTree;
+        private DevExpress.XtraTreeList.TreeList navigationTreeList;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn navNameCol;
+        private DevExpress.Utils.SvgImageCollection svgImageCollection1;
+        private DevExpress.XtraEditors.Behaviors.BreadCrumbEvents breadCrumbEvents1;
+        private DevExpress.XtraBars.BarButtonItem ContextItemRefresh;
+        private Control.HSimpleButton btnTreeRefresh;
         //private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

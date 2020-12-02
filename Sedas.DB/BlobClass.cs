@@ -126,6 +126,8 @@ namespace Sedas.DB
                 {
                     //실패에 대한 처리
                 }
+
+                fs.Close();
             }
             return null;
         }

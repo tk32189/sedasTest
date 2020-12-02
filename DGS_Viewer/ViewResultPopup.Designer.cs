@@ -195,6 +195,7 @@
             this.txtOi.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtOi.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtOi.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.txtOi.SedasForeColor = null;
             this.txtOi.Size = new System.Drawing.Size(100, 16);
             this.txtOi.TabIndex = 11;
             // 
@@ -211,6 +212,7 @@
             this.txtMi.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtMi.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtMi.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.txtMi.SedasForeColor = null;
             this.txtMi.Size = new System.Drawing.Size(100, 16);
             this.txtMi.TabIndex = 10;
             // 
@@ -283,6 +285,7 @@
             this.txtGi.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtGi.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtGi.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.txtGi.SedasForeColor = null;
             this.txtGi.Size = new System.Drawing.Size(100, 16);
             this.txtGi.TabIndex = 9;
             // 
@@ -326,6 +329,7 @@
             this.cmbSendState.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.cmbSendState.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cmbSendState.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.cmbSendState.SedasForeColor = null;
             this.cmbSendState.SedasSelectedText = "";
             this.cmbSendState.SedasSelectedValue = "";
             this.cmbSendState.Size = new System.Drawing.Size(100, 18);
@@ -391,6 +395,7 @@
             this.txtBirth.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtBirth.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtBirth.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.txtBirth.SedasForeColor = null;
             this.txtBirth.Size = new System.Drawing.Size(198, 16);
             this.txtBirth.TabIndex = 12;
             // 
@@ -407,6 +412,7 @@
             this.txtEngNm.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtEngNm.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtEngNm.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.txtEngNm.SedasForeColor = null;
             this.txtEngNm.Size = new System.Drawing.Size(198, 16);
             this.txtEngNm.TabIndex = 11;
             // 
@@ -423,6 +429,7 @@
             this.txtPtNm.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtPtNm.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtPtNm.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.txtPtNm.SedasForeColor = null;
             this.txtPtNm.Size = new System.Drawing.Size(198, 16);
             this.txtPtNm.TabIndex = 10;
             // 
@@ -494,6 +501,7 @@
             this.txtPtNo.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtPtNo.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtPtNo.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.txtPtNo.SedasForeColor = null;
             this.txtPtNo.Size = new System.Drawing.Size(198, 16);
             this.txtPtNo.TabIndex = 9;
             // 
@@ -519,6 +527,7 @@
             this.txtSex.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtSex.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtSex.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.txtSex.SedasForeColor = null;
             this.txtSex.Size = new System.Drawing.Size(80, 16);
             this.txtSex.TabIndex = 0;
             // 
@@ -542,6 +551,7 @@
             this.txtAge.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.txtAge.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtAge.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.txtAge.SedasForeColor = null;
             this.txtAge.Size = new System.Drawing.Size(80, 16);
             this.txtAge.TabIndex = 2;
             // 
@@ -636,6 +646,7 @@
             this.lblPtoNo.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblPtoNo.Properties.ReadOnly = true;
             this.lblPtoNo.SedasControlType = Sedas.Control.ControlType.Kuh;
+            this.lblPtoNo.SedasForeColor = null;
             this.lblPtoNo.Size = new System.Drawing.Size(100, 16);
             this.lblPtoNo.TabIndex = 3;
             // 

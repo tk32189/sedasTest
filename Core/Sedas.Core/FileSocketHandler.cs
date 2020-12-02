@@ -296,6 +296,33 @@ namespace Sedas.Core
             }
         }
 
+        /// <summary>
+        /// name         : GetAllFiles
+        /// desc         : 폴더 아래의 전체 파일 정보 리턴
+        /// author       : 심우종
+        /// create date  : 2020-09-29 14:33
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        public string GetAllFiles(string folderPath)
+        {
+            try
+            {
+                oSocket.Send(Encoding.UTF8.GetBytes("GetAllFiles|" + folderPath + "<EOF>"));
+
+                string message = ReciveMessage(oSocket);
+                return message;
+            }
+            catch (Exception ex)
+            {
+                LogWriter(String.Format("폴더 아래의 전체 파일 정보 리턴 조회 오류 : {0}", ex.Message), true);
+                return "";
+            }
+        }
+
+
+
+
+
 
 
         /// <summary>
@@ -1293,6 +1320,41 @@ namespace Sedas.Core
                 }
             }
         }
+
+
+
+        /// <summary>
+        /// name         : FileCopy
+        /// desc         : 파일복사
+        /// author       : 심우종
+        /// create date  : 2020-11-04 11:42
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        public bool FileCopy(string serverPathAndName, string copyFolder)
+        {
+            try
+            {
+                oSocket.Send(Encoding.UTF8.GetBytes("FileCopy|" + serverPathAndName + "|" + copyFolder + "<EOF>"));
+
+                string message = ReciveMessage(oSocket);
+                if (message == "OK")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                LogWriter(String.Format("파일복사 오류 : {0}", ex.Message), true);
+                return false;
+            }
+        }
+
+
+
 
         string backUpRootPath = "D:\\SeverDataBackup";
 

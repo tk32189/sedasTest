@@ -158,7 +158,7 @@ namespace DGS_Viewer
                 }
                 else if (this.ImageButtonValue.nSendStatus == 0 || this.ImageButtonValue.nSendStatus == 9 || this.ImageButtonValue.nSendStatus == 8)
                 {
-                    if (this.ImageButtonValue.nType == 0)
+                    if (this.ImageButtonValue.nType == 0 || this.ImageButtonValue.nType == 6)
                     {
                         this.nomalcolor = Color.FromArgb(255, 200, 200);
                         this.selectcolor = Color.FromArgb(255, 70, 70);
@@ -202,6 +202,10 @@ namespace DGS_Viewer
                     imageInfo = "전송대기";
                 }
                 else if (this.ImageButtonValue.nSendStatus == 9)
+                {
+                    imageInfo = "전송중";
+                }
+                else if (this.ImageButtonValue.nSendStatus == 7)
                 {
                     imageInfo = "전송중";
                 }

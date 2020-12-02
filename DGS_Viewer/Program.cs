@@ -18,7 +18,7 @@ namespace DGS_Viewer
         private static void Main(string[] args)
         {
             DevExpress.XtraEditors.XtraMessageBox.SmartTextWrap = true;
-            DevExpress.XtraEditors.WindowsFormsSettings.DefaultFont = new Font("Noto Sans KR Regular", 10);
+            DevExpress.XtraEditors.WindowsFormsSettings.DefaultFont = new Font("Noto Sans KR Regular", 22);
             //DevExpress.XtraEditors.WindowsFormsSettings.DefaultFont = new Font("굴림", 10);
 
 

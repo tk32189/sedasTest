@@ -42,6 +42,29 @@ namespace Sedas.Control
             }
         }
 
+
+        private Color? sedasForeColor = null;
+        public Color? SedasForeColor
+        {
+            get
+            {
+                return sedasForeColor;
+            }
+
+            set
+            {
+                sedasForeColor = value;
+
+                if (value != null && value != Color.Empty)
+                {
+                    this.Properties.Appearance.ForeColor = value.Value;
+                }
+            }
+        }
+
+
+
+
         Color borderColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
 
         private void SedasControlTypeChanged()
@@ -51,7 +74,16 @@ namespace Sedas.Control
                 this.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(22)))), ((int)(((byte)(33)))));
                 this.Properties.Appearance.Options.UseBackColor = true;
                 this.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-                this.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(191)))), ((int)(((byte)(186)))));
+
+                if (SedasForeColor != null)
+                {
+                    this.Properties.Appearance.ForeColor = SedasForeColor.Value;
+                }
+                else
+                {
+                    this.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(191)))), ((int)(((byte)(186)))));
+                }
+
                 this.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
                 this.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
                 this.Paint += HTextEdit_Paint;

@@ -32,7 +32,7 @@ namespace Sedas.Core
         public FileTransfer()
         {
             //따로 IP, PORT를 넘기지 않으면 병리서버로 자동설정
-            this.ip = "10.10.50.141";
+            this.ip = "10.10.50.142";
             this.port = "28080";
         }
 
@@ -317,6 +317,40 @@ namespace Sedas.Core
             return fileSocket.SedasSetupFileInfo(projectName, lastDtm);
         }
 
+        /// <summary>
+        /// name         : SedasSetupFileInfo
+        /// desc         : 설치파일정보 조회
+        /// author       : 심우종
+        /// create date  : 2020-09-29 14:23
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        public string GetAllFiles(string folderPath)
+        {
+            FileSocketHandler fileSocket = new FileSocketHandler(this.ip, this.port);
+            fileSocket.ShowErrorMessage = this.ShowErrorMessage;
+            fileSocket.IsSync = true;
+            fileSocket.onIpChanged += FileSocket_onIpChanged;
+            fileSocket.Start();
+            return fileSocket.GetAllFiles(folderPath);
+        }
+
+
+        /// <summary>
+        /// name         : FileCopy
+        /// desc         : 파일복사
+        /// author       : 심우종
+        /// create date  : 2020-11-04 11:42
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        public bool FileCopy(string serverPathAndName, string copyFolder)
+        {
+            FileSocketHandler fileSocket = new FileSocketHandler(this.ip, this.port);
+            fileSocket.ShowErrorMessage = this.ShowErrorMessage;
+            fileSocket.IsSync = true;
+            fileSocket.onIpChanged += FileSocket_onIpChanged;
+            fileSocket.Start();
+            return fileSocket.FileCopy(serverPathAndName, copyFolder);
+        }
 
 
         //private void SetControlStates(bool isConnected)

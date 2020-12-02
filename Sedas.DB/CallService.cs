@@ -98,7 +98,20 @@ namespace Sedas.DB
             }
         }
 
+        public Encoding SetReceiveEncoding
+        {
+            get
+            {
+                return setReceiveEncoding;
+            }
 
+            set
+            {
+                setReceiveEncoding = value;
+            }
+        }
+
+        private System.Text.Encoding setReceiveEncoding = null;
 
 
         /// <summary>
@@ -137,10 +150,19 @@ namespace Sedas.DB
             //WebResponse response = request.GetResponse();
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream, Encoding.Default, true);
+
+            StreamReader reader;
+            if (this.SetReceiveEncoding != null)
+            {
+                reader = new StreamReader(dataStream, this.SetReceiveEncoding, true);
+            }
+            else
+            {
+                reader = new StreamReader(dataStream, Encoding.Default, true);
+            }
+            
 
             string responseFromServer = reader.ReadToEnd();
-
             //Console.WriteLine(responseFromServer); // response 출력
 
 
@@ -148,9 +170,9 @@ namespace Sedas.DB
             dataStream.Close();
             response.Close();
 
-            responseFromServer = responseFromServer.Trim();
+            responseFromServer = responseFromServer.Trim() ;
 
-
+            //HttpUtility.HtmlDecode()
 
             XElement element = XElement.Parse(responseFromServer.Trim());
             IEnumerable<XElement> rootElemets = element.Elements();
@@ -427,7 +449,13 @@ namespace Sedas.DB
 
                         if (ele.FirstNode != null && !string.IsNullOrEmpty(ele.FirstNode.ToString()))
                         {
-                            row[ele.Name.ToString()] = ele.FirstNode.ToString();
+                            //StreamWriter oStreamWriter = new StreamWriter("C:\\test002.txt", true);
+                            //oStreamWriter.WriteLine(String.Format("{0} : {1}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), ele.FirstNode.ToString()));
+                            //oStreamWriter.Close();
+                            row[ele.Name.ToString()] = HttpUtility.HtmlDecode(ele.FirstNode.ToString());
+                            //StreamWriter oStreamWriter2 = new StreamWriter("C:\\test003.txt", true);
+                            //oStreamWriter2.WriteLine(String.Format("{0} : {1}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), row[ele.Name.ToString()].ToString()));
+                            //oStreamWriter2.Close();
                         }
                     }
                     //for (int i = 0; i < elements.Count(); i++)

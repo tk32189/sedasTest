@@ -62,7 +62,7 @@ namespace Sedas.Core
 
     public class LogHelper
     {
-        string defaultIp = "10.10.50.141";
+        string defaultIp = "10.10.50.142";
         string defaultPort = "28080";
 
         public LogHelper()

@@ -155,6 +155,47 @@ namespace DGS_Viewer
                 this.rdoImageSizeSmall.Checked = true;
             }
 
+            //Sort
+            if (g_OthersSetupData.sortOption == "studyDt" || string.IsNullOrEmpty(g_OthersSetupData.sortOption))
+            {
+                this.rdoSortStudyDt.Checked = true;
+            }
+            else if (g_OthersSetupData.sortOption == "insertDt")
+            {
+                this.rdoSortInsertDt.Checked = true;
+            }
+            else if (g_OthersSetupData.sortOption == "lastDt")
+            {
+                this.rdoSortLastDt.Checked = true;
+            }
+
+
+            //조회기간
+            if (g_OthersSetupData.nPeriod == 0)
+            {
+                this.rdoPeriodToday.Checked = true;
+            }
+            else
+            {
+                this.rdoPeriodOther.Checked = true;
+                this.txtPeriod.Text = g_OthersSetupData.nPeriod.ToString();
+            }
+
+            //검색기간 마지막수정일자로..
+            if ( g_OthersSetupData.periodType == "last")
+            {
+                this.chkLastUpDt.Checked = true;
+            }
+
+            //매핑이미지만 조회
+            if (g_OthersSetupData.onlyMapping == "Y")
+            {
+                this.chkOnlyMapping.Checked = true;
+            }
+
+
+
+
             if (g_ComboData.strCharCount.ToIntOrNull() != null)
             {
                 int charCount = g_ComboData.strCharCount.ToInt();
@@ -552,14 +593,14 @@ namespace DGS_Viewer
             {
                 cipher = "0";
             }
-            else if ( rdoCipher2.Checked == true)
+            else if (rdoCipher2.Checked == true)
             {
                 cipher = "1";
             }
 
             Global.G_IniWriteValue("OTHERS", "CIPHER", cipher, g_PathData.strIniPath);
 
-            Global.G_IniWriteValue("OTHERS", "ADDHYPEN", chkHypen.Checked == true? "1" : "0", g_PathData.strIniPath);
+            Global.G_IniWriteValue("OTHERS", "ADDHYPEN", chkHypen.Checked == true ? "1" : "0", g_PathData.strIniPath);
 
             string imageSize = "0";
             if (rdoImageSizeBig.Checked == true)
@@ -573,7 +614,50 @@ namespace DGS_Viewer
 
             Global.G_IniWriteValue("OTHERS", "IMAGESIZE", imageSize, g_PathData.strIniPath);
 
-            
+            string sortSetting = "studyDt";
+            //정렬 setting
+            if (this.rdoSortStudyDt.Checked == true)
+            {
+                sortSetting = "studyDt";
+            }
+            else if (this.rdoSortInsertDt.Checked == true)
+            {
+                sortSetting = "insertDt";
+            }
+            else if (this.rdoSortLastDt.Checked == true)
+            {
+                sortSetting = "lastDt";
+            }
+
+            Global.G_IniWriteValue("OTHERS", "SORT", sortSetting, g_PathData.strIniPath);
+
+
+            int period = 7;
+            //조회기간 setting
+            if (this.rdoPeriodToday.Checked == true)
+            {
+                period = 0;
+            }
+            else if ( this.rdoPeriodOther.Checked == true)
+            {
+                string strPeriod = txtPeriod.Text;
+
+                if (strPeriod.ToIntOrNull() != null)
+                {
+                    period = strPeriod.ToInt();
+                }
+            }
+
+            Global.G_IniWriteValue("OTHERS", "PERIOD", period.ToString(), g_PathData.strIniPath);
+
+            string periodType = "";
+            if (chkLastUpDt.Checked == true)
+            {
+                periodType = "last";
+            }
+
+            Global.G_IniWriteValue("OTHERS", "PERIOD_TYPE", periodType, g_PathData.strIniPath);
+
             Global.G_IniWriteValue("CHAR", "COUNT", listChar.Items.Count.ToString(), g_PathData.strIniCombo);
 
             for (int i = 0; i < listChar.Items.Count; i++)
@@ -591,6 +675,15 @@ namespace DGS_Viewer
 
                 Global.G_IniWriteValue("WEEK", count, this.listWeek.Items[i].ToString(), g_PathData.strIniCombo);
             }
+
+            string onlyMapping = "N";
+            if (chkOnlyMapping.Checked == true)
+            {
+                onlyMapping = "Y";
+            }
+
+            Global.G_IniWriteValue("OTHERS", "ONLY_MAPPING", onlyMapping, g_PathData.strIniPath);
+
 
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -744,6 +837,24 @@ namespace DGS_Viewer
             }
         }
 
-        
+
+        /// <summary>
+        /// name         : rdoPeriodOther_CheckedChanged
+        /// desc         : 조회기간 기타일자 체크 선택시
+        /// author       : 심우종
+        /// create date  : 
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private void rdoPeriodOther_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoPeriodOther.Checked == true)
+            {
+                txtPeriod.Enabled = true;
+            }
+            else
+            {
+                txtPeriod.Enabled = false;
+            }
+        }
     }
 }

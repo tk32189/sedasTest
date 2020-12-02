@@ -15,6 +15,7 @@ namespace Sedas.UserControl
     public partial class SedasFileOpenPopup : DevExpress.XtraEditors.XtraForm
     {
         List<string> selctedFiles = null; //선택된 파일
+        string selectedFolder = ""; //선택된 폴더
         PopupResult result = PopupResult.NULL; //선택결과
 
         string defaultPath = "";
@@ -25,6 +26,11 @@ namespace Sedas.UserControl
         }
 
 
+        public string SelectedFolder
+        {
+            get { return selectedFolder; }
+            set { selectedFolder = value; }
+        }
 
         public List<string> SelctedFiles
         {
@@ -38,19 +44,24 @@ namespace Sedas.UserControl
             set { result = value; }
         }
 
+        bool isFolderSelect = false;
+
         SedasFileOpen sedasFileOpen = null;
-        public SedasFileOpenPopup(string defaultPath = "")
+        public SedasFileOpenPopup(string defaultPath = "", bool isFolderSelect = false)
         {
+            this.isFolderSelect = isFolderSelect;
             InitializeComponent();
             InitFileOpenUserControl();
         }
 
-        public SedasFileOpenPopup(string ip, string port, string defaultPath = "")
+        public SedasFileOpenPopup(string ip, string port, string defaultPath = "", bool isFolderSelect = false)
         {
             if (!string.IsNullOrEmpty(defaultPath))
             {
                 this.defaultPath = defaultPath;
             }
+
+            this.isFolderSelect = isFolderSelect;
 
             InitializeComponent();
             InitFileOpenUserControl();
@@ -67,7 +78,27 @@ namespace Sedas.UserControl
                 sedasFileOpen.DefaultPath = this.defaultPath;
             }
             sedasFileOpen.OnFileSelectedEvent += SedasFileOpen_OnFileSelectedEvent;
+            sedasFileOpen.OnFolderSelectedEvent += SedasFileOpen_OnFolderSelectedEvent;
             sedasFileOpen.IsShowPopup = true;
+            sedasFileOpen.IsFolderSelectButtonVisible = this.isFolderSelect;
+        }
+
+
+        /// <summary>
+        /// name         : SedasFileOpen_OnFolderSelectedEvent
+        /// desc         : 폴더 선택 완료시
+        /// author       : 심우종
+        /// create date  : 2020-10-06 15:17
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private void SedasFileOpen_OnFolderSelectedEvent(string obj)
+        {
+            if (!string.IsNullOrEmpty(obj))
+            {
+                this.ResultState = PopupResult.OK;
+                this.SelectedFolder = obj;
+                this.Close();
+            }
         }
 
         private void SedasFileOpenPopup_Load(object sender, EventArgs e)

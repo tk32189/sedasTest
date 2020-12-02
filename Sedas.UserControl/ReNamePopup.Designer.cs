@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tlpMain = new Sedas.Control.HTableLayoutPanel();
-            this.hLabelControl1 = new Sedas.Control.HLabelControl();
-            this.txtName = new Sedas.Control.HTextEdit();
-            this.flwpnlButtons = new Sedas.Control.HFlowLayoutPanel();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReNamePopup));
+            this.tlpMain = new Sedas.Control.HTableLayoutPanel(this.components);
+            this.hLabelControl1 = new Sedas.Control.HLabelControl(this.components);
+            this.txtName = new Sedas.Control.HTextEdit(this.components);
+            this.flwpnlButtons = new Sedas.Control.HFlowLayoutPanel(this.components);
             this.btnConfirm = new Sedas.Control.HSimpleButton();
             this.btnCancel = new Sedas.Control.HSimpleButton();
             this.tlpMain.SuspendLayout();
@@ -71,6 +73,7 @@
             this.txtName.Location = new System.Drawing.Point(3, 23);
             this.txtName.Name = "txtName";
             this.txtName.SedasControlType = Sedas.Control.ControlType.Null;
+            this.txtName.SedasForeColor = null;
             this.txtName.Size = new System.Drawing.Size(266, 18);
             this.txtName.TabIndex = 1;
             this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
@@ -112,7 +115,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(290, 75);
             this.Controls.Add(this.tlpMain);
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("ReNamePopup.IconOptions.Icon")));
             this.Name = "ReNamePopup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "이름변경";
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();

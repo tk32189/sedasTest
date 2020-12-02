@@ -18,20 +18,26 @@ using DevExpress.XtraGrid.Views.WinExplorer;
 using Newtonsoft.Json;
 using System.Drawing.Drawing2D;
 using DevExpress.LookAndFeel;
+using DevExpress.XtraTreeList;
+using DevExpress.XtraTreeList.Nodes;
 
 namespace Sedas.UserControl
 {
     public partial class SedasFileOpen : DevExpress.XtraEditors.XtraUserControl, IFileSystemNavigationSupports
     {
+        public event Action<string[]> OnFileDragDrop; //로컬 파일을 Drop해서 넣은 경우
 
         /// <summary>
         /// 옵션으로 받을수 있는 값 정리
         /// </summary>
         FileTransfer ft = null; // new FileTransfer("10.10.50.142", "28080");
+        public static FileTransfer globalFt = null;
         bool isServer = false;
-        bool isShowPopup = true; //팝업으로 화면이 열리는 경우
+        bool isShowPopup = false; //팝업으로 화면이 열리는 경우
         bool isFileManagement = false; //파일관리 화면에서 사용되는 경우 
         bool isIntegrationViewer = false; //통합뷰어 화면에서 사용되는 경우
+        bool isFolderSelectButtonVisible = false; //폴더선택 버튼 사용여부
+        bool isTreeListVisible = false; //트리리스트 visible여부
 
         int defaultViewStyleIndex = 5; //기본 아이콘 스타일 인덱스
         string defaultPath = ""; //처음 시작할 path경로
@@ -39,13 +45,16 @@ namespace Sedas.UserControl
 
         List<string> selectedFiles = new List<string>();
 
-        public event Action OnFileSelectedEvent;
+        public event Action OnFileSelectedEvent; //파일선택 이벤트
+        public event Action<string> OnFolderSelectedEvent; //폴더선택 이벤트
+        public event Action<string> OnServerTempExeEvent; //서버 파일 임시파일로 강제실행 이벤트
         bool isInitControl = false; //최초 컨트롤 초기화중인지를 나타내는 플래그
 
         public SedasFileOpen()
         {
             InitializeComponent();
         }
+
 
 
 
@@ -59,6 +68,7 @@ namespace Sedas.UserControl
         public void InitServerInfo(string ip, string port)
         {
             this.ft = new FileTransfer(ip, port);
+            globalFt = this.ft;
             this.IsServer = true;
         }
 
@@ -89,6 +99,7 @@ namespace Sedas.UserControl
         public void ReConnect(string ip, string port)
         {
             this.ft = new FileTransfer(ip, port);
+            globalFt = this.ft;
             this.IsServer = true;
             Initialize();
         }
@@ -104,7 +115,7 @@ namespace Sedas.UserControl
             CalcPanels();
             UpdateView();
 
-            
+
             InitControl();
             this.isInitControl = false;
         }
@@ -118,6 +129,15 @@ namespace Sedas.UserControl
             //img1 = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
             //SvgBitmap bm = new SvgBitmap(img1);
             //Image img = SvgBitmap.Render(null, 1.0);
+            if (IsTreeListVisible == true)
+            {
+                InitTreeList();
+            }
+            else
+            {
+                this.tlpMain.ColumnStyles[0].Width = 0;
+            }
+
 
             DataTable viewTypeDt = new DataTable();
             viewTypeDt.Columns.Add("viewName", typeof(String));
@@ -146,7 +166,7 @@ namespace Sedas.UserControl
 
             }
 
-            
+
 
             grdViewType.DataSource = viewTypeDt;
             grvViewType.ClearSelection();
@@ -166,14 +186,15 @@ namespace Sedas.UserControl
                 this.chkCheckBoxVisible.Visible = false;
                 //this.winExplorerView.OptionsView.ShowCheckBoxes = true;
 
-                if (IsServer == true)
-                {
-                    this.btnCreatFolder.Visible = true;//새폴더 생성 버튼
-                }
-                else
-                {
-                    this.btnCreatFolder.Visible = false;//새폴더 생성 버튼
-                }
+                //if (IsServer == true)
+                //{
+                //    this.btnCreatFolder.Visible = true;//새폴더 생성 버튼
+                //}
+                //else
+                //{
+                //    this.btnCreatFolder.Visible = false;//새폴더 생성 버튼
+                //}
+                this.btnCreatFolder.Visible = true;//새폴더 생성 버튼
 
             }
             else if (this.IsIntegrationViewer == true)
@@ -184,8 +205,145 @@ namespace Sedas.UserControl
             else
             {
                 this.btnCreatFolder.Visible = false;//새폴더 생성 버튼
+
+                //foreach (LinkPersistInfo link in itemPopupMenu.LinksPersistInfo)
+                //{
+                //    link.Item.Enabled = false;
+                //}
             }
 
+            if (this.isServer == true)
+            {
+                this.gridControl.AllowDrop = true;
+            }
+
+            //폴더선택 버튼 visible설정
+            if (this.IsFolderSelectButtonVisible == true)
+            {
+                this.btnFolderSelect.Visible = true;
+            }
+            else
+            {
+                this.btnFolderSelect.Visible = false;
+            }
+
+            barManager1.SetPopupContextMenu(this.gridControl, itemPopupMenu);
+
+
+
+            //winExplorerView.BeginDataUpdate();
+
+            //winExplorerView.ClearSorting();
+            //columnGroup.SortOrder = ColumnSortOrder.Ascending;
+            //this.columnName.SortOrder = ColumnSortOrder.Ascending;
+            ////DevExpress.XtraGrid.Columns.GridColumnSortInfo[] sortInfo = {
+            ////new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.columnGroup, DevExpress.Data.ColumnSortOrder.Ascending),
+            ////new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.columnName, DevExpress.Data.ColumnSortOrder.Ascending)
+            ////};
+
+            ////this.winExplorerView.SortInfo.ClearAndAddRange(sortInfo);
+
+            //winExplorerView.EndDataUpdate();
+        }
+
+
+        /// <summary>
+        /// name         : InitTreeList
+        /// desc         : 트리리스트 초기화
+        /// author       : 심우종
+        /// create date  : 2020-11-24 15:17
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private void InitTreeList(bool isRefresh = false)
+        {
+            if (this.IsServer == true)
+            {
+                navigationTreeList.DataSource = new RootItemForServer();
+                if (isRefresh == false)
+                {
+                    navigationTreeList.VirtualTreeGetChildNodes += OnNavigationTreeListGetChildNodes;
+                    navigationTreeList.VirtualTreeGetCellValue += OnNavigationTreeListGetCellValue;
+                    //navigationTreeList.FocusedNodeChanged += OnNavigationTreeListFocusedNodeChanged;
+                    navigationTreeList.CustomDrawNodeImages += OnTreeListCustomDrawNodeImages;
+                    navigationTreeList.GetSelectImage += OnTreeListGetStateImage;
+                }
+                
+                navigationTreeList.ForceInitialize();
+                navigationTreeList.Nodes[0].Expand();
+            }
+            else
+            {
+                navigationTreeList.DataSource = new RootItem();
+
+                if (isRefresh == false)
+                {
+                    navigationTreeList.VirtualTreeGetChildNodes += OnNavigationTreeListGetChildNodes;
+                    navigationTreeList.VirtualTreeGetCellValue += OnNavigationTreeListGetCellValue;
+                    navigationTreeList.FocusedNodeChanged += OnNavigationTreeListFocusedNodeChanged;
+                    navigationTreeList.CustomDrawNodeImages += OnTreeListCustomDrawNodeImages;
+                    breadCrumbEvents1.CustomItemContents += BreadCrumbEvents1_CustomItemContents;
+                    navigationTreeList.GetSelectImage += OnTreeListGetStateImage;
+                }
+                
+                navigationTreeList.ForceInitialize();
+                navigationTreeList.Nodes[0].Expand();
+            }
+
+        }
+
+        void OnNavigationTreeListFocusedNodeChanged(object sender, FocusedNodeChangedEventArgs e)
+        {
+            if (navigationTreeList.FocusedNode == null)
+                return;
+            Cursor current = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            //searchControl.ClearFilter();
+            //searchControl.Properties.NullValuePrompt = "Search " + navigationTreeList.FocusedNode.GetDisplayText(0);
+            Item _item = (Item)navigationTreeList.GetRow(navigationTreeList.FocusedNode.Id);
+            editBreadCrumb.Properties.RootGlyph = _item.Image;
+
+
+            editBreadCrumb.Path = _item.FullName;
+
+
+            //treeList1.DataSource = _item.GetFilesSystemInfo();
+            Cursor.Current = current;
+        }
+
+        private void BreadCrumbEvents1_CustomItemContents(object sender, DevExpress.XtraEditors.Behaviors.CustomItemContentsEventArgs e)
+        {
+            BreadCrumbNode node = e.Item;
+            Item _item = (Item)navigationTreeList.GetRow(((TreeListNode)e.Source).Id);
+            node.Value = _item.Name;
+            node.Image = _item.Image;
+        }
+
+        void OnTreeListGetStateImage(object sender, GetSelectImageEventArgs e)
+        {
+            e.NodeImageIndex = 0;
+        }
+
+        void OnNavigationTreeListGetChildNodes(object sender, VirtualTreeGetChildNodesInfo e)
+        {
+            Cursor current = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
+            e.Children = ((Item)e.Node).GetDirectories();
+            Cursor.Current = current;
+        }
+
+        void OnNavigationTreeListGetCellValue(object sender, VirtualTreeGetCellValueInfo e)
+        {
+            e.CellData = ((Item)e.Node).DisplayName;
+        }
+
+        void OnTreeListCustomDrawNodeImages(object sender, CustomDrawNodeImagesEventArgs e)
+        {
+            TreeList tree = (TreeList)sender;
+            IFileImage _item = (IFileImage)tree.GetRow(e.Node.Id);
+            if (_item.Image == null)
+                return;
+            e.Cache.DrawImage(_item.Image, e.SelectImageLocation);
+            e.Handled = true;
         }
 
         void InitializeDefaultFolderIcons()
@@ -235,7 +393,7 @@ namespace Sedas.UserControl
                         this.isLimitedStartPath = true;
                     }
                 }
-                
+
 
 
                 BreadCrumb.Path = this._currentPath;
@@ -244,7 +402,7 @@ namespace Sedas.UserControl
                 //    BreadCrumb.Properties.History.Add(new BreadCrumbHistoryItem(driveInfo.RootDirectory.ToString()));
                 //}
 
-                
+
 
             }
             else
@@ -286,7 +444,17 @@ namespace Sedas.UserControl
                         }
                     }
                 }
-                
+
+            }
+            else
+            {
+                if (path.Length >= 9)
+                {
+                    if (path.Substring(0, 8) == "This PC\\")
+                    {
+                        path = path.Substring(8, path.Length - 8);
+                    }
+                }
             }
 
             this._currentPath = path;
@@ -310,6 +478,7 @@ namespace Sedas.UserControl
                 InitBreadCrumbComputerNode(e.Node);
                 return;
             }
+
             string dir = e.Node.Path;
             if (!FileSystemHelper.IsDirExists(dir))
                 return;
@@ -344,7 +513,17 @@ namespace Sedas.UserControl
             }
             else
             {
-                if (!FileSystemHelper.IsDirExists(e.Path))
+                string path = e.Path;
+                if (path.Length >= 9)
+                {
+                    if (path.Substring(0, 8) == "This PC\\")
+                    {
+                        path = path.Substring(8, path.Length - 8);
+                    }
+                }
+
+
+                if (!FileSystemHelper.IsDirExists(path))
                 {
                     e.ValidationResult = BreadCrumbValidatePathResult.Cancel;
                     return;
@@ -446,7 +625,15 @@ namespace Sedas.UserControl
                         string path = "\\";
                         if (string.IsNullOrEmpty(_currentPath) || _currentPath == "serverRoot" || _currentPath == "serverRoot\\")
                         {
-                            path = "\\";
+                            if (!string.IsNullOrEmpty(defaultPath))
+                            {
+                                path = "\\" + DefaultPath;
+                            }
+                            else
+                            {
+                                path = "\\";
+                            }
+
                         }
                         else
                         {
@@ -815,12 +1002,12 @@ namespace Sedas.UserControl
                     {
                         case "jpeg":
                         case "jpg":
-                        case "png": 
+                        case "png":
                         case "icon":
-                        case "gif": 
-                        case "bmp": 
+                        case "gif":
+                        case "bmp":
                         case "tiff":
-                        case "emf": 
+                        case "emf":
                         case "wmf":
                             isImage = true;
                             break;
@@ -849,7 +1036,7 @@ namespace Sedas.UserControl
                         picturethumbnail.Image = pThumbnail;
                     }
                 }
-                
+
             }
 
         }
@@ -883,7 +1070,7 @@ namespace Sedas.UserControl
         }
         void OnWinExplorerViewItemClick(object sender, WinExplorerViewItemClickEventArgs e)
         {
-            if (e.MouseInfo.Button == MouseButtons.Right) itemPopupMenu.ShowPopup(Cursor.Position);
+            //if (e.MouseInfo.Button == MouseButtons.Right) itemPopupMenu.ShowPopup(Cursor.Position);
 
 
             if (this.IsFileManagement == true)
@@ -973,8 +1160,20 @@ namespace Sedas.UserControl
                     //아무일도 일어나지 않도록 수정
                     needToDoAction = false;
 
+                    if (IsFileManagement == true) //파일관리 화면인 경우
+                    {
+                        string path = ((FileSystemEntry)e.ItemInfo.Row.RowKey).Path;
+                        if (!string.IsNullOrEmpty(path))
+                        {
+                            //서버파일 임시실행 이벤트 전달
+                            if (this.OnServerTempExeEvent != null)
+                            {
+                                this.OnServerTempExeEvent(path);
+                            }
+                        }
+                    }
                     //팝업인 경우
-                    if (IsShowPopup == true)
+                    else if (IsShowPopup == true)
                     {
                         //해당 파일 정보 리턴
                         if (SelectedFiles == null)
@@ -992,6 +1191,7 @@ namespace Sedas.UserControl
                             this.OnFileSelectedEvent();
                         }
                     }
+
                 }
                 else if (((FileSystemEntry)e.ItemInfo.Row.RowKey).ToString() == "DevExpress.Utils.Helpers.DirectoryEntry")
                 {
@@ -1199,6 +1399,32 @@ namespace Sedas.UserControl
             }
         }
 
+        public bool IsFolderSelectButtonVisible
+        {
+            get
+            {
+                return isFolderSelectButtonVisible;
+            }
+
+            set
+            {
+                isFolderSelectButtonVisible = value;
+            }
+        }
+
+        public bool IsTreeListVisible
+        {
+            get
+            {
+                return isTreeListVisible;
+            }
+
+            set
+            {
+                isTreeListVisible = value;
+            }
+        }
+
         void IFileSystemNavigationSupports.UpdatePath(string path)
         {
             BreadCrumb.Path = path;
@@ -1251,7 +1477,7 @@ namespace Sedas.UserControl
 
         }
 
-        
+
 
         private void grvViewType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -1405,6 +1631,30 @@ namespace Sedas.UserControl
             UpdateView();
         }
 
+
+        /// <summary>
+        /// name         : ContextItemRefresh_ItemClick
+        /// desc         : 새로고침 클릭시
+        /// author       : 심우종
+        /// create date  : 2020-11-27 15:04
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private void ContextItemRefresh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //if (isServer == true)
+            //{
+            //    this.FileRefresh();
+            //}
+            //else
+            //{
+
+            //}
+
+            this.FileRefresh();
+        }
+
+
+
         /// <summary>
         /// name         : ContextItemRename_ItemClick
         /// desc         : 이름변경 클릭시
@@ -1451,9 +1701,9 @@ namespace Sedas.UserControl
                 if (selectedFile.Count() > 0)
                 {
                     string filePath = selectedFile.ElementAt(0);
-                    
 
-                    
+
+
 
                     if (filePath.Split('.').Length >= 2)
                     {
@@ -1468,7 +1718,7 @@ namespace Sedas.UserControl
                     }
 
                     if (ft.NameChange(filePath, newName, "F") == true)
-                    { 
+                    {
                         //성공
                     }
 
@@ -1615,6 +1865,13 @@ namespace Sedas.UserControl
                 return;
             }
 
+            this.FileDelete(selectedFile, selectedFolder);
+
+            this.FileRefresh();
+        }
+
+        private void FileDelete(List<string> selectedFile, List<string> selectedFolder, bool needToMessage = true)
+        {
             if (isServer == true)
             {
                 //1. 파일을 삭제하는 경우
@@ -1641,13 +1898,16 @@ namespace Sedas.UserControl
 
                         if (ft.FileCheckInFolder(folderName) == true)
                         {
-                            if (DevExpress.XtraEditors.XtraMessageBox.Show(folderName + " 폴더안에 파일이 존재합니다. 모두 삭제하시겠습니까?", "확인", buttons: MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            if (needToMessage == true)
                             {
-                                //PASS
-                            }
-                            else
-                            {
-                                continue;
+                                if (DevExpress.XtraEditors.XtraMessageBox.Show(folderName + " 폴더안에 파일이 존재합니다. 모두 삭제하시겠습니까?", "확인", buttons: MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                {
+                                    //PASS
+                                }
+                                else
+                                {
+                                    continue;
+                                }
                             }
                         }
 
@@ -1674,7 +1934,15 @@ namespace Sedas.UserControl
                         FileInfo oFileInfo = new FileInfo(filePath);
                         if (oFileInfo.Exists == true)
                         {
-                            oFileInfo.Delete();
+                            try
+                            {
+                                oFileInfo.Delete();
+                            }
+                            catch (Exception ex)
+                            {
+                                DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message);
+                            }
+
                         }
                     }
                 }
@@ -1693,25 +1961,34 @@ namespace Sedas.UserControl
                             //폴더안에 파일 체크
                             if (this.isFiles(folderName) == true)
                             {
-                                if (DevExpress.XtraEditors.XtraMessageBox.Show(folderName + " 폴더안에 파일이 존재합니다. 모두 삭제하시겠습니까?", "확인", buttons: MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                if (needToMessage == true)
                                 {
-                                    //PASS
+                                    if (DevExpress.XtraEditors.XtraMessageBox.Show(folderName + " 폴더안에 파일이 존재합니다. 모두 삭제하시겠습니까?", "확인", buttons: MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                    {
+                                        //PASS
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
                                 }
-                                else
-                                {
-                                    continue;
-                                }
+                                //if (DevExpress.XtraEditors.XtraMessageBox.Show(folderName + " 폴더안에 파일이 존재합니다. 모두 삭제하시겠습니까?", "확인", buttons: MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                //{
+                                //    //PASS
+                                //}
+                                //else
+                                //{
+                                //    continue;
+                                //}
                             }
 
-                            
+
                             di.Delete(true); //true 넣으면 파일 존재시에도 모두 삭제
                         }
                     }
 
                 }
             }
-
-            this.FileRefresh();
         }
 
         private bool isFiles(string dir)
@@ -1761,16 +2038,1050 @@ namespace Sedas.UserControl
                 {
                     DevExpress.XtraEditors.XtraMessageBox.Show("폴더 생성에 실패하였습니다.");
                 }
-               
+
+            }
+            else
+            {
+                string currentPath = GetCurrentPath();
+
+                if (_currentPath.Length > 10)
+                {
+                    if (currentPath.Substring(0, 10) == "serverRoot")
+                    {
+                        currentPath = currentPath.Substring(11, currentPath.Length - 11);
+                    }
+                }
+
+                DirectoryInfo directoryInfo = new DirectoryInfo(currentPath);
+                string newFolderName = DupFolderNameCheck("새폴더", directoryInfo.FullName);
+
+                if (!string.IsNullOrEmpty(newFolderName))
+                {
+                    DirectoryInfo di = new DirectoryInfo(directoryInfo.FullName + "\\" + newFolderName);
+                    //newFolerFullName = di.FullName;
+                    if (di.Exists == false)
+                    {
+                        di.Create();
+                    }
+                }
             }
 
             this.FileRefresh();
         }
 
+
+        /// <summary>
+        /// name         : DupFolderNameCheck
+        /// desc         : 폴더명 중복체크
+        /// author       : 심우종
+        /// create date  : 
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private string DupFolderNameCheck(string newFolderName, string path)
+        {
+
+            string tempNewFolderName = newFolderName;
+            try
+            {
+                bool isDup = false;
+                DirectoryInfo di = new DirectoryInfo(path + "\\" + tempNewFolderName);
+
+                //디렉토리명 중복
+                if (di.Exists == true)
+                {
+                    isDup = true;
+
+                    bool isTempNumExists = false;
+                    int existTempNum = 0;
+                    int existTempNumIndex = 0;
+
+                    int startIndexNum = tempNewFolderName.LastIndexOf('(');
+                    int endIndexNum = tempNewFolderName.LastIndexOf(')');
+                    existTempNumIndex = startIndexNum;
+                    if (startIndexNum >= 0 && endIndexNum >= 0)
+                    {
+                        //임시번호가 뒤에 붙어있음.
+                        string tempNum = tempNewFolderName.Substring(startIndexNum, endIndexNum - startIndexNum + 1);
+                        if (tempNum.Length >= 3)
+                        {
+                            if (tempNum[0].ToString() == "(" && tempNum[tempNum.Length - 1].ToString() == ")")
+                            {
+                                string strNumber = tempNum.Substring(1, tempNum.Length - 2);
+                                int number;
+                                if (int.TryParse(strNumber, out number) == true)
+                                {
+                                    int num = number;
+                                    existTempNum = num;
+                                    isTempNumExists = true;
+                                }
+                            }
+                        }
+                    }
+
+                    if (isTempNumExists == true && existTempNum > 0 && existTempNumIndex > 0)
+                    {
+                        tempNewFolderName = tempNewFolderName.Substring(0, existTempNumIndex) + "(" + (existTempNum + 1).ToString() + ")";
+                    }
+                    else
+                    {
+                        tempNewFolderName = tempNewFolderName + "(1)";
+                    }
+                }
+
+
+                if (isDup == false)
+                {
+                    return tempNewFolderName;
+                }
+                else
+                {
+                    return DupFolderNameCheck(tempNewFolderName, path);
+                }
+            }
+            catch
+            {
+                return tempNewFolderName;
+            }
+        }
+
         private void SedasFileOpen_Load(object sender, EventArgs e)
         {
             this.LookAndFeel.SetSkinStyle(SkinSvgPalette.DefaultSkin.BlueDark);
+
+
         }
+
+
+        private void gridControl_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            if (files.Length < 1)
+            {
+                return;
+            }
+
+            if (this.OnFileDragDrop != null)
+            {
+                this.OnFileDragDrop(files);
+            }
+
+        }
+
+
+
+
+
+
+        private void gridControl_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+        }
+
+
+        /// <summary>
+        /// name         : btnFolderSelect_Click
+        /// desc         : 폴더선택 버튼 클릭시
+        /// author       : 심우종
+        /// create date  : 2020-10-06 14:41
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private void btnFolderSelect_Click(object sender, EventArgs e)
+        {
+            List<string> selectedFolders = GetSelectedFilesNew(false, true);
+            if (selectedFolders != null && selectedFolders.Count > 0)
+            {
+                if (OnFolderSelectedEvent != null)
+                {
+                    OnFolderSelectedEvent(selectedFolders.ElementAt(0));
+                }
+            }
+
+        }
+
+        //복사기능을 이용하기 위해 복사된 파일리스트
+        List<string> copyFile = new List<string>();
+        List<string> copyFolder = new List<string>();
+        bool isCopyFromCut = false; //잘라내기 여부
+
+
+        /// <summary>
+        /// name         : ContextItemCopy_ItemClick
+        /// desc         : 복사 버튼 클릭시
+        /// author       : 심우종
+        /// create date  : 2020-11-04 09:39
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private void ContextItemCopy_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.ItemCopy();
+            this.isCopyFromCut = false;
+        }
+
+        private void ItemCopy()
+        {
+            //초기화
+            this.copyFile.Clear();
+            this.copyFolder.Clear();
+
+            List<string> selectedFile = GetSelectedFilesNew(isFileAdd: true, isFolderAdd: false);
+            List<string> selectedFolder = GetSelectedFilesNew(isFileAdd: false, isFolderAdd: true);
+
+            if (selectedFile.Count() + selectedFolder.Count() == 0)
+            {
+                return;
+            }
+
+            if (selectedFile != null && selectedFile.Count > 0)
+            {
+                foreach (string item in selectedFile)
+                {
+                    copyFile.Add(item);
+                }
+            }
+
+            if (selectedFolder != null && selectedFolder.Count > 0)
+            {
+                foreach (string item in selectedFolder)
+                {
+                    copyFolder.Add(item);
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// name         : ContextItemCut_ItemClick
+        /// desc         : 잘라내기 버튼 클릭시
+        /// author       : 심우종
+        /// create date  : 2020-11-04 14:10
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private void ContextItemCut_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.ItemCopy();
+            this.isCopyFromCut = true;
+        }
+
+
+        /// <summary>
+        /// name         : ContextItemPaste_ItemClick
+        /// desc         : 붙여넣기 버튼 클릭시
+        /// author       : 심우종
+        /// create date  : 2020-11-04 09:39
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private void ContextItemPaste_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            if (copyFile.Count() + copyFolder.Count() == 0)
+            {
+                return;
+            }
+
+            List<string> deleteFolder = new List<string>();
+
+
+            if (isServer == true)
+            {
+                string currentPath = GetCurrentPath();
+
+                //파일복사
+                if (copyFile != null && this.copyFile.Count > 0)
+                {
+                    foreach (string item in copyFile)
+                    {
+                        ft.FileCopy(item, currentPath);
+                    }
+                }
+
+                
+
+                //폴더복사
+                if (copyFolder != null && this.copyFolder.Count > 0)
+                {
+                    foreach (string folderPath in copyFolder)
+                    {
+                        //잘라내기를 한 경우 하위폴더에 복사하는지 여부 체크필요
+                        if (isCopyFromCut == true)
+                        {
+                            string checkFilePath = folderPath;
+                            if (!string.IsNullOrEmpty(checkFilePath) && checkFilePath.Length > 2)
+                            {
+                                if (checkFilePath.Substring(0, 1) == "\\")
+                                {
+                                    checkFilePath = checkFilePath.Substring(1, checkFilePath.Length - 1);
+                                }
+                            }
+
+
+                            if (currentPath.Contains(checkFilePath))
+                            {
+                                XtraMessageBox.Show("대상 폴더가 원본 폴더의 하위폴더입니다." + "\r\n\r\n" + checkFilePath);
+                                continue;
+                            }
+                        }
+
+
+                        string serverFolderName = folderPath.Split('\\').LastOrDefault();
+                        if (string.IsNullOrEmpty(serverFolderName)) continue;
+
+
+                        string parentPath = folderPath.Replace(serverFolderName, "");
+
+
+
+                        string result = ft.GetAllFiles(folderPath);
+
+                        string[] splValue = result.Split('|');
+
+                        if (splValue.Count() < 2)
+                        {
+                            return;
+                        }
+
+                        if (splValue.ElementAt(0).ToString() == "EXISTS")
+                        {
+                            DataTable serverDt = JsonConvert.DeserializeObject<DataTable>(splValue.ElementAt(1));
+
+                            int i = 0;
+                            if (serverDt != null && serverDt.Rows.Count > 0)
+                            {
+                                foreach (DataRow row in serverDt.Rows)
+                                {
+
+                                    string fileCheckName = row["fileCheckName"].ToString();
+                                    string fileFullName = row["fileFullName"].ToString();
+                                    string fileName = fileFullName.Split('\\').LastOrDefault();
+
+                                    string newPath = currentPath + "\\" + fileFullName.Replace(parentPath, "").Replace(fileName, "");
+                                    ft.FileCopy(fileFullName, newPath);
+                                }
+
+                            }
+                        }
+
+                        deleteFolder.Add(folderPath);
+                    }
+                }
+
+
+            }
+            else
+            {
+                string currentPath = GetCurrentPath();
+
+                //파일복사
+                if (copyFile != null && this.copyFile.Count > 0)
+                {
+                    foreach (string item in copyFile)
+                    {
+                        FileInfo file = new FileInfo(item);
+                        if (file.Exists)
+                        {
+                            this.FileCopy(currentPath, file);
+                        }
+                    }
+                }
+
+
+                //폴더복사
+                if (copyFolder != null && this.copyFolder.Count > 0)
+                {
+                    foreach (string item in copyFolder)
+                    {
+                        DirectoryInfo di = new DirectoryInfo(item);
+                        if (di.Exists)
+                        {
+                            //잘라내기를 한 경우 하위폴더에 복사하는지 여부 체크필요
+                            if (isCopyFromCut == true)
+                            {
+                                if (currentPath.Contains(di.FullName))
+                                {
+                                    XtraMessageBox.Show("대상 폴더가 원본 폴더의 하위폴더입니다." + "\r\n\r\n" + di.FullName);
+                                    continue;
+                                }
+                            }
+
+
+
+
+                            string parentPath = di.Parent.FullName;
+
+
+
+                            List<FileInfo> allFiles = GetAllFiles(di.FullName);
+
+                            if (allFiles != null && allFiles.Count > 0)
+                            {
+                                foreach (FileInfo file in allFiles)
+                                {
+
+                                    string newPath = currentPath + file.DirectoryName.Replace(parentPath, "");
+
+
+                                    this.FileCopy(newPath, file);
+                                }
+                            }
+
+
+                            deleteFolder.Add(item);
+
+                        }
+                    }
+                }
+            }
+
+            //잘라내기를 한 경우 파일 삭제
+            if (isCopyFromCut == true)
+            {
+                this.FileDelete(copyFile, deleteFolder, needToMessage: false);
+            }
+
+            this.FileRefresh();
+        }
+
+
+        /// <summary>
+        /// name         : filePathCheck
+        /// desc         : 경로 체크(디렉토리 생성)
+        /// author       : 심우종
+        /// create date  : 
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private void filePathCheck(string localFilePath)
+        {
+            string[] spliPath = localFilePath.Split('\\');
+
+            //string fileName = "";
+            string path = "";
+
+
+            if (spliPath != null && spliPath.Count() > 0)
+            {
+
+
+
+                for (int i = 0; i < spliPath.Count(); i++)
+                {
+                    //처음은 루트경로.. 체크 PASS
+                    if (i == 0)
+                    {
+                        path = spliPath.ElementAt(i);
+                    }
+                    else
+                    {
+                        path = path + "\\" + spliPath.ElementAt(i);
+                        this.DirectoryCheck(path);
+                    }
+
+
+                }
+            }
+        }
+
+
+
+        /// <summary>
+        /// name         : DirectoryCheck
+        /// desc         : 폴더 체크 및 없으면 폴더생성
+        /// author       : 심우종
+        /// create date  : 
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private void DirectoryCheck(string path)
+        {
+            DirectoryInfo di = new DirectoryInfo(path);
+            if (!di.Exists)
+            {
+                di.Create();
+            }
+
+        }
+
+        /// <summary>
+        /// name         : GetAllFiles
+        /// desc         : 해당 디렉토리 안의 모든 파일정보 리턴
+        /// author       : 심우종
+        /// create date  : 
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private List<FileInfo> GetAllFiles(string directoriPath)
+        {
+            List<FileInfo> totalFiles = new List<FileInfo>();
+            DirectoryInfo di = new DirectoryInfo(directoriPath);
+            if (di.Exists)
+            {
+                DirectoryInfo[] directories = di.GetDirectories();
+
+                if (directories != null && directories.Count() > 0)
+                {
+                    foreach (DirectoryInfo subDi in directories)
+                    {
+                        List<FileInfo> subFiles = GetAllFiles(subDi.FullName);
+                        totalFiles.AddRange(subFiles);
+                    }
+                }
+
+                FileInfo[] files = di.GetFiles();
+                if (files != null && files.Count() > 0)
+                {
+                    totalFiles.AddRange(files);
+                }
+
+            }
+            return totalFiles;
+        }
+
+
+        /// <summary>
+        /// name         : FileCopy
+        /// desc         : 파일을 복사한다.
+        /// author       : 심우종
+        /// create date  : 2020-11-04 10:21
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private void FileCopy(string copyPath, FileInfo file)
+        {
+            filePathCheck(copyPath); //경로체크 없으면 생성
+
+            CoreLibrary core = new CoreLibrary();
+            //중복된 파일명 체크
+            string newFileName = core.DupFileRenameCheck(copyPath, file.Name, isNeedToDupCheck: true);
+
+            string newFilePathAndName = copyPath + "\\" + newFileName;
+            file.CopyTo(newFilePathAndName);
+        }
+
+
+        /// <summary>
+        /// name         : winExplorerView_CustomColumnSort
+        /// desc         : 그리드 정렬
+        /// author       : 심우종
+        /// create date  : 2020-11-04 14:33
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private void winExplorerView_CustomColumnSort(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnSortEventArgs e)
+        {
+            //DevExpress.XtraGrid.Views.Grid.GridView view = sender as DevExpress.XtraGrid.Views.Grid.GridView;
+            //if (view == null) return;
+
+
+            try
+            {
+                string type1 = e.RowObject1 is DevExpress.Utils.Helpers.FileEntry ? "1" : "0";
+                string type2 = e.RowObject2 is DevExpress.Utils.Helpers.FileEntry ? "1" : "0";
+
+                object val1 = winExplorerView.GetListSourceRowCellValue(e.ListSourceRowIndex1, "Name");
+                object val2 = winExplorerView.GetListSourceRowCellValue(e.ListSourceRowIndex2, "Name");
+                e.Handled = true;
+                e.Result = System.Collections.Comparer.Default.Compare(type1 + val1, type2 + val2);
+            }
+            catch (Exception ee)
+            {
+                //...
+            }
+        }
+
+
+        /// <summary>
+        /// name         : btnTreeRefresh_Click
+        /// desc         : 트리리스트 새로고침 버튼 클릭시
+        /// author       : 심우종
+        /// create date  : 2020-11-30 11:12
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private void btnTreeRefresh_Click(object sender, EventArgs e)
+        {
+            InitTreeList(isRefresh:true);
+        }
+    }
+
+
+
+
+    public class RootItem : Item
+    {
+        public RootItem() : base("Root") { }
+        public override List<Item> GetDirectories()
+        {
+            return new List<Item>() { new ThisPCItem() };
+        }
+        public override Image Image
+        {
+            get { return null; }
+            set { }
+        }
+        public override List<CustomFileInfo> GetFilesSystemInfo()
+        {
+            return null;
+        }
+    }
+
+    public class RootItemForServer : Item
+    {
+        public RootItemForServer() : base("Root") { }
+        public override List<Item> GetDirectories()
+        {
+            return new List<Item>() { new ServerItem() };
+        }
+        public override Image Image
+        {
+            get { return null; }
+            set { }
+        }
+        public override List<CustomFileInfo> GetFilesSystemInfo()
+        {
+            return null;
+        }
+    }
+
+
+
+    /// <summary>
+    /// name         : ServerItem
+    /// desc         : 서버를 구성하는 아이템 생성
+    /// author       : 심우종
+    /// create date  : 
+    /// update date  : 최종 수정일자 , 수정자, 수정개요
+    /// </summary> 
+    public class ServerItem : Item
+    {
+        public ServerItem() : base("DiR") { }
+        public override List<Item> GetDirectories()
+        {
+            string paramIcon = "4";
+            string paramSize = "16";
+            string path = "\\DiR";
+            string jsonValue = SedasFileOpen.globalFt.ExplorerInfo(path, paramIcon, paramSize);
+
+            string[] splValue = jsonValue.Split('|');
+
+            if (splValue.Count() != 2)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("파일 정보 조회에 실패하였습니다.");
+                return null;
+            }
+
+            List<Item> items = new List<Item>(10);
+            if (true)
+            {
+                DataTable reDt = JsonConvert.DeserializeObject<DataTable>(splValue.ElementAt(0));
+                DataTable imageDt = JsonConvert.DeserializeObject<DataTable>(splValue.ElementAt(1));
+                if (reDt != null && reDt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < reDt.Rows.Count; i++)
+                    {
+                        DataRow row = reDt.Rows[i];
+                        DataRow imageRow = imageDt.AsEnumerable().Where(e => e["imageCode"].ToString() == row["image"].ToString()).FirstOrDefault();
+                        if (imageRow != null)
+                        {
+                            if (row["type"].ToString() == "D")
+                            {
+                                items.Add(new DirectoryItemForServer(row["fullName"].ToString(), stringToImage(imageRow["imageValue"].ToString())));
+                            }
+                        }
+
+                    }
+                }
+            }
+            return items;
+        }
+
+        private Image stringToImage(string base64String)
+        {
+            byte[] imageBytes = Convert.FromBase64String(base64String);
+            // Convert byte[] to Image
+            using (var ms = new MemoryStream(imageBytes, 0, imageBytes.Length))
+            {
+                Image image = Image.FromStream(ms, true);
+                return image;
+            }
+        }
+
+        public override List<CustomFileInfo> GetFilesSystemInfo()
+        {
+            List<CustomFileInfo> infos = new List<CustomFileInfo>(15);
+            infos.Add(CreateSystemFolderInfo(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory))));
+            infos.Add(CreateSystemFolderInfo(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments))));
+            infos.Add(CreateSystemFolderInfo(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic))));
+            infos.Add(CreateSystemFolderInfo(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures))));
+            infos.Add(CreateSystemFolderInfo(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyVideos))));
+            string[] drives = Environment.GetLogicalDrives();
+            foreach (string drive in drives)
+            {
+                DriveInfo driveInfo = new DriveInfo(drive);
+                infos.Add(new CustomFileInfo()
+                {
+                    FullName = driveInfo.Name,
+                    Name = drive,
+                    Image = GetImage(drive),
+                    TypeName = "Drive",
+                    Type = FileType.Drive
+                });
+            }
+            return infos;
+        }
+        CustomFileInfo CreateSystemFolderInfo(FileSystemInfo info)
+        {
+            return new CustomFileInfo()
+            {
+                Name = info.Name,
+                FullName = info.FullName,
+                DateCreated = info.CreationTime,
+                DateModified = info.LastWriteTime,
+                Image = GetImage(info.FullName),
+                TypeName = "System Folder",
+                Type = FileType.SystemFolder
+            };
+        }
+        public override Image Image
+        {
+            get { return null; }
+            set { }
+        }
+    }
+
+
+
+
+    public class ThisPCItem : Item
+    {
+        public ThisPCItem() : base("This PC") { }
+        public override List<Item> GetDirectories()
+        {
+            List<Item> items = new List<Item>(10);
+            items.Add(new DirectoryItem(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)));
+            items.Add(new DirectoryItem(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)));
+            items.Add(new DirectoryItem(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic)));
+            items.Add(new DirectoryItem(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)));
+            items.Add(new DirectoryItem(Environment.GetFolderPath(Environment.SpecialFolder.MyVideos)));
+            string[] drives = Environment.GetLogicalDrives();
+            foreach (string drive in drives)
+                items.Add(new DriveItem(drive));
+            return items;
+        }
+        public override List<CustomFileInfo> GetFilesSystemInfo()
+        {
+            List<CustomFileInfo> infos = new List<CustomFileInfo>(15);
+            infos.Add(CreateSystemFolderInfo(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory))));
+            infos.Add(CreateSystemFolderInfo(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments))));
+            infos.Add(CreateSystemFolderInfo(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic))));
+            infos.Add(CreateSystemFolderInfo(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures))));
+            infos.Add(CreateSystemFolderInfo(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyVideos))));
+            string[] drives = Environment.GetLogicalDrives();
+            foreach (string drive in drives)
+            {
+                DriveInfo driveInfo = new DriveInfo(drive);
+                infos.Add(new CustomFileInfo()
+                {
+                    FullName = driveInfo.Name,
+                    Name = drive,
+                    Image = GetImage(drive),
+                    TypeName = "Drive",
+                    Type = FileType.Drive
+                });
+            }
+            return infos;
+        }
+        CustomFileInfo CreateSystemFolderInfo(FileSystemInfo info)
+        {
+            return new CustomFileInfo()
+            {
+                Name = info.Name,
+                FullName = info.FullName,
+                DateCreated = info.CreationTime,
+                DateModified = info.LastWriteTime,
+                Image = GetImage(info.FullName),
+                TypeName = "System Folder",
+                Type = FileType.SystemFolder
+            };
+        }
+        public override Image Image
+        {
+            get { return null; }
+            set { }
+        }
+    }
+
+    public class DriveItem : DirectoryItem
+    {
+        public DriveItem(string fullName) : base(fullName) { }
+        protected override string GetDirectoryName(string path)
+        {
+            //string _name = path.Replace(Path.DirectorySeparatorChar.ToString(), "");
+            string _name = path;
+            return _name;
+        }
+        protected override string GetDisplayName(string fullName)
+        {
+            //return "Disc (" + Name + ")";
+            return Name;
+        }
+    }
+    public class DirectoryItem : Item
+    {
+        public DirectoryItem(string fullName) : base(fullName) { }
+        public override List<Item> GetDirectories()
+        {
+            List<Item> items = new List<Item>(10);
+            try
+            {
+                if (Directory.Exists(FullName))
+                {
+                    string[] dirs = Directory.GetDirectories(FullName);
+                    foreach (string dir in dirs)
+                    {
+                        var attributes = File.GetAttributes(dir);
+                        if ((attributes & FileAttributes.Hidden) != FileAttributes.Hidden)
+                            items.Add(new DirectoryItem(dir));
+                    }
+                }
+            }
+            catch { }
+            finally { }
+            return items;
+        }
+        protected override string GetDirectoryName(string path)
+        {
+            return Path.GetFileName(path);
+        }
+    }
+
+    public class DirectoryItemForServer : Item
+    {
+        public DirectoryItemForServer(string fullName) : base(fullName) { }
+        public DirectoryItemForServer(string fullName, Image image) : base(fullName, image) { }
+        public override List<Item> GetDirectories()
+        {
+            List<Item> items = new List<Item>(10);
+            try
+            {
+
+                string path = FullName;
+                string paramIcon = "4";
+                string paramSize = "16";
+                string jsonValue = SedasFileOpen.globalFt.ExplorerInfo(path, paramIcon, paramSize);
+
+                string[] splValue = jsonValue.Split('|');
+
+                if (splValue.Count() != 2)
+                {
+                    DevExpress.XtraEditors.XtraMessageBox.Show("파일 정보 조회에 실패하였습니다.");
+                    return null;
+                }
+
+                if (true)
+                {
+                    DataTable reDt = JsonConvert.DeserializeObject<DataTable>(splValue.ElementAt(0));
+                    DataTable imageDt = JsonConvert.DeserializeObject<DataTable>(splValue.ElementAt(1));
+                    if (reDt != null && reDt.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < reDt.Rows.Count; i++)
+                        {
+                            DataRow row = reDt.Rows[i];
+                            DataRow imageRow = imageDt.AsEnumerable().Where(e => e["imageCode"].ToString() == row["image"].ToString()).FirstOrDefault();
+                            if (imageRow != null)
+                            {
+                                if (row["type"].ToString() == "D")
+                                {
+                                    items.Add(new DirectoryItemForServer(row["fullName"].ToString(), stringToImage(imageRow["imageValue"].ToString())));
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+            catch { }
+            finally { }
+            return items;
+        }
+
+        private Image stringToImage(string base64String)
+        {
+            byte[] imageBytes = Convert.FromBase64String(base64String);
+            // Convert byte[] to Image
+            using (var ms = new MemoryStream(imageBytes, 0, imageBytes.Length))
+            {
+                Image image = Image.FromStream(ms, true);
+                return image;
+            }
+        }
+
+
+        protected override string GetDirectoryName(string path)
+        {
+            return Path.GetFileName(path);
+        }
+    }
+
+
+    public abstract class Item : IFileImage
+    {
+        public Item(string fullName)
+        {
+            Image = GetImage(fullName);
+            Name = GetDirectoryName(fullName);
+            //if (Name == "D:")
+            //{
+            //    Name = "D:\\";
+            //}
+            //else if (Name == "C:")
+            //{
+            //    Name = "C:\\";
+            //}
+            FullName = fullName;
+            DisplayName = GetDisplayName(fullName);
+        }
+
+        public Item(string fullName, Image image)
+        {
+            Image = image;
+            Name = GetDirectoryName(fullName);
+            FullName = fullName;
+            DisplayName = GetDisplayName(fullName);
+        }
+
+
+
+        protected virtual string GetDisplayName(string fullName)
+        {
+            return Name;
+        }
+        public string DisplayName
+        {
+            get;
+            private set;
+        }
+        public string Name
+        {
+            get;
+            private set;
+        }
+        public string FullName
+        {
+            get;
+            private set;
+        }
+        public virtual Image Image
+        {
+            get;
+            set;
+        }
+        public abstract List<Item> GetDirectories();
+        public static Size ImageSize
+        {
+            get;
+            set;
+        }
+        protected Image GetImage(string fullName)
+        {
+            return FileSystemHelper.GetImage(fullName, IconSizeType.Small, ImageSize);
+        }
+        protected virtual string GetDirectoryName(string fullName)
+        {
+            return fullName;
+        }
+        public virtual List<CustomFileInfo> GetFilesSystemInfo()
+        {
+            List<CustomFileInfo> infos = new List<CustomFileInfo>(15);
+            try
+            {
+                DirectoryInfo dInfo = new DirectoryInfo(FullName);
+                if ((int)dInfo.Attributes == -1)
+                    return infos;
+                var directories = dInfo.GetDirectories();
+                foreach (var directory in directories)
+                {
+                    if ((directory.Attributes & FileAttributes.Hidden) != FileAttributes.Hidden)
+                    {
+                        infos.Add(new CustomFileInfo()
+                        {
+                            Name = directory.Name,
+                            FullName = directory.FullName,
+                            DateCreated = directory.CreationTime,
+                            DateModified = directory.LastWriteTime,
+                            Image = GetImage(directory.FullName),
+                            TypeName = "File Folder",
+                            Type = FileType.FileFolder
+                        });
+                    }
+                }
+                var files = dInfo.GetFiles();
+                foreach (var file in files)
+                {
+                    if ((file.Attributes & FileAttributes.Hidden) != FileAttributes.Hidden)
+                    {
+                        infos.Add(new CustomFileInfo()
+                        {
+                            Name = file.Name,
+                            FullName = file.FullName,
+                            DateCreated = file.CreationTime,
+                            DateModified = file.LastWriteTime,
+                            Image = GetImage(file.FullName),
+                            TypeName = "File",
+                            Type = FileType.File,
+                            Size = file.Length
+                        });
+                    }
+                }
+            }
+            catch { }
+            return infos;
+        }
+
+
+        public class CustomFileInfo : IFileImage
+        {
+            public CustomFileInfo() { }
+            public Image Image
+            {
+                get;
+                set;
+            }
+            public string FullName
+            {
+                get;
+                set;
+            }
+            public string Name
+            {
+                get;
+                set;
+            }
+            public FileType Type
+            {
+                get;
+                set;
+            }
+            public string TypeName
+            {
+                get;
+                set;
+            }
+            public DateTime? DateModified
+            {
+                get;
+                set;
+            }
+            public DateTime? DateCreated
+            {
+                get;
+                set;
+            }
+            public long? Size
+            {
+                get;
+                set;
+            }
+        }
+    }
+
+    public enum FileType { Drive, SystemFolder, FileFolder, File }
+
+    interface IFileImage
+    {
+        Image Image { get; }
     }
 
 }

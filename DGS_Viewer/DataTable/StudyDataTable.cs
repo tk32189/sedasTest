@@ -52,6 +52,11 @@ namespace DGS_Viewer
             this.Columns.Add("accessId", typeof(String));
             this.Columns.Add("studyNm", typeof(String));
             this.Columns.Add("uuId", typeof(String));
+            this.Columns.Add("lastUpdtDt", typeof(String));
+            this.Columns.Add("lastUpdtDtDisplay", typeof(String));
+
+            this.Columns.Add("mappingCount", typeof(String));
+
         }
     }
 }

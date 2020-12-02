@@ -99,7 +99,7 @@ namespace DGS_Viewer
             if (g_DBconnectData.strIsDev == "Y")
             {
                 this.callService = new CallService("10.10.221.72", "8180");
-                ft = new FileTransfer("10.10.221.72", "1111");
+                ft = new FileTransfer("10.10.221.71", "1111");
                 //this.callService = new CallService("kisnewdev.kuh.ac.kr");
                 this.Text = this.Text + "  (개발)";
             }
@@ -115,7 +115,7 @@ namespace DGS_Viewer
             this.initContextMenu();
 
             //다른 프로그램에서 넘어온 병리번호가 있는경우
-             if (!string.IsNullOrEmpty(this.receivedPtono))
+            if (!string.IsNullOrEmpty(this.receivedPtono))
             {
                 if (receivedPtono.Length >= 8)
                 {
@@ -132,7 +132,7 @@ namespace DGS_Viewer
                             {
                                 alpha = alpha + value.ToString();
                             }
-                            
+
                         }
                         else
                         {
@@ -165,6 +165,9 @@ namespace DGS_Viewer
                 }
 
             }
+
+
+            this.txtPtNo.Focus(); //최초 포커스는 등록번호로..
         }
 
 
@@ -227,6 +230,23 @@ namespace DGS_Viewer
             g_OthersSetupData.nUIMode = int.Parse(Global.G_IniReadValue("OTHERS", "UIMODE", g_PathData.strIniPath));
             g_OthersSetupData.nCipher = int.Parse(Global.G_IniReadValue("OTHERS", "CIPHER", g_PathData.strIniPath));
             g_OthersSetupData.nImageSize = int.Parse(Global.G_IniReadValue("OTHERS", "IMAGESIZE", g_PathData.strIniPath));
+
+            g_OthersSetupData.sortOption = Global.G_IniReadValue("OTHERS", "SORT", g_PathData.strIniPath);
+            g_OthersSetupData.periodType = Global.G_IniReadValue("OTHERS", "PERIOD_TYPE", g_PathData.strIniPath);
+            g_OthersSetupData.onlyMapping = Global.G_IniReadValue("OTHERS", "ONLY_MAPPING", g_PathData.strIniPath);
+
+            string strPeriod = Global.G_IniReadValue("OTHERS", "PERIOD", g_PathData.strIniPath);
+            if (!string.IsNullOrEmpty(strPeriod) && strPeriod.ToIntOrNull() != null)
+            {
+                g_OthersSetupData.nPeriod = strPeriod.ToInt();
+            }
+            else
+            {
+                g_OthersSetupData.nPeriod = 7;  //default 7일
+            }
+
+
+
             tempValue = Global.G_IniReadValue("OTHERS", "ADDHYPEN", g_PathData.strIniPath);
             if (tempValue == "1")
                 g_OthersSetupData.bAddHypen = true;
@@ -475,17 +495,29 @@ namespace DGS_Viewer
                 cmbChar.SelectedIndex = 0;
             }
 
+
+
             //기간검색 콤보박스 데이터
             this.InitCmbWeek();
 
+            //전송상태 콤보박스 데이터
+            this.InitCmbSendStat();
+
             DateTime current = DateTime.Now;
-            DateTime startDt = current.AddDays(-7);
+
+            DateTime startDt = current.AddDays(g_OthersSetupData.nPeriod * -1);
 
             this.dtpStart.EditValue = startDt;
             this.dtpEnd.EditValue = current;
             this.dtpStart.Enabled = false;
             this.dtpEnd.Enabled = false;
 
+            //당일로 체크한 경우 자동으로 기간 선택되도록 전사실 요청 2020-11-17
+            if (g_OthersSetupData.nPeriod == 0)
+            {
+                this.chkStDt.Checked = true;
+                this.chkEdDt.Checked = true;
+            }
 
             //그리드 컨트롤 초기값 설정
             this.InitGridControl();
@@ -608,8 +640,48 @@ namespace DGS_Viewer
                 }
             }
 
+            if (g_OthersSetupData.periodType == "last")
+            {
+                lblPeriod.Text = "기간검색 (마지막 수정일 기준)";
+            }
+            else
+            {
+                lblPeriod.Text = "기간검색";
+            }
+
         }
 
+
+
+        /// <summary>
+        /// name         : InitCmbSendStat
+        /// desc         : 전송상태 콤보 초기화
+        /// author       : 심우종
+        /// create date  : 2020-10-19 13:51
+        /// update date  : 최종 수정일자 , 수정자, 수정개요
+        /// </summary> 
+        private void InitCmbSendStat()
+        {
+            //전송상태 콤보박스 데이터
+            DataTable dt = new DataTable();
+            dt.Columns.Add("cdVal");
+            dt.Columns.Add("cdValNm");
+
+            String[] statMaster = { "", "0", "1", "2", "8", "9" };
+            String[] statMasterDesc = { "", "미전송", "전송완료", "전송실패", "전송대기", "전송중" };
+            for (int i = 0; i < statMaster.Count(); i++)
+            {
+                if (g_ComboData.strarrayChar.Count > i)
+                {
+                    DataRow row = dt.NewRow();
+                    row["cdVal"] = statMaster.ElementAt(i).ToString();
+                    row["cdValNm"] = statMasterDesc.ElementAt(i).ToString();
+                    dt.Rows.Add(row);
+                }
+            }
+
+            this.cmbSendStat.DataBindingFromDataTable(dt, "cdVal", "cdValNm");
+        }
 
         /// <summary>
         /// name         : InitCmbWeek
@@ -679,6 +751,7 @@ namespace DGS_Viewer
 
             if (g_ListData.strCount.ToIntOrNull() != null)
             {
+                int lastIndex = 0;
                 for (int i = 0; i < g_ListData.strCount.ToInt(); i++)
                 {
                     if (g_ListData.strarrayListName.Count > i
@@ -700,25 +773,33 @@ namespace DGS_Viewer
                             caption = g_ListData.strarrayListName[i].ToString();
                         }
 
-                        Sedas.Control.GridControl.HGridColumn gridColumn = new Sedas.Control.GridControl.HGridColumn();
-                        gridColumn.AppearanceCell.Options.UseTextOptions = true;
-                        gridColumn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                        gridColumn.AppearanceHeader.Options.UseTextOptions = true;
-                        gridColumn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                        gridColumn.Caption = caption;
-                        gridColumn.FieldName = codeValue; // "Data" + (i + 1).ToString();
-                        gridColumn.Name = "grdColumn" + (i + 1).ToString();
-                        gridColumn.OptionsColumn.AllowEdit = false;
-                        gridColumn.Visible = true;
-                        gridColumn.VisibleIndex = i;
-                        gridColumn.Width = 64;
-                        gridColumn.Tag = codeValue;
-                        gridColumn.OptionsColumn.FixedWidth = true;
-                        gridColumn.MinWidth = 0;
-                        gridColumn.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(82)))), ((int)(((byte)(116)))));
-                        gridColumn.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-                        gridColumn.AppearanceHeader.Options.UseBackColor = true;
-                        gridColumn.AppearanceHeader.Options.UseForeColor = true;
+                        //컬럼 생성
+                        Sedas.Control.GridControl.HGridColumn gridColumn = GetGridColumn(caption, codeValue, "grdColumn" + (i + 1).ToString(), codeValue, i);
+
+
+                        //Sedas.Control.GridControl.HGridColumn gridColumn = new Sedas.Control.GridControl.HGridColumn();
+                        //gridColumn.AppearanceCell.Options.UseTextOptions = true;
+                        //gridColumn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                        //gridColumn.AppearanceCell.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+                        //gridColumn.AppearanceCell.Options.UseFont = true;
+                        //gridColumn.AppearanceHeader.Options.UseTextOptions = true;
+                        //gridColumn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                        //gridColumn.AppearanceHeader.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+                        //gridColumn.AppearanceHeader.Options.UseFont = true;
+                        //gridColumn.Caption = caption;
+                        //gridColumn.FieldName = codeValue; // "Data" + (i + 1).ToString();
+                        //gridColumn.Name = "grdColumn" + (i + 1).ToString();
+                        //gridColumn.OptionsColumn.AllowEdit = false;
+                        //gridColumn.Visible = true;
+                        //gridColumn.VisibleIndex = i;
+                        //gridColumn.Width = 64;
+                        //gridColumn.Tag = codeValue;
+                        //gridColumn.OptionsColumn.FixedWidth = true;
+                        //gridColumn.MinWidth = 0;
+                        //gridColumn.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(82)))), ((int)(((byte)(116)))));
+                        //gridColumn.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+                        //gridColumn.AppearanceHeader.Options.UseBackColor = true;
+                        //gridColumn.AppearanceHeader.Options.UseForeColor = true;
 
 
 
@@ -737,12 +818,48 @@ namespace DGS_Viewer
                     }
 
 
-
+                    lastIndex = i;
                 }
+
+                //마지막 수정시간 컬럼 필요..
+                Sedas.Control.GridControl.HGridColumn lastDtColumn = GetGridColumn("마지막 수정일자", "lastUpdtDtDisplay", "lastUpdtDtColumn", "", lastIndex++);
+                lastDtColumn.Width = 120;
+                grvOrder.Columns.Add(lastDtColumn);
+
             }
 
             grdOrder.Dock = DockStyle.None;
             grdOrder.Dock = DockStyle.Fill;
+
+        }
+
+        private Sedas.Control.GridControl.HGridColumn GetGridColumn(string caption, string fieldName, string name, string tag, int visibleIndex)
+        {
+            Sedas.Control.GridControl.HGridColumn gridColumn = new Sedas.Control.GridControl.HGridColumn();
+            gridColumn.AppearanceCell.Options.UseTextOptions = true;
+            gridColumn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            gridColumn.AppearanceCell.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            gridColumn.AppearanceCell.Options.UseFont = true;
+            gridColumn.AppearanceHeader.Options.UseTextOptions = true;
+            gridColumn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            gridColumn.AppearanceHeader.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            gridColumn.AppearanceHeader.Options.UseFont = true;
+            gridColumn.Caption = caption;
+            gridColumn.FieldName = fieldName; // "Data" + (i + 1).ToString();
+            gridColumn.Name = name;
+            gridColumn.OptionsColumn.AllowEdit = false;
+            gridColumn.Visible = true;
+            gridColumn.VisibleIndex = visibleIndex;
+            gridColumn.Width = 64;
+            gridColumn.Tag = tag;
+            gridColumn.OptionsColumn.FixedWidth = true;
+            gridColumn.MinWidth = 0;
+            gridColumn.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(82)))), ((int)(((byte)(116)))));
+            gridColumn.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            gridColumn.AppearanceHeader.Options.UseBackColor = true;
+            gridColumn.AppearanceHeader.Options.UseForeColor = true;
+
+            return gridColumn;
 
         }
 
@@ -868,10 +985,16 @@ namespace DGS_Viewer
             //}
 
 
+
+
             //return;
+            if (g_OthersSetupData.periodType == "last")
+            {
+                param.Add("Data7", "last");
+            }
+            
 
-
-
+            string sendStatOption = cmbSendStat.SedasSelectedValue;
 
             CallResultData result = this.callService.SelectSql("reqGetViewerData", param);
             if (result.resultState == ResultState.OK)
@@ -881,13 +1004,57 @@ namespace DGS_Viewer
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
+
+                    if (g_OthersSetupData.sortOption == "insertDt")
+                    {
+                        DataView dv = dt.DefaultView;
+                        dv.Sort = "insertDt desc, studyId desc";
+                        dt = dv.ToTable();
+                    }
+                    else if ( g_OthersSetupData.sortOption == "lastDt")
+                    {
+                        if (dt.Columns.Contains("lastUpdtDt"))
+                        {
+                            DataView dv = dt.DefaultView;
+                            dv.Sort = "lastUpdtDt desc, studyId desc";
+                            dt = dv.ToTable();
+                        }
+                    }
+                    else if (g_OthersSetupData.sortOption == "studyDt" || string.IsNullOrEmpty(g_OthersSetupData.sortOption))
+                    {
+                        //그대로
+                    }
+                    
+
                     StudyDataTable newDt = new StudyDataTable();
 
-
+                    int count = 1;
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         DataRow newRow = newDt.NewRow();
                         DataRow row = dt.Rows[i];
+
+                        if (!string.IsNullOrEmpty(sendStatOption))
+                        {
+                            if (row["sendStat"].ToString() != sendStatOption)
+                            {
+                                continue;
+                            }
+                        }
+
+                        //매핑 이미지가 있는 데이터만 조회
+                        if (g_OthersSetupData.onlyMapping == "Y")
+                        {
+                            if (row.Table.Columns.Contains("mappingCount"))
+                            {
+                                string mappingCount = row["mappingCount"].ToString();
+
+                                if (mappingCount.ToIntOrNull() != null && mappingCount.ToInt() == 0)
+                                {
+                                    continue;
+                                }
+                            } 
+                        }
 
                         string gi = row["gi"].ToString();
                         string mi = row["mi"].ToString();
@@ -915,7 +1082,7 @@ namespace DGS_Viewer
                         this.coreLibrary.TableCopy(row, ref newRow);
 
                         //그리드에 보여주기위한 컬럼 매핑
-                        newRow["Data00"] = row["studyId"].ToString();
+                        newRow["Data00"] = count.ToString(); //row["studyId"].ToString();
                         newRow["Data01"] = row["ptoNo"].ToString();
                         newRow["Data02"] = row["gi"].ToString();
                         newRow["Data03"] = row["mi"].ToString();
@@ -959,8 +1126,9 @@ namespace DGS_Viewer
                         {
                             string insertDt = row["insertDt"].ToString().Substring(0, 4) + "-" + row["insertDt"].ToString().Substring(4, 2) + "-" + row["insertDt"].ToString().Substring(6, 2);
                             newRow["Data12"] = insertDt;
-
                         }
+
+
                         newRow["Data13"] = row["dstudy1"].ToString();
                         newRow["Data14"] = row["dstudy2"].ToString();
                         newRow["Data15"] = row["dstudy3"].ToString();
@@ -968,8 +1136,26 @@ namespace DGS_Viewer
                         newRow["Data17"] = row["studyNm"].ToString();
                         newRow["Data18"] = row["uuId"].ToString();
 
+                        if (row.Table.Columns.Contains("lastUpdtDt") && !string.IsNullOrEmpty(row["lastUpdtDt"].ToString()) && row["lastUpdtDt"].ToString().Length >= 8)
+                        {
+                            newRow["lastUpdtDtDisplay"] = row["lastUpdtDt"].ToString().Substring(0, 4) + "-" + row["lastUpdtDt"].ToString().Substring(4, 2) + "-" + row["lastUpdtDt"].ToString().Substring(6, 2);
+                        }
+                        
+
+
+
+
                         newDt.Rows.Add(newRow);
+                        count++;
                     }
+
+
+
+
+
+
+
+
 
                     grdOrder.DataSource = newDt;
 
@@ -1010,7 +1196,7 @@ namespace DGS_Viewer
                     }
                 }
             }
-            
+
 
 
             if (!string.IsNullOrEmpty(reSelectStudyId))
@@ -1445,7 +1631,7 @@ namespace DGS_Viewer
             for (int i = 0; i < imageList.Count; i++)
             {
                 ImageContainer image = imageList.ElementAt(i);
-                if ( image.ImageButtonValue != null)
+                if (image.ImageButtonValue != null)
                 {
                     DataRow row = imageDt.NewRow();
                     row["fileName"] = image.ImageButtonValue.strRowFilePath;
@@ -1475,28 +1661,51 @@ namespace DGS_Viewer
             //KeyValueData parmaResult = JsonConvert.DeserializeObject<KeyValueData>(jsonValue);
             //MessageBox.Show(jsonValue);
 
+
+            string path = @"C:\SEDAS\SedasPhoto\SedasPhotoMagic.exe";
+            FileInfo file = new FileInfo(path);
+
+            //기존에 띄워져 있으면 kill
+            if (file.Exists)
+            {
+                string name = file.Name.Split('.').FirstOrDefault();
+
+                if (!string.IsNullOrEmpty(name))
+                {
+                    Process[] processList = Process.GetProcessesByName(name);
+
+                    //기존에 띄워져 있으면 kill
+                    if (processList != null && processList.Count() > 0)
+                    {
+                        foreach (Process pro in processList)
+                        {
+                            pro.Kill();
+                        }
+                    }
+                }
+            }
+
+
+
             using (Process compiler = new Process())
             {
-                string path = @"C:\SEDAS\SedasPhoto\SedasPhotoMagic.exe";
-                FileInfo file = new FileInfo(path);
-
                 compiler.StartInfo.FileName = path;
                 //string arg = string.Format("\"{0}\" {1} {2} {3} {4} {5} {6}", filePath, strImagePath, strPathologyNum, imageType, ptNo, ptNm, imageNum);
                 string arg = string.Format("\"{0}\" {1} {2} {3} \"{4}\" {5} {6}", jsonValue, strImagePath, strPathologyNum, ptNo, ptNm, selectedImageNum, userId);
                 compiler.StartInfo.Arguments = arg;
                 //compiler.StartInfo.Arguments = "\"" + jsonValue + "\"" ;
 
-                compiler.StartInfo.UseShellExecute = false;
-                compiler.StartInfo.RedirectStandardOutput = true;
+                compiler.StartInfo.UseShellExecute = true;
+                //compiler.StartInfo.RedirectStandardOutput = true;
                 compiler.StartInfo.WorkingDirectory = file.DirectoryName;
                 compiler.Start();
 
                 //Console.WriteLine(compiler.StandardOutput.ReadToEnd());
 
-                compiler.WaitForExit();
+                //compiler.WaitForExit();
 
 
-                this.SearchData(reSelectStudyId: this.selectedItem["studyId"].ToString());
+                //this.SearchData(reSelectStudyId: this.selectedItem["studyId"].ToString());
             }
         }
 
@@ -1658,7 +1867,7 @@ namespace DGS_Viewer
         }
 
 
-        
+
         /// <summary>
         /// 저장버튼 클릭시
         /// </summary>
@@ -1762,7 +1971,7 @@ namespace DGS_Viewer
                 {
                     Global.logHelper.WriteLog("viewerSaveClick", LogType.INFO, ActionType.CALL_DB, "Viewer 이미지 저장", "reqSetViewerImageSaveAfter 저장 성공", ptoNo: selectedItem["ptoNo"].ToString());
                 }
-                
+
                 return true;
             }
             else
@@ -1773,7 +1982,7 @@ namespace DGS_Viewer
                 {
                     Global.logHelper.WriteLog("viewerSaveClick", LogType.ERROR, ActionType.CALL_DB, "Viewer 이미지 저장", "reqSetViewerImageSaveAfter 저장 실패", ptoNo: selectedItem["ptoNo"].ToString());
                 }
-                
+
                 return false;
             }
         }
@@ -1846,7 +2055,7 @@ namespace DGS_Viewer
                     string ptoNo = deleteImage[0].strPathologyNum.ToString();
                     Global.logHelper.WriteLog("viewerSaveClick", LogType.INFO, ActionType.ACTION, "Viewer 이미지 저장", "DB에서 이미지 삭제 성공", ptoNo: ptoNo);
                 }
-                
+
                 return true;
             }
             else
@@ -2132,7 +2341,7 @@ namespace DGS_Viewer
                     //string path = g_PathData.strImagePath + this.deleteImage[i].strSaveFilePath;
 
                     if (ft.DeleteFile(this.deleteImage[i].strSaveFilePath) == true)
-                    { 
+                    {
                         //파일서버에서 이미지 삭제
                     }
                     //bool isFileExist = File.Exists(path);
@@ -2290,7 +2499,7 @@ namespace DGS_Viewer
                 {
                     return false;
                 }
-                    
+
             }
 
             return true;
@@ -2661,7 +2870,7 @@ namespace DGS_Viewer
                 CallResultData result = this.callService.SelectSql("reqSetViewerSendDicom", param);
                 if (result.resultState == ResultState.OK)
                 {
-                    Global.logHelper.WriteLog("viewerSendResult", LogType.INFO, ActionType.CALL_DB, "Viewer 결과전송(전체영상)", "결과전송에 성공하였습니다.", studyId : seletedStudyId);
+                    Global.logHelper.WriteLog("viewerSendResult", LogType.INFO, ActionType.CALL_DB, "Viewer 결과전송(전체영상)", "결과전송에 성공하였습니다.", studyId: seletedStudyId);
                     //데이터 조회 성공
                     //MessageBox.Show("삭제되었습니다.");
                 }
@@ -2938,7 +3147,7 @@ namespace DGS_Viewer
                         {
                             data.strCm = row["cm"].ToString();
                         }
-                        
+
                         data.strPtNo = tableData["ptNo"].ToString();
                         data.strPtNm = tableData["ptNm"].ToString();
                         if (row["seq"].ToString().ToIntOrNull() != null)
@@ -3292,7 +3501,7 @@ namespace DGS_Viewer
             //XtraMessageBox.Show
 
             ImageContainer image = selectedImageList[0];
-            
+
 
             string path = g_PathData.strPhotoshopPath;
             FileInfo file = new FileInfo(path);
@@ -4343,8 +4552,8 @@ namespace DGS_Viewer
                     //저장성공
                 }
                 else
-                { 
-                
+                {
+
                 }
             }
         }
@@ -4397,19 +4606,19 @@ namespace DGS_Viewer
 
         private void DirectoryExistsTest()
         {
-            
+
             string serverPath = "Imagedata\\20200525\\M0000001";
             //[디렉토리 존재여부 확인]
             //serverPath : 서버 디렉토리 경로 (ex : Imagedata\\20200525\\M0000001)
 
-            for( int i= 0; i < 1000; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 if (ft.DirectoryExists(serverPath) == true)
                 {
 
                 }
             }
-            
+
         }
 
 
@@ -4464,7 +4673,7 @@ namespace DGS_Viewer
                     //저장성공
                 }
             }
-            
+
 
 
 
@@ -4712,7 +4921,7 @@ namespace DGS_Viewer
         {
             if (this.cmbChar.SelectedIndex > -1)
             {
-                
+
                 string value = this.cmbChar.Properties.Items[this.cmbChar.SelectedIndex].Value.ToString();
                 //Global.G_IniWriteValue("DGSDB", "SETTINGTYPE", value, System.Environment.CurrentDirectory + "\\Setting\\IIP_Setting.ini");
                 Global.G_IniWriteValue("OTHERS", "PTONO_TYPE", value, g_PathData.strIniPath);
@@ -4726,8 +4935,8 @@ namespace DGS_Viewer
                 if (column.Visible == true)
                 {
                     if (string.IsNullOrEmpty(column.Tag.ToString()))
-                    { 
-                    
+                    {
+
                     }
                 }
             }
